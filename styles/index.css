@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+.bg{
+    background: #F6E9FE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.bg-login{
+    width: 559px;
+    height: 595px;
+    border: 2px solid #cccc;
+    padding: 30px;
+    background: conic-gradient(from 180deg at 50% 50%, #F3CCFF 0deg, rgba(249, 244, 254, 0.59) 216.51deg, #F3CCFF 360deg);
+    border-radius: 95px;
+    box-shadow: 1px 2px 5px 1px #989696;
+}
+.bg-login h2{
+    font-family: 'Alata';
+    font-size: 64px;
+    text-align: center;
+    margin-top:-60px;
+    color: #6B005B;
+}
+.logo img {
+    margin-top: -110px;
+    margin-left: 80px;
+    width: 350px;
+}
+
+.bg-login input{
+    font-family: 'Alata';
+    font-size: 16px ;
+    display: block;
+    text-align: center;
+    border: #F2F7FF;
+    width: 300px;
+    height: 64px;
+
+    margin: 10px auto;
+    background: #F2F7FF;
+    border-radius: 100px;
+ 
+}
+.bg-login a{
+font-family: 'Alata';
+margin-left: 200px;
+font-size: 15px;
+line-height: 24px;
+color: #9898CA;
+
+}
+.bg-login button {
+    font-family: 'Alata';
+    color: #FEFEFE;
+    font-size: 18px;
+    margin: 30px;
+    margin-left: 150px;
+    width: 190.83px;
+    height: 42.88px;
+    background: #BA94D1;
+    border: #F2F7FF;
+    box-shadow: 0px 0px 1px rgba(117, 131, 142, 0.04);
+    border-radius: 16px;
+
+}
+button:hover{
+    background: #fbf9fc;
+    color: #bebefc;
+}
+
