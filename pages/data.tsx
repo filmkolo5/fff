@@ -2,6 +2,7 @@ import React from 'react'
 import { FiUsers } from "react-icons/fi";
 import { CgFileDocument } from "react-icons/cg";
 import { TbDatabase } from "react-icons/Tb";
+import { BsSearch} from "react-icons/Bs";
 
 export default function 
 () {
@@ -25,15 +26,16 @@ export default function
 
         <div className='data'>
           <h3>ข้อมูลบุคลากร</h3>
-          </div>
           <div className='dataTable'>
             <h6>ตารางข้อมูลพนักงาน</h6>
           <div className='bginputsearch'>
-          <input type=" ID"name=" ID"placeholder="EMPLOYEE ID" />
+          <input type=" ssearch"name=" ssearch"placeholder="Search " />
+          <div className='searchIcon'><BsSearch/>
+          <button className='add_data'> + ข้อมูลพนักงาน </button>
           </div>
-          <div className='searchIcon'></div>
-
           </div>
+          </div> 
+          </div> 
     </div>
   )
 }

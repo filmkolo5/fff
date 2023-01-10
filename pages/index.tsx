@@ -11,7 +11,7 @@ export default function login() {
    <input type=" ID"name=" ID"placeholder="EMPLOYEE ID" />
     <input type=" password"name=" password"placeholder="PASSWORD" />
     <a href='#'> Forget Password</a>
-    <button type='submit'>LOGIN</button>
+    <button className='bt'>LOGIN</button>
     </div>
   </div>
   
