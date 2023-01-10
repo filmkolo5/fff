@@ -84,15 +84,12 @@ border-radius: 4px;
 .add_data:hover {
     color: #f59300;
 }
-.mat_table{ 
-   /* mat-table */
-
-
+.MAT_TABLE{ 
     /* Auto layout */
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 0px;
 
     position: absolute;
@@ -103,10 +100,8 @@ border-radius: 4px;
 
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    
 }
-.BOX_NUMBER{
+.HEAD_BOX_NUMBER{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,7 +134,7 @@ border-radius: 4px;
     flex-grow: 0;
 
 }
-.BOX_EMPLOYEE_ID{
+.HEAD_BOX_EMPLOYEE_ID{
 
     font-family: 'Itim', cursive;
     font-style: normal;
@@ -161,7 +156,7 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.BOX_FNAME_LNAME{
+.HEAD_BOX_FNAME_LNAME{
     
     font-family: 'Itim', cursive;
     font-style: normal;
@@ -183,7 +178,7 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.BOX_POSITION{
+.HEAD_BOX_POSITION{
 
     font-family: 'Itim', cursive;
     font-style: normal;
@@ -205,7 +200,7 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.BOX_AFFILIATION{
+.HEAD_BOX_AFFILIATION{
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
@@ -226,7 +221,7 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.BOX_IHUB_POSITION{
+.HEAD_BOX_IHUB_POSITION{
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
@@ -247,7 +242,7 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.BOX_PERFORMANCE{
+.HEAD_BOX_PERFORMANCE{
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
@@ -267,7 +262,7 @@ border-radius: 4px;
     order: 0;
     flex-grow: 0;
 }
-.BOX_DELETE_EDIT{
+.HEAD_BOX_DELETE_EDIT{
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
@@ -293,16 +288,184 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
+.BOX_NUMBER{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;    
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 10px;
+
+    width: 80px;
+    height: 48px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.BOX_EMPLOYEE_ID{
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.25px;
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+
+    width: 134px;
+    height: 48px;
+    
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.BOX_FNAME_LNAME{
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 219px;
+    height: 48px;
+
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+}
+.BOX_POSITION{
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 110px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.BOX_AFFILIATION{
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 234px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.BOX_IHUB_POSITION{
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 156px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.BOX_PERFORMANCE{
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 128px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+    .BOX_DELETE_EDIT{
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 233px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+    }
 
 
 
 
-/* tr{
+tr{
     color: black;
-} */
-/* td{
+}
+td{
     border-style: solid;
 }
 th{
     border-style: solid; 
-} */
+}
