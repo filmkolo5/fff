@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Nunito+Sans:wght@200&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    
-}
+
+
 .logo_ihub {
-    max-width:1440px;
+    width: auto;
     font-family: 'Alata', sans-serif;
     color:#fcfcfc;
-    font-size: 24px;
+    font-size: 20px;
     background: linear-gradient(90.25deg, #7F669D -0.28%, #BA94D1 32.63%, #DEBACE 71.82%, #F7CD8E 98.59%);
     display: flex;
     align-items: center;
@@ -31,31 +28,23 @@
     color:#fffefe;
     font-family: 'Kanit', sans-serif;
 }
-
-.login_1 {
-    font-size: 18px;
-    color:#7d0099;
-    font-family: 'Alata', sans-serif;
-    margin: 250px;
-    
+.login-ihub li a{
+    font-size: 16px;
+    color: rgb(251, 247, 250);
+    margin-left: 300px;
 }
+
 .data{
    position: absolute;
 width: 165px;
 height: 38px;
 left: 112px;
 top: 95px;
-
-
-
 font-family: 'Nunito Sans';
 font-style: normal;
 font-weight: 700;
 font-size: 28px;
 line-height: 38px;
-
-
-
 color: #000000;
     
 }
@@ -87,7 +76,7 @@ color: #000000;
 .dataTable h6 {
 width: 140px;
 height: 22px;
-
+margin-left: 10px;
 font-family: 'Kanit', sans-serif;
 font-style: normal;
 font-weight: 700;
@@ -100,7 +89,6 @@ color: #000000;
 .search{
     display: flex;
     flex-direction: row;
-    align-items: center;
     padding: 8px 12px;
     gap: 10px;
     width: 320px;
@@ -109,4 +97,18 @@ color: #000000;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
     
+}
+.bginputsearch{
+    font-size: 16px ;
+    margin-left: 10px;
+    text-align: center;
+    border: #F2F7FF;
+    color: black;
+    width: 262px;
+    height: 24px;
+    color: black;
+    background: white;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+    
+ 
 }
