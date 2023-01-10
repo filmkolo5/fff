@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Nunito+Sans:wght@200&display=swap');
+
+
+.logo_ihub {
+    width: auto;
+    font-family: 'Alata', sans-serif;
+    color:#fcfcfc;
+    font-size: 20px;
+    background: linear-gradient(90.25deg, #7F669D -0.28%, #BA94D1 32.63%, #DEBACE 71.82%, #F7CD8E 98.59%);
+    display: flex;
+    align-items: center;
+}
+.menu {
+    width: 644;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    list-style:none ;
+    
+}
+
+
+.menu li  {
+    margin: 70px;
+    font-size: 16px;
+    color:#fffefe;
+    font-family: 'Kanit', sans-serif;
+}
+.login-ihub li a{
+    font-size: 16px;
+    color: rgb(251, 247, 250);
+    margin-left: 300px;
+}
+
+.data{
+   position: absolute;
+width: 165px;
+height: 38px;
+left: 112px;
+top: 95px;
+font-family: 'Nunito Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 38px;
+color: #000000;
+    
+}
+.data h3 {
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+}
+
+.dataTable{
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0px 0px;
+    gap: 24px;
+    position: absolute;
+    width: 1296px;
+    height: 158.15px;
+    left: 72px;
+    top: 164px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+    
+}
+
+.dataTable h6 {
+width: 140px;
+height: 22px;
+margin-left: 10px;
+font-family: 'Kanit', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+
+
+}
+.search{
+    display: flex;
+    flex-direction: row;
+    padding: 8px 12px;
+    gap: 10px;
+    width: 320px;
+    height: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    
+}
+.bginputsearch{
+    font-size: 16px ;
+    margin-left: 10px;
+    text-align: center;
+    border: #F2F7FF;
+    color: black;
+    width: 262px;
+    height: 24px;
+    color: black;
+    background: white;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+    
+ 
+}
