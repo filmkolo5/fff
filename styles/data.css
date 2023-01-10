@@ -424,9 +424,10 @@ border-radius: 4px;
     font-size: 14px;
     line-height: 20px;
 
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    letter-spacing: 0.25px;
 
     /* black/0.87 */
 
@@ -444,6 +445,7 @@ border-radius: 4px;
     font-size: 14px;
     line-height: 20px;
 
+    
     text-align: center;
     align-items: center;
     letter-spacing: 0.25px;
@@ -460,7 +462,7 @@ border-radius: 4px;
 
 
 
-tr{
+/* tr{
     color: black;
 }
 td{
@@ -468,4 +470,4 @@ td{
 }
 th{
     border-style: solid; 
-}
+} */
