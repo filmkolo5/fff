@@ -22,7 +22,7 @@ export default function () {
   const [users, setUsers] = useState<IUsers[]>([]);
 
   useEffect(()=>{
-    setUsers(usersJson.users);
+    setUsers([...usersJson.users]);
   }, [])
 
   return (
@@ -43,7 +43,7 @@ export default function () {
       </header>
 
 
-        <div className='data'>
+        <div>
           <h3>ข้อมูลบุคลากร</h3>
           <div className='dataTable'>
             <h6>ตารางข้อมูลพนักงาน</h6>
