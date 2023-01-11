@@ -65,7 +65,7 @@ color: #9898CA;
     border-radius: 16px;
 
 }
-button:hover{
+.bt:hover{
     background: #fbf9fc;
     color: #bebefc;
 }

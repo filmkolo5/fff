@@ -1,114 +1,473 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Nunito+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 
+body {
+    background: rgb(253, 248, 248);
+}
 .logo_ihub {
-    width: auto;
     font-family: 'Alata', sans-serif;
-    color:#fcfcfc;
-    font-size: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 55px;
     background: linear-gradient(90.25deg, #7F669D -0.28%, #BA94D1 32.63%, #DEBACE 71.82%, #F7CD8E 98.59%);
-    display: flex;
-    align-items: center;
-}
-.menu {
-    width: 644;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    list-style:none ;
-    
-}
 
+}
+.menu{
+    display: flex;
+    list-style: none;
+    align-items: center;
 
-.menu li  {
+}
+.menu li {
     margin: 70px;
     font-size: 16px;
-    color:#fffefe;
+    color:white;
     font-family: 'Kanit', sans-serif;
+
+   
 }
-.login-ihub li a{
-    font-size: 16px;
-    color: rgb(251, 247, 250);
+.login-ihub li{
     margin-left: 300px;
+    font-family: 'Alata', sans-serif;
+    color: rgb(154, 96, 159);
 }
-
-.data{
-   position: absolute;
-width: 165px;
-height: 38px;
-left: 112px;
-top: 95px;
-font-family: 'Nunito Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 28px;
-line-height: 38px;
-color: #000000;
-    
-}
-.data h3 {
-    font-family: 'Kanit', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 38px;
-}
-
 .dataTable{
- 
+    padding: 12px 0px 0px;
+    margin: 40px;
+    margin-left: 100px;
+    width: 1296px;
+    height: 120px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+}
+.data h3{
+    font-family: 'Kanit', sans-serif;
+  margin: 20px;
+  margin-left: 100px;
+}
+.data h6{
+    font-family: 'Kanit', sans-serif;
+    margin: 5px;
+    font-size: 14px;
+}
+.bginputsearch{
+margin: 5px;
+width: 250px;
+height: 35px;
+padding: 7px;
+background: #FFFFFF;
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+border-radius: 4px;
+}
+.searchIcon{
+   margin-top: -18px;
+   margin-left: 200px;
+   color: #7F669D;
+}
+.add_data {
+    font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    width: 130px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    border: #f9f9f9;
+    background: #F7CD8E;
+    border-radius: 4px;
+    margin-left: 940px;
+}
+
+.add_data:hover {
+    color: #f59300;
+}
+.MAT_TABLE{ 
+    /* Auto layout */
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 12px 0px 0px;
-    gap: 24px;
+    padding: 0px;
+
     position: absolute;
     width: 1296px;
-    height: 158.15px;
+    height: 617.85px;
     left: 72px;
-    top: 164px;
+    top: 322.15px;
+
     background: #FFFFFF;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
-    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.HEAD_BOX_NUMBER{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.dataTable h6 {
-width: 140px;
-height: 22px;
-margin-left: 10px;
-font-family: 'Kanit', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 22px;
-color: #000000;
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 0px;    
+
+    color: #757575;
 
 
-}
-.search{
+    line-height: 20px;
     display: flex;
     flex-direction: row;
-    padding: 8px 12px;
+    align-items: center;
+    padding: 10px 16px;
     gap: 10px;
-    width: 320px;
-    height: 40px;
+
+    width: 80px;
+    height: 48px;
+
     background: #FFFFFF;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
 }
-.bginputsearch{
-    font-size: 16px ;
-    margin-left: 10px;
+.HEAD_BOX_EMPLOYEE_ID{
+
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 0px;    
+
+    color: #757575;
+
+    width: 134px;
+    height: 48px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+.HEAD_BOX_FNAME_LNAME{
+    
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 0px;    
+
+    color: #757575;
+
+    width: 134px;
+    height: 48px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+.HEAD_BOX_POSITION{
+
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 0px;    
+
+    color: #757575;
+
+    width: 110px;
+    height: 48px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+.HEAD_BOX_AFFILIATION{
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 0px;    
+
+    color: #757575;
+
+    width: 234px;
+    height: 48px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+.HEAD_BOX_IHUB_POSITION{
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 0px;    
+
+    color: #757575;
+
+    width: 156px;
+    height: 48px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+.HEAD_BOX_PERFORMANCE{
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 0px;    
+
+    color: #757575;
+
+    width: 128px;
+    height: 48px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.HEAD_BOX_DELETE_EDIT{
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 0px;    
+
+    color: #757575;
+
+    /* th-text-start */
+
+
+    /* Auto layout */ 
+
+    width: 333px;
+    height: 48px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+.BOX_NUMBER{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;    
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 10px;
+
+    width: 80px;
+    height: 48px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.BOX_EMPLOYEE_ID{
+    align-items: center;
     text-align: center;
-    border: #F2F7FF;
-    color: black;
-    width: 262px;
-    height: 24px;
-    color: black;
-    background: white;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+    letter-spacing: 0.25px;
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+
+    width: 134px;
+    height: 48px;
     
- 
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
+.BOX_FNAME_LNAME{
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 219px;
+    height: 48px;
+
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+
+}
+.BOX_POSITION{
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 110px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.BOX_AFFILIATION{
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 234px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.BOX_IHUB_POSITION{
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 156px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.BOX_PERFORMANCE{
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 128px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+    .BOX_DELETE_EDIT{
+
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+
+    /* black/0.87 */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    width: 233px;
+    height: 48px;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+    }
+
+
+
+
+/* tr{
+    color: black;
+}
+td{
+    border-style: solid;
+}
+th{
+    border-style: solid; 
+} */
