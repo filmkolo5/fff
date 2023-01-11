@@ -7,42 +7,46 @@
 body {
     background: rgb(253, 248, 248);
 }
-header{
-    position: absolute;
+
+header {
     display: flex;
-width: 1920px;
-height: 70px;
-background: linear-gradient(90.25deg, #7F669D 0%, #BA94D1 30%, #DEBACE 60%, #F7CD8E 90%);
+    width: 100vw;
+    height: 70px;
+    background: linear-gradient(90.25deg, #7F669D 0%, #BA94D1 30%, #DEBACE 60%, #F7CD8E 90%);
+    padding-left: 96px;
+    padding-right: 96px;
 }
+
 .logo_ihub {
     font-family: 'Alata', sans-serif;
     display: flex;
     align-items: center;
     color: white;
     width: 100%;
-    height: 55px;
-
+    height: 100%;
+    justify-content: space-between;
 }
-.menu{
+
+.menu {
     display: flex;
     list-style: none;
     align-items: center;
-
+    gap: 16px;
 }
+
 .menu li {
-    margin: 70px;
     font-size: 16px;
-    color:white;
+    color: white;
     font-family: 'Kanit', sans-serif;
-
-   
 }
-.login-ihub li{
+
+.login-ihub li {
     margin-left: 300px;
     font-family: 'Alata', sans-serif;
     color: rgb(154, 96, 159);
 }
-.dataTable{
+
+.dataTable {
     position: absolute;
     width: 1296px;
     height: 158.15px;
@@ -56,7 +60,8 @@ background: linear-gradient(90.25deg, #7F669D 0%, #BA94D1 30%, #DEBACE 60%, #F7C
 
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
 }
-h3{
+
+h3 {
     position: absolute;
     width: 165px;
     height: 38px;
@@ -75,7 +80,8 @@ h3{
 
     color: #000000;
 }
-h6{
+
+h6 {
     margin: 20px;
     /* Headings/H6 */
 
@@ -89,20 +95,23 @@ h6{
 
     color: #000000;
 }
-.bginputsearch{
-margin: 5px;
-width: 250px;
-height: 35px;
-padding: 7px;
-background: #FFFFFF;
-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
-border-radius: 4px;
+
+.bginputsearch {
+    margin: 5px;
+    width: 250px;
+    height: 35px;
+    padding: 7px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
 }
-.searchIcon{
-   margin-top: -18px;
-   margin-left: 200px;
-   color: #7F669D;
+
+.searchIcon {
+    margin-top: -18px;
+    margin-left: 200px;
+    color: #7F669D;
 }
+
 .add_data {
     font-family: 'Kanit', sans-serif;
     font-size: 14px;
@@ -118,24 +127,19 @@ border-radius: 4px;
 .add_data:hover {
     color: #f59300;
 }
-.MAT_TABLE{ 
+
+.MAT_TABLE {
     /* Auto layout */
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-
-    position: absolute;
-    width: 1296px;
-    height: 617.85px;
-    left: 72px;
-    top: 322.15px;
-
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.HEAD_BOX_NUMBER{
+
+.HEAD_BOX_NUMBER {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,7 +147,7 @@ border-radius: 4px;
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
-    line-height: 0px;    
+    line-height: 0px;
 
     color: #757575;
 
@@ -168,12 +172,13 @@ border-radius: 4px;
     flex-grow: 0;
 
 }
-.HEAD_BOX_EMPLOYEE_ID{
+
+.HEAD_BOX_EMPLOYEE_ID {
 
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
-    line-height: 0px;    
+    line-height: 0px;
 
     color: #757575;
 
@@ -190,12 +195,13 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.HEAD_BOX_FNAME_LNAME{
-    
+
+.HEAD_BOX_FNAME_LNAME {
+
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
-    line-height: 0px;    
+    line-height: 0px;
 
     color: #757575;
 
@@ -212,12 +218,13 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.HEAD_BOX_POSITION{
+
+.HEAD_BOX_POSITION {
 
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
-    line-height: 0px;    
+    line-height: 0px;
 
     color: #757575;
 
@@ -234,11 +241,12 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.HEAD_BOX_AFFILIATION{
+
+.HEAD_BOX_AFFILIATION {
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
-    line-height: 0px;    
+    line-height: 0px;
 
     color: #757575;
 
@@ -255,11 +263,12 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.HEAD_BOX_IHUB_POSITION{
+
+.HEAD_BOX_IHUB_POSITION {
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
-    line-height: 0px;    
+    line-height: 0px;
 
     color: #757575;
 
@@ -276,11 +285,12 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.HEAD_BOX_PERFORMANCE{
+
+.HEAD_BOX_PERFORMANCE {
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
-    line-height: 0px;    
+    line-height: 0px;
 
     color: #757575;
 
@@ -296,18 +306,19 @@ border-radius: 4px;
     order: 0;
     flex-grow: 0;
 }
-.HEAD_BOX_DELETE_EDIT{
+
+.HEAD_BOX_DELETE_EDIT {
     font-family: 'Itim', cursive;
     font-style: normal;
     font-size: 15px;
-    line-height: 0px;    
+    line-height: 0px;
 
     color: #757575;
 
     /* th-text-start */
 
 
-    /* Auto layout */ 
+    /* Auto layout */
 
     width: 333px;
     height: 48px;
@@ -322,7 +333,8 @@ border-radius: 4px;
     align-self: stretch;
     flex-grow: 0;
 }
-.BOX_NUMBER{
+
+.BOX_NUMBER {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -331,7 +343,7 @@ border-radius: 4px;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 20px;    
+    line-height: 20px;
     /* black/0.87 */
 
     color: rgba(0, 0, 0, 0.87);
@@ -349,7 +361,8 @@ border-radius: 4px;
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
-.BOX_EMPLOYEE_ID{
+
+.BOX_EMPLOYEE_ID {
     align-items: center;
     text-align: center;
     letter-spacing: 0.25px;
@@ -367,11 +380,12 @@ border-radius: 4px;
 
     width: 134px;
     height: 48px;
-    
+
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
-.BOX_FNAME_LNAME{
+
+.BOX_FNAME_LNAME {
     font-family: 'Itim';
     font-style: normal;
     font-weight: 400;
@@ -392,7 +406,8 @@ border-radius: 4px;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 
 }
-.BOX_POSITION{
+
+.BOX_POSITION {
     font-family: 'Itim';
     font-style: normal;
     font-weight: 400;
@@ -411,7 +426,8 @@ border-radius: 4px;
     height: 48px;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
-.BOX_AFFILIATION{
+
+.BOX_AFFILIATION {
     font-family: 'Itim';
     font-style: normal;
     font-weight: 400;
@@ -430,7 +446,8 @@ border-radius: 4px;
     height: 48px;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
-.BOX_IHUB_POSITION{
+
+.BOX_IHUB_POSITION {
 
     font-family: 'Itim';
     font-style: normal;
@@ -450,7 +467,8 @@ border-radius: 4px;
     height: 48px;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
-.BOX_PERFORMANCE{
+
+.BOX_PERFORMANCE {
 
     font-family: 'Itim';
     font-style: normal;
@@ -471,7 +489,8 @@ border-radius: 4px;
     height: 48px;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
-    .BOX_DELETE_EDIT{
+
+.BOX_DELETE_EDIT {
 
     font-family: 'Itim';
     font-style: normal;
@@ -479,7 +498,7 @@ border-radius: 4px;
     font-size: 14px;
     line-height: 20px;
 
-    
+
     text-align: center;
     align-items: center;
     letter-spacing: 0.25px;
@@ -491,7 +510,7 @@ border-radius: 4px;
     width: 233px;
     height: 48px;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
-    }
+}
 
 
 
