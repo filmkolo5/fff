@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react'
-import { FiUsers } from "react-icons/fi";
-import { CgFileDocument } from "react-icons/cg";
-import { TbDatabase } from "react-icons/Tb";
-import { FiEdit } from "react-icons/fi";
-import { RiDeleteBin6Line } from "react-icons/ri";
 import { useState } from 'react';
 import usersJson from "../json/data.json";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+import { UsersService } from '../services/UsersService';
+
+/* PRIME REACT IMPORT */
+import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
+import "primereact/resources/primereact.min.css";                  //core css
+import "primeicons/primeicons.css";                                //icons
+import "primeflex/primeflex.css" 
+
 interface IUsers {
   "number": number;
   "employee_id": number;
@@ -22,84 +25,42 @@ export default function () {
   const [users, setUsers] = useState<IUsers[]>([]);
 
   useEffect(() => {
-    setUsers([...usersJson.users]);
+    setUsers([...usersJson.data.users]);
   }, [])
 
+  // const usersService = new UsersService();
+  // const [loading, setLoading] = useState(true);
+  // const [user, setUser] = useState();
+
+  // useEffect(() => {
+  //     let a = usersService.getUser()
+  //     getUser(a)
+  //     setLoading(false);
+  // }, []); // eslint-disab
+  // const getUser = (data:any) => {
+  //   return 
+  //   console.log(data)
+  //   return [...data || []].map(d => {
+  //       d.date = new Date(d.date);
+  //       return d;
+  //   });
   return (
-    <div>
-      {/* <header>
-        <div className='logo_ihub' >
-          <img src="/img/1.png" alt='' height={50} />
-          <a>PEA  IHub </a>
-          <div className='menu'>
-            <li><a href='#'><FiUsers /> ข้อมูลบุคลากร</a></li>
-            <li><a href='#'><CgFileDocument /> หลักสูตร </a></li>
-            <li><a href='#'><TbDatabase /> งบประมาณ</a></li>
-            <div className='login-ihub'>
-              <li><a href='#'> Login</a></li>
-            </div>
-          </div>
-        </div>
-      </header> */}
-
-
-      {/* <div>
-        <h3>ข้อมูลบุคลากร</h3>
-        <div className='dataTable'>
-          <h6>ตารางข้อมูลพนักงาน</h6>
-          <div className='bginputsearch'>
-            <input type=" ssearch" name=" ssearch" placeholder="Search " />
-            <div className='searchIcon'>
-              <button className='add_data'> + ข้อมูลพนักงาน </button>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div> */}
-
-      <table className='MAT_TABLE'>
-        <tbody>
-          <tr>
-            <th className='HEAD_BOX_NUMBER'>ลำดับ</th>
-            <th className='HEAD_BOX_EMPLOYEE_ID'>รหัสพนักงาน</th>
-            <th className='HEAD_BOX_FNAME_LNAME'>ชื่อ - นามสกุล</th>
-            <th className='HEAD_BOX_POSITION'>ตำแหน่งย่อ</th>
-            <th className='HEAD_BOX_AFFILIATION'>สังกัด</th>
-            <th className='HEAD_BOX_IHUB_POSITION'>ต่ำแหน่ง IHub</th>
-            <th className='HEAD_BOX_PERFORMANCE'>การปฏิบัติงาน</th>
-            <td className='HEAD_BOX_DELETE_EDIT'></td>
-          </tr>
-          {users.map((user) => {
-            return (<tr key={user.employee_id}>
-              <td className='BOX_NUMBER'>{user.number}</td>
-              <td className='BOX_EMPLOYEE_ID'>{user.employee_id}</td>
-              <td className='BOX_FNAME_LNAME'>{user.fname_lname}</td>
-              <td className='BOX_POSITION'>{user.position}</td>
-              <td className='BOX_AFFILIATION'>{user.affiliation}</td>
-              <td className='BOX_IHUB_POSITION'>{user.ihub_position}</td>
-              <td className='BOX_PERFORMANCE'>None</td>
-              <td className='BOX_DELETE_EDIT'><FiEdit size="1rem" />   <RiDeleteBin6Line size="1rem" /></td>
-            </tr>);
-          })}
-   
-        </tbody>
-      </table>
-      <div>
-        {/* <DataTable value={users}
-          dataKey="id" paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
-          paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
-          responsiveLayout="scroll">
-          <Column selectionMode="multiple" headerStyle={{ width: '3rem' }} exportable={false}></Column>
-          <Column field="number" header="number" sortable style={{ minWidth: '12rem' }}></Column>
-          <Column field="employee_id" header="employee_id" sortable style={{ minWidth: '16rem' }}></Column>
-          <Column field="image" header="Image" body={imageBodyTemplate}></Column>
-          <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '8rem' }}></Column>
-        </DataTable> */}
+    <div className='grid'>
+      <div className='col'>
+ 
+          <DataTable value={[...users]} className='shadow'>  
+              <Column header='ลำดับ' field='number'/>
+              <Column header='รหัสพนักงาน' field='employee_id'/>
+              <Column header='ชื่อ - นามสกุล' field='fname_lname'/>
+              <Column header='ตำแหน่งย่อ'field='position'/>
+              <Column header='สังกัด'field='affiliation'/>
+              <Column header='ต่ำแหน่ง IHub'field='ihub_position'/>
+              <Column header='การปฏิบัติงาน'field=''/>
+              <Column header=''/>
+          </DataTable>
       </div>
     </div>
   )
 }
+
+

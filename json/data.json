@@ -1,5 +1,7 @@
 {
-    "users": [{
+  "data": {
+    "users": [
+      {
         "number": 1,
         "employee_id": 409490,
         "fname_lname": "นายจักรพันธ์ อร่ามดิลกรัตน์",
@@ -88,5 +90,7 @@
         "affiliation": "ผอฟ.ศฝฟ.ฝพบ.รผก.(บก)",
         "ihub_position": "AdHoc",
         "performance": ""
-      }]
+      }
+    ]
+  }
 }
