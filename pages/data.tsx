@@ -26,41 +26,13 @@ export default function () {
   }, [])
 
   return (
-    <div>
-      {/* <header>
-        <div className='logo_ihub' >
-          <img src="/img/1.png" alt='' height={50} />
-          <a>PEA  IHub </a>
-          <div className='menu'>
-            <li><a href='#'><FiUsers /> ข้อมูลบุคลากร</a></li>
-            <li><a href='#'><CgFileDocument /> หลักสูตร </a></li>
-            <li><a href='#'><TbDatabase /> งบประมาณ</a></li>
-            <div className='login-ihub'>
-              <li><a href='#'> Login</a></li>
-            </div>
-          </div>
+      <div>
+        <div className='DATA_TEXT'>
+          ข้อมูลบุคลากร
         </div>
-      </header> */}
-
-
-      {/* <div>
-        <h3>ข้อมูลบุคลากร</h3>
-        <div className='dataTable'>
-          <h6>ตารางข้อมูลพนักงาน</h6>
-          <div className='bginputsearch'>
-            <input type=" ssearch" name=" ssearch" placeholder="Search " />
-            <div className='searchIcon'>
-              <button className='add_data'> + ข้อมูลพนักงาน </button>
-
-            </div>
-
-          </div>
-
+        <div className='DATA_SEARCH'>
         </div>
-
-      </div> */}
-
-      <table className='MAT_TABLE'>
+        <table className='MAT_TABLE'>
         <tbody>
           <tr>
             <th className='HEAD_BOX_NUMBER'>ลำดับ</th>
@@ -84,22 +56,10 @@ export default function () {
               <td className='BOX_DELETE_EDIT'><FiEdit size="1rem" />   <RiDeleteBin6Line size="1rem" /></td>
             </tr>);
           })}
-   
         </tbody>
       </table>
-      <div>
-        {/* <DataTable value={users}
-          dataKey="id" paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
-          paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
-          responsiveLayout="scroll">
-          <Column selectionMode="multiple" headerStyle={{ width: '3rem' }} exportable={false}></Column>
-          <Column field="number" header="number" sortable style={{ minWidth: '12rem' }}></Column>
-          <Column field="employee_id" header="employee_id" sortable style={{ minWidth: '16rem' }}></Column>
-          <Column field="image" header="Image" body={imageBodyTemplate}></Column>
-          <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '8rem' }}></Column>
-        </DataTable> */}
       </div>
-    </div>
+     
+   
   )
 }
