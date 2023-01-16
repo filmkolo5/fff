@@ -62,14 +62,11 @@ header {
 }
 
 .MAT_TABLE {
-<<<<<<< HEAD
 
     color: #000000;
-=======
     display: flex;
     flex-direction: column;
     align-items: flex-start;
->>>>>>> e4c88d8ff2893c9f1149edfb4c68d8246096d41b
     padding: 0px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

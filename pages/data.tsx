@@ -45,7 +45,7 @@ export default function () {
   //       return d;
   //   });
   return (
-<<<<<<< HEAD
+    
     <div className='grid'>
       <div className='col'>
  
@@ -59,8 +59,7 @@ export default function () {
               <Column header='การปฏิบัติงาน'field=''/>
               <Column header=''/>
           </DataTable>
-=======
-      <div>
+      {/* <div>
         <div className='DATA_TEXT'>
           <h3>ข้อมูลบุคลากร</h3>
         </div>
@@ -93,7 +92,8 @@ export default function () {
           })}
         </tbody>
       </table>
->>>>>>> e4c88d8ff2893c9f1149edfb4c68d8246096d41b
+      </div> */}
+      </div>
       </div>
      
    
