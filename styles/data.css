@@ -68,12 +68,15 @@ header {
 }
 
 .MAT_TABLE {
+
+    color: #000000;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
 .HEAD_BOX_NUMBER {
@@ -439,7 +442,9 @@ header {
     height: 48px;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
-
+.shadow {
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+}
 
 
 
