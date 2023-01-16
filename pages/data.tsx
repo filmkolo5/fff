@@ -45,15 +45,15 @@ export default function () {
     <div className='grid'>
       <div className='col'>
  
-          <DataTable value={[...users]} className='shadow'>  
-              <Column header='ลำดับ' field='number'/>
-              <Column header='รหัสพนักงาน' field='employee_id'/>
-              <Column header='ชื่อ - นามสกุล' field='fname_lname'/>
-              <Column header='ตำแหน่งย่อ'field='position'/>
-              <Column header='สังกัด'field='affiliation'/>
-              <Column header='ต่ำแหน่ง IHub'field='ihub_position'/>
-              <Column header='การปฏิบัติงาน'field=''/>
-              <Column header=''/>
+          <DataTable value={[...users]} className='shadow' style={{backgroundColor: "white"}}>  
+              <Column sortable header='ลำดับ' field='number' className='ui-column-data'/>
+              <Column sortable header='รหัสพนักงาน' field='employee_id'className='ui-column-data'/>
+              <Column sortable header='ชื่อ - นามสกุล' field='fname_lname'className='ui-column-data'/>
+              <Column sortable header='ตำแหน่งย่อ'field='position'className='ui-column-data'/>
+              <Column sortable header='สังกัด'field='affiliation'className='ui-column-data'/>
+              <Column sortable header='ต่ำแหน่ง IHub'field='ihub_position'className='ui-column-data'/>
+              <Column header='การปฏิบัติงาน'field=''className='ui-column-data'/>
+              <Column header='ICON DELETE/EDIT'className='ui-column-data'/>
           </DataTable>
   
       </div>
