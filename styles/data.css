@@ -42,15 +42,23 @@ header {
     font-family: 'Alata', sans-serif;
     color: rgb(154, 96, 159);
 }
-้้.DATA_TEXT {
-    font-size: px;
-    color: #000000;
+.DATA_TEXT h3{
+    padding-top: 0px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    color: #000;
 }
+
 .DATA_SEARCH {
     height: 158px;
     background: #FFFFFF;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
 
+}
+.DATA_SEARCH h6{
+    padding: 20px;
+    font-size: 16px;
+    color: #000;
 }
 
 .MAT_TABLE {

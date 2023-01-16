@@ -28,9 +28,10 @@ export default function () {
   return (
       <div>
         <div className='DATA_TEXT'>
-          ข้อมูลบุคลากร
+          <h3>ข้อมูลบุคลากร</h3>
         </div>
         <div className='DATA_SEARCH'>
+          <h6>ตารางข้อมูลพนักงาน</h6>
         </div>
         <table className='MAT_TABLE'>
         <tbody>
