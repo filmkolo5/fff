@@ -31,7 +31,8 @@ header {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 16px;
+    margin-left: 30px;
+    gap: 50px;
     font-size: 16px;
     color: white;
     font-family: 'Kanit', sans-serif;
@@ -43,8 +44,9 @@ header {
     color: rgb(154, 96, 159);
 }
 .DATA_TEXT h3{
-    padding-top: 0px;
-    padding-bottom: 10px;
+    padding-bottom: 36px;
+    padding-left: 20px;
+    font-family: 'Kanit', sans-serif;
     font-size: 25px;
     color: #000;
 }
@@ -57,8 +59,12 @@ header {
 }
 .DATA_SEARCH h6{
     padding: 20px;
+    font-family: 'Kanit', sans-serif;
     font-size: 16px;
     color: #000;
+}
+.p-input-icon-right{
+    margin-left: 10px;
 }
 
 .MAT_TABLE {
@@ -446,3 +452,9 @@ td{
 th{
     border-style: solid; 
 } */
+i {
+    z-index: 1;
+  }
+  ::ng-deep .p-autocomplete .p-inputtext {
+    padding-left: 28px;
+  }

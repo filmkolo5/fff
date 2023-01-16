@@ -8,6 +8,17 @@ import { useState } from 'react';
 import usersJson from "../json/data.json";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+import { InputText } from 'primereact/inputtext';
+
+/* PRIME REACT */
+import "primereact/resources/themes/lara-light-indigo/theme.css"
+import "primereact/resources/primereact.min.css"
+import "primeicons/primeicons.css"
+import "primeflex/primeflex.css"
+
+
+
+
 interface IUsers {
   "number": number;
   "employee_id": number;
@@ -17,14 +28,16 @@ interface IUsers {
   "ihub_position": string;
   "performance": string;
 }
-
 export default function () {
   const [users, setUsers] = useState<IUsers[]>([]);
-
   useEffect(() => {
-    setUsers([...usersJson.users]);
+    setUsers([...usersJson.users]); 
   }, [])
+  const [value4, setValue4] = useState('');
 
+
+
+  
   return (
       <div>
         <div className='DATA_TEXT'>
@@ -32,6 +45,10 @@ export default function () {
         </div>
         <div className='DATA_SEARCH'>
           <h6>ตารางข้อมูลพนักงาน</h6>
+          <span className="p-input-icon-right">
+                    <i className="pi pi-search" />
+                    <InputText value={value4} onChange={(e) => setValue4(e.target.value)}placeholder="Search" />
+                </span>
         </div>
         <table className='MAT_TABLE'>
         <tbody>
@@ -56,7 +73,9 @@ export default function () {
               <td className='BOX_PERFORMANCE'>None</td>
               <td className='BOX_DELETE_EDIT'><FiEdit size="1rem" />   <RiDeleteBin6Line size="1rem" /></td>
             </tr>);
+          
           })}
+          
         </tbody>
       </table>
       </div>
