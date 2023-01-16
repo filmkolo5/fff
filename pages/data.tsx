@@ -45,6 +45,7 @@ export default function () {
   //       return d;
   //   });
   return (
+<<<<<<< HEAD
     <div className='grid'>
       <div className='col'>
  
@@ -58,8 +59,44 @@ export default function () {
               <Column header='การปฏิบัติงาน'field=''/>
               <Column header=''/>
           </DataTable>
+=======
+      <div>
+        <div className='DATA_TEXT'>
+          <h3>ข้อมูลบุคลากร</h3>
+        </div>
+        <div className='DATA_SEARCH'>
+          <h6>ตารางข้อมูลพนักงาน</h6>
+        </div>
+        <table className='MAT_TABLE'>
+        <tbody>
+          <tr>
+            <th className='HEAD_BOX_NUMBER'>ลำดับ</th>
+            <th className='HEAD_BOX_EMPLOYEE_ID'>รหัสพนักงาน</th>
+            <th className='HEAD_BOX_FNAME_LNAME'>ชื่อ - นามสกุล</th>
+            <th className='HEAD_BOX_POSITION'>ตำแหน่งย่อ</th>
+            <th className='HEAD_BOX_AFFILIATION'>สังกัด</th>
+            <th className='HEAD_BOX_IHUB_POSITION'>ต่ำแหน่ง IHub</th>
+            <th className='HEAD_BOX_PERFORMANCE'>การปฏิบัติงาน</th>
+            <td className='HEAD_BOX_DELETE_EDIT'></td>
+          </tr>
+          {users.map((user) => {
+            return (<tr key={user.employee_id}>
+              <td className='BOX_NUMBER'>{user.number}</td>
+              <td className='BOX_EMPLOYEE_ID'>{user.employee_id}</td>
+              <td className='BOX_FNAME_LNAME'>{user.fname_lname}</td>
+              <td className='BOX_POSITION'>{user.position}</td>
+              <td className='BOX_AFFILIATION'>{user.affiliation}</td>
+              <td className='BOX_IHUB_POSITION'>{user.ihub_position}</td>
+              <td className='BOX_PERFORMANCE'>None</td>
+              <td className='BOX_DELETE_EDIT'><FiEdit size="1rem" />   <RiDeleteBin6Line size="1rem" /></td>
+            </tr>);
+          })}
+        </tbody>
+      </table>
+>>>>>>> e4c88d8ff2893c9f1149edfb4c68d8246096d41b
       </div>
-    </div>
+     
+   
   )
 }
 
