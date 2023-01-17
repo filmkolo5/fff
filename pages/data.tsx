@@ -10,6 +10,8 @@ import "primereact/resources/themes/lara-light-indigo/theme.css"
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
+import { Dropdown } from 'primereact/dropdown';
+import { Paginator } from 'primereact/paginator';
 
 interface IUsers {
   "number": number;
@@ -21,6 +23,7 @@ interface IUsers {
   "performance": string;
 }
 export default function () {
+
   const [users, setUsers] = useState<IUsers[]>([]);
   useEffect(() => {
 
@@ -29,37 +32,74 @@ export default function () {
 
   }, [])
   const [value4, setValue4] = useState('');
+  const template2 = {
+    layout: 'RowsPerPageDropdown CurrentPageReport PrevPageLink NextPageLink',
+    'RowsPerPageDropdown': (options) => {
+      const dropdownOptions = [
+        { label: 1, value: 1 },
+        { label: 2, value: 2 },
+        { label: 4, value: 4 },
+        { label: 10, value: 10 }
+      ];
+
+      return (
+        <React.Fragment>
+          <span className="mx-1" style={{ color: 'var(--text-color)', userSelect: 'none' }}>Items per page: </span>
+          <Dropdown value={options.value} options={dropdownOptions} onChange={options.onChange} />
+        </React.Fragment>
+      );
+    },
+    'CurrentPageReport': (options) => {
+      return (
+        <span style={{ color: 'var(--text-color)', userSelect: 'none', width: '120px', textAlign: 'center' }}>
+          {options.first} - {options.last} of {options.totalRecords}
+        </span>
+      )
+    }
+  };
+
+
+    const [customFirst2, setCustomFirst2] = useState(0);
+    const [customRows2, setCustomRows2] = useState(10);
+
+    const onCustomPageChange2 = (event) => {
+      setCustomFirst2(event.first);
+      setCustomRows2(event.rows);
+
+      
+    }
+  
 
   return (
     <div>
-        <div className='DATA_TEXT'>
-          <h3>ข้อมูลบุคลากร</h3>
-        </div>
-        <div className='DATA_SEARCH'>
-          <h6>ตารางข้อมูลพนักงาน</h6>
-          <span className="p-input-icon-right">
-                    <i className="pi pi-search" />
-                    <InputText value={value4} onChange={(e) => setValue4(e.target.value)}placeholder="Search" />
-                </span>
-         </div>
-    <div className='grid'>
-      <div className='col'>
- 
-          <DataTable value={[...users]} className='shadow' style={{backgroundColor: "white"}}>  
-              <Column sortable header='ลำดับ' field='number' className='ui-column-data'/>
-              <Column sortable header='รหัสพนักงาน' field='employee_id'className='ui-column-data'/>
-              <Column sortable header='ชื่อ - นามสกุล' field='fname_lname'className='ui-column-data'/>
-              <Column sortable header='ตำแหน่งย่อ'field='position'className='ui-column-data'/>
-              <Column sortable header='สังกัด'field='affiliation'className='ui-column-data'/>
-              <Column sortable header='ต่ำแหน่ง IHub'field='ihub_position'className='ui-column-data'/>
-              <Column header='การปฏิบัติงาน'field=''className='ui-column-data'/>
-              <Column header='ICON DELETE/EDIT'className='ui-column-data'/>
+      <div className='DATA_TEXT'>
+        <h3>ข้อมูลบุคลากร</h3>
+      </div>
+      <div className='DATA_SEARCH'>
+        <h6>ตารางข้อมูลพนักงาน</h6>
+        <span className="p-input-icon-right">
+          <i className="pi pi-search" />
+          <InputText value={value4} onChange={(e) => setValue4(e.target.value)} placeholder="Search" />
+        </span>
+      </div>
+      <div className='grid'>
+        <div className='col'>
+
+          <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={3} paginatorClassName="justify-content-end" className="mt-6" responsiveLayout="scroll">
+            <Column sortable header='ลำดับ' field='number' className='ui-column-data' />
+            <Column sortable header='รหัสพนักงาน' field='employee_id' className='ui-column-data' />
+            <Column sortable header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
+            <Column sortable header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
+            <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
+            <Column sortable header='ต่ำแหน่ง IHub' field='ihub_position' className='ui-column-data' />
+            <Column header='การปฏิบัติงาน' field='' className='ui-column-data' />
+            <Column header='ICON DELETE/EDIT' className='ui-column-data' />
           </DataTable>
-  
+
+        </div>
       </div>
-      </div>
-     </div>
-   
+    </div>
+
   )
 }
 
