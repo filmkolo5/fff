@@ -4,6 +4,7 @@ import usersJson from "../json/data.json";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
+import Dialog  from './Dialog';
 
 /* PRIME REACT */
 import "primereact/resources/themes/lara-light-indigo/theme.css"
@@ -34,7 +35,7 @@ export default function () {
   const [value4, setValue4] = useState('');
   const template2 = {
     layout: 'RowsPerPageDropdown CurrentPageReport PrevPageLink NextPageLink',
-    'RowsPerPageDropdown': (options) => {
+    'RowsPerPageDropdown': (options : any) => {
       const dropdownOptions = [
         { label: 1, value: 1 },
         { label: 2, value: 2 },
@@ -49,7 +50,7 @@ export default function () {
         </React.Fragment>
       );
     },
-    'CurrentPageReport': (options) => {
+    'CurrentPageReport': (options : any) => {
       return (
         <span style={{ color: 'var(--text-color)', userSelect: 'none', width: '120px', textAlign: 'center' }}>
           {options.first} - {options.last} of {options.totalRecords}
@@ -62,7 +63,7 @@ export default function () {
     const [customFirst2, setCustomFirst2] = useState(0);
     const [customRows2, setCustomRows2] = useState(10);
 
-    const onCustomPageChange2 = (event) => {
+    const onCustomPageChange2 = (event : any) => {
       setCustomFirst2(event.first);
       setCustomRows2(event.rows);
 
@@ -81,6 +82,8 @@ export default function () {
           <i className="pi pi-search" />
           <InputText value={value4} onChange={(e) => setValue4(e.target.value)} placeholder="Search" />
         </span>
+        <div className='Dialog'><Dialog /></div>
+
       </div>
       <div className='grid'>
         <div className='col'>
