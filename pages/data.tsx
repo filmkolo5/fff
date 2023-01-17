@@ -90,9 +90,8 @@ export default function () {
         <span className="p-input-icon-right">
           <i className="pi pi-search" />
           <InputText value={value4} onChange={(e) => setValue4(e.target.value)} placeholder="Search" />
-        </span>
+      </span>
         <div className='Dialog'><Dialog /></div>
-
       </div>
       <div className='grid'>
         <div className='col'>

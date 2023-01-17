@@ -40,8 +40,8 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
           onClick={onClose}
           sx={{
             position: 'absolute',
-            right: 8,
-            top: 8,
+            right: 10,
+            top: 10,
             color: (theme) => theme.palette.grey[500],
           }}
         >
@@ -63,8 +63,8 @@ export default function CustomizedDialogs() {
   };
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        + เพิ่มข้อมูลพนักงาน
+      <Button className='outlined' onClick={handleClickOpen}>
+        <h5>+ เพิ่มข้อมูลพนักงาน</h5>
       </Button>
       <BootstrapDialog
         onClose={handleClose}
@@ -75,7 +75,7 @@ export default function CustomizedDialogs() {
           เพิ่มข้อมูลพนักงาน
         </BootstrapDialogTitle>
         <DialogContent dividers>
-        <Box sx={{'& > :not(style)': { m: 1, width: '25ch' },}}>
+        <Box sx={{'& > :not(style)': { m: 1, width: 'ch' },}}>
       <TextField id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
     </Box>
           <Typography gutterBottom>
