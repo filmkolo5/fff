@@ -104,7 +104,7 @@ h5{
     flex: none;
     order: 0;
     flex-grow: 1;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 .bt-1:hover{
     background: #cecdcf;
@@ -165,7 +165,7 @@ width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Itim', cursive;
+    font-family: 'Kanit', sans-serif;
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -187,7 +187,7 @@ width: 300px;
 }
 
 .HEAD_BOX_EMPLOYEE_ID {
-    font-family: 'Itim', cursive;
+    font-family: 'Kanit', sans-serif;
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -205,7 +205,7 @@ width: 300px;
 
 .HEAD_BOX_FNAME_LNAME {
 
-    font-family: 'Itim', cursive;
+    
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -214,7 +214,7 @@ width: 300px;
     height: 48px;
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
-
+    font-family: 'Kanit', sans-serif;
     /* Inside auto layout */
 
     flex: none;
@@ -224,7 +224,7 @@ width: 300px;
 }
 
 .HEAD_BOX_POSITION {
-    font-family: 'Itim', cursive;
+    
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -233,7 +233,7 @@ width: 300px;
     height: 48px;
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
-
+    font-family: 'Kanit', sans-serif;
     /* Inside auto layout */
 
     flex: none;
@@ -243,11 +243,11 @@ width: 300px;
 }
 
 .HEAD_BOX_AFFILIATION {
-    font-family: 'Itim', cursive;
+  
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
-
+    font-family: 'Kanit', sans-serif;
     color: #757575;
 
     width: 234px;
@@ -265,7 +265,7 @@ width: 300px;
 }
 
 .HEAD_BOX_IHUB_POSITION {
-    font-family: 'Itim', cursive;
+    
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -274,7 +274,7 @@ width: 300px;
 
     width: 156px;
     height: 48px;
-
+    font-family: 'Kanit', sans-serif;
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 
@@ -287,7 +287,7 @@ width: 300px;
 }
 
 .HEAD_BOX_PERFORMANCE {
-    font-family: 'Itim', cursive;
+    
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -299,7 +299,7 @@ width: 300px;
 
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
-
+    font-family: 'Kanit', sans-serif;
     /* Inside auto layout */
 
     flex: none;
@@ -308,7 +308,7 @@ width: 300px;
 }
 
 .HEAD_BOX_DELETE_EDIT {
-    font-family: 'Itim', cursive;
+    
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -327,7 +327,7 @@ width: 300px;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 
     /* Inside auto layout */
-
+    font-family: 'Kanit', sans-serif;
     flex: none;
     order: 0;
     align-self: stretch;
@@ -339,7 +339,7 @@ width: 300px;
     align-items: center;
     justify-content: center;
 
-    font-family: 'Itim';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -354,7 +354,7 @@ width: 300px;
     align-items: center;
     padding: 10px 16px;
     gap: 10px;
-
+    font-family: 'Kanit', sans-serif;
     width: 80px;
     height: 48px;
 
@@ -367,7 +367,7 @@ width: 300px;
     text-align: center;
     letter-spacing: 0.25px;
 
-    font-family: 'Itim';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -376,7 +376,7 @@ width: 300px;
     /* black/0.87 */
 
     color: rgba(0, 0, 0, 0.87);
-
+    font-family: 'Kanit', sans-serif;
 
     width: 134px;
     height: 48px;
@@ -386,12 +386,12 @@ width: 300px;
 }
 
 .BOX_FNAME_LNAME {
-    font-family: 'Itim';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-
+    font-family: 'Kanit', sans-serif;
     text-align: center;
     align-items: center;
     letter-spacing: 0.25px;
@@ -408,12 +408,12 @@ width: 300px;
 }
 
 .BOX_POSITION {
-    font-family: 'Itim';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-
+    font-family: 'Kanit', sans-serif;
     text-align: center;
     align-items: center;
     letter-spacing: 0.25px;
@@ -428,12 +428,12 @@ width: 300px;
 }
 
 .BOX_AFFILIATION {
-    font-family: 'Itim';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-
+    font-family: 'Kanit', sans-serif;
     text-align: center;
     align-items: center;
     letter-spacing: 0.25px;
@@ -449,12 +449,12 @@ width: 300px;
 
 .BOX_IHUB_POSITION {
 
-    font-family: 'Itim';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-
+    font-family: 'Kanit', sans-serif;
     text-align: center;
     align-items: center;
     letter-spacing: 0.25px;
@@ -470,12 +470,12 @@ width: 300px;
 
 .BOX_PERFORMANCE {
 
-    font-family: 'Itim';
+   
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-
+    font-family: 'Kanit', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -492,12 +492,12 @@ width: 300px;
 
 .BOX_DELETE_EDIT {
 
-    font-family: 'Itim';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-
+    font-family: 'Kanit', sans-serif;
 
     text-align: center;
     align-items: center;
@@ -516,7 +516,7 @@ width: 300px;
 }
 .ui-column-data{
     text-align: center;
-    font-family: 'Itim';
+    font-family: 'Kanit', sans-serif;
     font-size: 14px;
 }
 .pagin{

@@ -11,6 +11,8 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -65,7 +67,7 @@ export default function CustomizedDialogs() {
     <div>
       <Button className='outlined' onClick={handleClickOpen}>
         <h5>+ เพิ่มข้อมูลพนักงาน</h5>
-      </Button>
+      </Button >
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
