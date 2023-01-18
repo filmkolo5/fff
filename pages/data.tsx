@@ -96,7 +96,7 @@ export default function () {
       <div className='grid'>
         <div className='col'>
 
-          <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={3}  paginatorClassName="justify-content-end" responsiveLayout="scroll">
+          <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={3}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow '>
             <Column sortable header='ลำดับ' field='number' className='ui-column-data' />
             <Column sortable header='รหัสพนักงาน' field='employee_id' className='ui-column-data' />
             <Column sortable header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />

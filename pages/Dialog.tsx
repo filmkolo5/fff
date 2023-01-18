@@ -75,22 +75,23 @@ export default function CustomizedDialogs() {
           เพิ่มข้อมูลพนักงาน
         </BootstrapDialogTitle>
         <DialogContent dividers>
-        <Box sx={{'& > :not(style)': { m: 1, width: 'ch' },}}>
-      <TextField id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
+        <Box sx={{'& > :not(style)': { m: 1, width: '25' },}}>
+      <TextField className='S-1' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
+      <Button className='bt-0' variant="contained">ค้นหา</Button>
     </Box>
           <Typography gutterBottom>
-          <Box sx={{'& > :not(style)': { m: 1, width: '25ch' },}}>
-      <TextField id="outlined-basic" label="ชื่อ-นามสุกล" variant="outlined" />
-    </Box>
-          </Typography>
-          <Typography gutterBottom>
-          <Box sx={{'& > :not(style)': { m: 1, width: '25ch' },}}>
-      <TextField id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
+          <Box sx={{'& > :not(style)': { m: 1, width: '400px' ,},}}>
+      <TextField className='S-2' id="outlined-basic" label="ชื่อ-นามสุกล" variant="outlined" />
     </Box>
           </Typography>
           <Typography gutterBottom>
-          <Box sx={{'& > :not(style)': { m: 1, width: '25ch' },}}>
-      <TextField id="outlined-basic" label="สังกัด" variant="outlined" />
+          <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
+      <TextField className='S-3' id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
+    </Box>
+          </Typography>
+          <Typography gutterBottom>
+          <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
+      <TextField className='S-4' id="outlined-basic" label="สังกัด" variant="outlined" />
     </Box>
           </Typography>
           <Typography gutterBottom>
@@ -113,12 +114,8 @@ export default function CustomizedDialogs() {
           </Typography>
         </DialogContent>
         <DialogActions>
-        <Button autoFocus onClick={handleClose}>
-            ยกเลิก
-          </Button>
-          <Button autoFocus onClick={handleClose}>
-            บันทึก
-          </Button>
+        <Button autoFocus onClick={handleClose}className='bt-1'>ยกเลิก</Button>
+        <Button autoFocus onClick={handleClose}className='bt-2'>บันทึก</Button>
         </DialogActions>
       </BootstrapDialog>
     </div>
