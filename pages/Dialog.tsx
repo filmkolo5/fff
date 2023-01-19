@@ -11,6 +11,8 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 
 
@@ -66,7 +68,6 @@ export default function CustomizedDialogs() {
   };
   return (
     <div>
-
       <Button variant="contained"onClick={handleClickOpen} sx={{backgroundColor:'#F7CD8E',"&:hover":{backgroundColor:'#e29521'}}}> + เพิ่มข้อมูลพนักงาน </Button>
       <BootstrapDialog
         onClose={handleClose}
