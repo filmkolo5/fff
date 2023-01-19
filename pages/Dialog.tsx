@@ -12,6 +12,9 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 
+
+
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -63,35 +66,34 @@ export default function CustomizedDialogs() {
   };
   return (
     <div>
-      <Button className='outlined' onClick={handleClickOpen}>
-        <h5>+ เพิ่มข้อมูลพนักงาน</h5>
-      </Button>
+
+      <Button variant="contained"onClick={handleClickOpen} sx={{backgroundColor:'#F7CD8E',"&:hover":{backgroundColor:'#e29521'}}}> + เพิ่มข้อมูลพนักงาน </Button>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+        <BootstrapDialogTitle  id="customized-dialog-title " onClose={handleClose} >
           เพิ่มข้อมูลพนักงาน
-        </BootstrapDialogTitle>
+        </BootstrapDialogTitle >
         <DialogContent dividers>
-        <Box sx={{'& > :not(style)': { m: 1, width: '25' },}}>
-      <TextField className='S-1' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
-      <Button className='bt-0' variant="contained">ค้นหา</Button>
+        <Box sx={{'& > :not(style )': {  m: 1, width: '25' },}}>
+      <TextField  id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
+      <Button className='b-0'  variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} >ค้นหา</Button>
     </Box>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' ,},}}>
-      <TextField className='S-2' id="outlined-basic" label="ชื่อ-นามสุกล" variant="outlined" />
+      <TextField  id="outlined-basic" label="ชื่อ-นามสุกล" variant="outlined" />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField className='S-3' id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
+      <TextField  id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField className='S-4' id="outlined-basic" label="สังกัด" variant="outlined" />
+      <TextField  id="outlined-basic" label="สังกัด" variant="outlined" />
     </Box>
           </Typography>
           <Typography gutterBottom>
@@ -108,14 +110,14 @@ export default function CustomizedDialogs() {
       disablePortal
       id="performance"
       options={positionIHUB}
-      sx={{ width: 300 }}
+      sx={{ width: 300  }}
       renderInput={(params) => <TextField {...params} label="การปฏิบัติงาน" />}
     />
           </Typography>
         </DialogContent>
         <DialogActions>
-        <Button autoFocus onClick={handleClose}className='bt-1'>ยกเลิก</Button>
-        <Button autoFocus onClick={handleClose}className='bt-2'>บันทึก</Button>
+        <Button autoFocus onClick={handleClose}className='bt-1' sx={{color:'black',width:210,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined">ยกเลิก</Button>
+        <Button autoFocus onClick={handleClose}className='bt-2'  sx={{backgroundColor:'#7F669D',color:'#FFFFFF',width:210,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" >บันทึก</Button>
         </DialogActions>
       </BootstrapDialog>
     </div>

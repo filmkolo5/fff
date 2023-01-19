@@ -5,6 +5,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
 import Dialog  from './Dialog';
+import EditIcon from '@mui/icons-material/Edit';
 
 /* PRIME REACT */
 import "primereact/resources/themes/lara-light-indigo/theme.css"
@@ -104,8 +105,7 @@ export default function () {
             <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
             <Column sortable header='ต่ำแหน่ง IHub' field='ihub_position' className='ui-column-data' />
             <Column header='การปฏิบัติงาน' field='' className='ui-column-data' />
-            <Column header='ICON DELETE/EDIT' className='ui-column-data' />
-          </DataTable>
+            <Column header= 'ICON DELETE/EDIT' className='ui-column-data' /></DataTable>
 
         </div>
       </div>
