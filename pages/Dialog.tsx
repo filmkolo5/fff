@@ -80,12 +80,14 @@ export default function CustomizedDialogs() {
           <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
           <Button   variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} ><h5>ค้นหา</h5></Button>
         </Box>
-        {/* ----------------------------------------------- ชื่อ - นามสกุล ----------------------------------------------- */}
+        {/* ----------------------------------------------- ชื่อ ----------------------------------------------- */}
         <Typography gutterBottom>
-          <Box sx={{'& > :not(style)': { m: 1, width: '400px' ,},}}>
-            <TextField  className='b-0' id="outlined-basic" label="ชื่อ-นามสุกล" variant="outlined" />
+          <Box sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
+          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined" />
+           {/* ----------------------------------------------- นามสกุล ----------------------------------------------- */}
+          <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" />
           </Box>
-        </Typography>
+          </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
