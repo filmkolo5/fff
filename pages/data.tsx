@@ -5,7 +5,6 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
 import Dialog  from './Dialog';
-import EditIcon from '@mui/icons-material/Edit';
 
 /* PRIME REACT */
 import "primereact/resources/themes/lara-light-indigo/theme.css"
@@ -13,7 +12,9 @@ import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
 import { Dropdown } from 'primereact/dropdown';
-import { Paginator } from 'primereact/paginator';
+
+/* Components */
+import { template2 } from '../components/template2';
 
 interface IUsers {
   "number": number;
@@ -28,59 +29,10 @@ export default function () {
 
   const [users, setUsers] = useState<IUsers[]>([]);
   useEffect(() => {
-
-
     setUsers([...usersJson.data.users]);
-
   }, [])
   const [value4, setValue4] = useState('');
-
-  const template2 = {
-    layout: 'RowsPerPageDropdown CurrentPageReport PrevPageLink NextPageLink',
-    'RowsPerPageDropdown': (options : any) => {
-      const dropdownOptions = [
-        { label: 1, value: 1 },
-        { label: 2, value: 2 },
-        { label: 3, value: 3 },
-        { label: 4, value: 4 },
-        { label: 5, value: 5 },
-        { label: 6, value: 6 },
-        { label: 7, value: 7 },
-        { label: 8, value: 8 },
-        { label: 9, value: 9 },
-        { label: 10, value: 10 }
-      ];
-
-      return (
-        <React.Fragment>
-          <span className="mx-1" style={{ color: 'var(--text-color)', userSelect: 'none' }}>Items per page: </span>
-          <Dropdown value={options.value} options={dropdownOptions} onChange={options.onChange} />
-        </React.Fragment>
-      );
-    },
-
-    'CurrentPageReport': (options : any) => {
-
-      return (
-        <span style={{ color: 'var(--text-color)', userSelect: 'none', width: '120px', textAlign: 'center' }}>
-          {options.first} - {options.last} of {options.totalRecords}
-        </span>
-      )
-    }
-  };
-
-
-    const [customFirst2, setCustomFirst2] = useState(0);
-    const [customRows2, setCustomRows2] = useState(10);
-
-    const onCustomPageChange2 = (event : any) => {
-      setCustomFirst2(event.first);
-      setCustomRows2(event.rows);
-
-      
-    }
   
-
   return (
     <div>
       <div className='DATA_TEXT'>
@@ -94,6 +46,7 @@ export default function () {
       </span>
         <div className='Dialog'><Dialog /></div>
       </div>
+      
       <div className='grid'>
         <div className='col'>
 
@@ -106,7 +59,6 @@ export default function () {
             <Column sortable header='ต่ำแหน่ง IHub' field='ihub_position' className='ui-column-data' />
             <Column header='การปฏิบัติงาน' field='' className='ui-column-data' />
             <Column header= 'ICON DELETE/EDIT' className='ui-column-data' /></DataTable>
-
         </div>
       </div>
     </div>

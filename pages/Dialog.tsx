@@ -11,8 +11,8 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
-
-
+import { Performance } from '../components/performance';
+import { PositionBox } from '../components/positionBox';
 
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -75,69 +75,45 @@ export default function CustomizedDialogs() {
           <h4>เพิ่มข้อมูลพนักงาน</h4>
         </BootstrapDialogTitle >
         <DialogContent dividers>
+        {/* ----------------------------------------------- รหัสพนักงาน ----------------------------------------------- */}
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
-      <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
-      <Button   variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} ><h5>ค้นหา</h5></Button>
-    </Box>
-          <Typography gutterBottom>
+          <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
+          <Button   variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} ><h5>ค้นหา</h5></Button>
+        </Box>
+        {/* ----------------------------------------------- ชื่อ - นามสกุล ----------------------------------------------- */}
+        <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' ,},}}>
-      <TextField  className='b-0' id="outlined-basic" label="ชื่อ-นามสุกล" variant="outlined" />
-    </Box>
-          </Typography>
-          <Typography gutterBottom>
+            <TextField  className='b-0' id="outlined-basic" label="ชื่อ-นามสุกล" variant="outlined" />
+          </Box>
+        </Typography>
+        {/* ----------------------------------------------- ตำแหน่ง ----------------------------------------------- */}
+        <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
-    </Box>
-          </Typography>
-          <Typography gutterBottom>
+            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
+          </Box>
+        </Typography>
+        {/* ----------------------------------------------- สังกัด ----------------------------------------------- */}
+        <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" />
-    </Box>
-          </Typography>
-          <Typography gutterBottom>
-          <PosisionBox/>
-          </Typography>
-          <Typography gutterBottom>
+            <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" />
+          </Box>
+        </Typography>
+        {/* ----------------------------------------------- ตำแหน่ง ihub ----------------------------------------------- */}
+        <Typography gutterBottom>
+          <PositionBox/>
+        </Typography>
+        {/* ----------------------------------------------- การปฏิบัติงาน ----------------------------------------------- */}
+        <Typography gutterBottom>
           <Performance/>
-          </Typography>
+        </Typography>
         </DialogContent>
+        {/* ----------------------------------------------- ปุ่มยกเลิก ----------------------------------------------- */}
         <DialogActions>
-        <Button autoFocus onClick={handleClose}className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
-        <Button autoFocus onClick={handleClose}className='bt-2' sx={{backgroundColor:'#7F669D',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          <Button autoFocus onClick={handleClose}className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
+        {/* ----------------------------------------------- ปุ่มบันทึก ----------------------------------------------- */}
+          <Button autoFocus onClick={handleClose}className='bt-2' sx={{backgroundColor:'#7F669D',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
         </DialogActions>
       </BootstrapDialog>
     </div>
   );
 }
-function PosisionBox() {
-  return (
-    <Autocomplete
-      disablePortal
-      id="posision-ihub"
-      options={positionIHUB}
-      sx={{ m: 1,width: 400 }}
-      renderInput={(params) => <TextField {...params} className='b-1' label="ตำแหน่ง IHUB" />}
-    />
-  );
-}
-const positionIHUB = [
-  { label: 'Subcommittee' },
-  { label: 'PMOs' },
-  { label: 'Mentor'},
-  { label: 'GEMs' },
-  { label: 'Ad Hoc'},
-];
-function Performance() {
-  return (
-    <Autocomplete
-      disablePortal
-      id="performance"
-      options={performance}
-      sx={{ m: 1,width: 400 }}
-      renderInput={(params) => <TextField {...params} className='b-1' label="การปฏิบัติงาน" />}
-    />
-  );
-}
-const performance = [
-  { label: 'None' },
-];
