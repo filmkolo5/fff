@@ -14,6 +14,10 @@ import Box from '@mui/material/Box';
 import { Performance } from '../components/performance';
 import { PositionBox } from '../components/positionBox';
 
+      /* REACT */
+import { useState } from 'react';
+      /* data.tsx */
+import data from './data';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -55,7 +59,7 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
   );
 }
 
-export default function CustomizedDialogs() {
+export default function CustomizedDialogs(props : any) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -64,6 +68,10 @@ export default function CustomizedDialogs() {
   const handleClose = () => {
     setOpen(false);
   };
+  
+
+  
+          console.log(newuser);
   return (
     <div>
       <Button className="contained" variant="contained"onClick={handleClickOpen} sx={{backgroundColor:'#F7CD8E',"&:hover":{backgroundColor:'#e29521'}}}> <h5>+ เพิ่มข้อมูลพนักงาน</h5></Button>
@@ -77,32 +85,32 @@ export default function CustomizedDialogs() {
         <DialogContent dividers>
         {/* ----------------------------------------------- รหัสพนักงาน ----------------------------------------------- */}
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
-          <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
+          <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" type="text" value={ addusername } onChange={ (e) => setAddusername(e.target.value) }/>
           <Button   variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} ><h5>ค้นหา</h5></Button>
         </Box>
         {/* ----------------------------------------------- ชื่อ ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined" />
-           {/* ----------------------------------------------- นามสกุล ----------------------------------------------- */}
-          <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" />
+          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined"type="text" value={ addfristname } onChange={ (e) => setAddfristname(e.target.value) } />
+        {/* ----------------------------------------------- นามสกุล ----------------------------------------------- */}
+          <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" type="text" value={ addlastname } onChange={ (e) => setAddlastname(e.target.value) }/>
           </Box>
           </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
+            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" type="text" value={ addposition } onChange={ (e) => setAddposition(e.target.value) } />
           </Box>
         </Typography>
         {/* ----------------------------------------------- สังกัด ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" />
+            <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" type="text" value={ addaffiliation } onChange={ (e) => setAddaffiliation(e.target.value) } />
           </Box>
         </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ihub ----------------------------------------------- */}
         <Typography gutterBottom>
-          <PositionBox/>
+          <PositionBox positionValue = {addpositionihub} setPositionValue = { setAddpositionihub } />
         </Typography>
         {/* ----------------------------------------------- การปฏิบัติงาน ----------------------------------------------- */}
         <Typography gutterBottom>
@@ -111,9 +119,28 @@ export default function CustomizedDialogs() {
         </DialogContent>
         {/* ----------------------------------------------- ปุ่มยกเลิก ----------------------------------------------- */}
         <DialogActions>
-          <Button autoFocus onClick={handleClose}className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
+          <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
         {/* ----------------------------------------------- ปุ่มบันทึก ----------------------------------------------- */}
-          <Button autoFocus onClick={handleClose}className='bt-2' sx={{backgroundColor:'#7F669D',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          <Button autoFocus 
+          onClick={()=>{setUsers(
+            [
+              ...users,
+              {
+                number:users.length+1,
+                employee_id: addusername,
+                fname_lname: `${addfristname} ${addlastname}`,
+                position: addposition,
+                affiliation: addaffiliation,
+                ihub_position: addpositionihub,
+                performance:"",
+              }
+            ]
+             );handleClose()}} 
+          className='bt-2' 
+          sx={{backgroundColor:'#7F669D',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#b499d3'}}} 
+          variant="contained" >
+            <h5>บันทึก</h5>
+          </Button>
         </DialogActions>
       </BootstrapDialog>
     </div>

@@ -31,8 +31,17 @@ export default function () {
   useEffect(() => {
     setUsers([...usersJson.data.users]);
   }, [])
+
   const [value4, setValue4] = useState('');
-  
+
+  const [addusername,setAddusername] = useState('');
+  const [addfristname,setAddfristname] = useState('');
+  const [addlastname,setAddlastname] = useState('');
+  const [addposition,setAddposition] = useState('');
+  const [addaffiliation,setAddaffiliation] = useState('');
+  const [addpositionihub,setAddpositionihub] = useState('');
+  const [newuser, setNewuser]= useState('');
+
   return (
     <div>
       <div className='DATA_TEXT'>
@@ -44,23 +53,43 @@ export default function () {
           <i className="pi pi-search" />
           <InputText value={value4} onChange={(e) => setValue4(e.target.value)} placeholder="Search" />
       </span>
-        <div className='Dialog'><Dialog /></div>
+        <div className='Dialog'>
+          <Dialog
+           addusername = { addusername }
+           setAddusername = { setAddusername }
+           addfristname = { addfristname }
+           setAddfristname = { setAddfristname }
+           addlastname = { addlastname }
+           setAddlastname = { setAddlastname }
+           addposition = { addposition }
+           setAddposition = { setAddposition }
+           addaffiliation = { addaffiliation }
+           setAddaffiliation = { setAddaffiliation }
+           addpositionihub = { addpositionihub }
+           setAddpositionihub = { setAddpositionihub }
+           newuser = { newuser }
+           setNewuser = { setNewuser }
+           users = { users }
+           setUsers = { setUsers }
+          />
+        </div>
       </div>
-      
+
       <div className='grid'>
         <div className='col'>
-
           <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={3}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow '>
             <Column sortable header='ลำดับ' field='number' className='ui-column-data' />
             <Column sortable header='รหัสพนักงาน' field='employee_id' className='ui-column-data' />
             <Column sortable header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
             <Column sortable header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
             <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
-            <Column sortable header='ต่ำแหน่ง IHub' field='ihub_position' className='ui-column-data' />
+            <Column sortable header='ตำแหน่ง IHub' field='ihub_position' className='ui-column-data' />
             <Column header='การปฏิบัติงาน' field='' className='ui-column-data' />
-            <Column header= 'ICON DELETE/EDIT' className='ui-column-data' /></DataTable>
+            <Column header= 'ICON DELETE/EDIT' className='ui-column-data' />
+          </DataTable>
         </div>
       </div>
+      
     </div>
 
   )
