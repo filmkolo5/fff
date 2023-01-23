@@ -68,7 +68,22 @@ export default function CustomizedDialogs(props : any) {
   const handleClose = () => {
     setOpen(false);
   };
-  
+  const { addusername ,
+          setAddusername , 
+          addfristname , 
+          setAddfristname , 
+          addlastname , 
+          setAddlastname , 
+          addposition , 
+          setAddposition , 
+          addaffiliation , 
+          setAddaffiliation , 
+          addpositionihub , 
+          setAddpositionihub,
+          newuser ,
+          setNewuser,
+          users,
+          setUsers } =  props;
 
   
           console.log(newuser);
