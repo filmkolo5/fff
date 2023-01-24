@@ -6,9 +6,29 @@ import Link from 'next/link';
 import { FiUsers } from "react-icons/fi";
 import { HiOutlineDocumentText } from "react-icons/hi2";
 import { HiOutlineDatabase} from "react-icons/hi";
+import { IoIosSchool} from "react-icons/io";
 import { CiLogin} from "react-icons/ci";
+import { HiChevronDown} from "react-icons/hi";
+import { HiDocumentPlus} from "react-icons/hi2";
+import { TbListDetails} from "react-icons/tb";
+import * as React from 'react';
 
-export default function App({ Component, pageProps }: AppProps) {
+
+// Avatar LOGIN 
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import { deepOrange, deepPurple } from '@mui/material/colors';
+
+  export default function App({ Component, pageProps }: AppProps) {
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return <div>
     <header>
       <div className='logo_ihub' >
@@ -27,11 +47,27 @@ export default function App({ Component, pageProps }: AppProps) {
           <Link href='/'>
            <HiOutlineDatabase/> งบประมาณ
             </Link>
+        <div className="dropdown-link">
+        <Link href='/'>
+      <IoIosSchool/> <a>โครงการ</a><HiChevronDown/>
+      </Link>
+      < div className="dropdown">
+      <Link href='/project_creation'>
+         <HiDocumentPlus/><a>การสร้างโครงการ </a></Link>
+      <Link href='/'>
+        <TbListDetails/><a>รายละเอียดโครงการ</a></Link>
+          </div>
+    
+</div>
+
           </div>
         </div>
         <div className='login-ihub'>
         <Link href='/login'>
-          <CiLogin/>  Login
+          {/* <CiLogin/>  Login */}
+          <Stack direction="row" spacing={2}>
+      <Avatar sx={{ backgroundColor:'#7F669D',width: 25 ,height: 25 ,fontSize:14}}>PH</Avatar>
+    </Stack>
           </Link>
         </div>
       </div>
