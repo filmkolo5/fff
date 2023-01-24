@@ -13,5 +13,6 @@ export function Performance() {
     );
   }
   const performance = [
-    { label: 'None' },
+    { label: 'Full-Time' },
+    { label: 'Part-Time' },
   ];
