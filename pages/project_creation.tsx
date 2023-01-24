@@ -19,9 +19,10 @@ export default function SelectLabels() {
         </div>
         <div className='BG-POJECT'>
           <div className='TEXT'>
-            <h3>สร้างโครงการ</h3>
           </div>
-          
+          <div className='POJECT'>
+            <h3>โครงการหลัก : </h3>
+            </div>
       <FormControl sx={{ m: 1, minWidth:400}}>
         <Select value={namepoject} onChange={handleChange}
           displayEmpty inputProps={{ 'aria-label': 'Without label' }}>
@@ -32,6 +33,7 @@ export default function SelectLabels() {
         </Select>
       </FormControl>
       </div>
-    </div>
+      </div>
+    
   );
 }
