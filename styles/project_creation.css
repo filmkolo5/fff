@@ -1,3 +1,8 @@
+  
+  body {
+    background: rgb(253, 248, 248);
+}
+  
   /* หน้าสร้างโครงการ */
   .HEAD-POJECT{
     font-family: 'Kanit', sans-serif;
@@ -15,6 +20,7 @@
       padding: 20px;
     font-family: 'Kanit', sans-serif;
     font-size: 20px;
+    color: #000;
   
     }  
   .POJECT-1{
@@ -26,6 +32,7 @@
 .POJECT-1 h3{
   font-family: 'Kanit', sans-serif;
   font-size: 16px;
+  color: #000;
 
 }
 .POJECT-2{
@@ -46,4 +53,57 @@
 .POJECT-3 h3 {
   font-family: 'Kanit', sans-serif;
   font-size: 16px;
+  margin-left: 23px;
+  color: #000;
+}
+.POJECT-4 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+.POJECT-4 h3{
+  font-family: 'Kanit', sans-serif;
+  font-size: 16px;
+  color: #000;
+
+}
+
+/* .POJECT-5-1 {
+box-sizing: border-box;
+position: absolute;
+width: 600px;
+height: 140px;
+left: 520px;
+top: 680px;
+border: 1px dashed #7B61FF;
+border-radius: 5px;
+}
+.POJECT-5-1 h3{
+  display: flex;
+  align-items: center;
+  font-family: 'Kanit', sans-serif;
+  font-size: 16px;
+  color: #000;
+
+}
+ */
+ .POJECT-5 {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+}
+.POJECT-5 h3{
+  font-family: 'Kanit', sans-serif;
+  font-size: 16px;
+  color: #000;
+
+}
+.POJECT-6{
+  display: flex;
+ justify-content: center;
+ margin-top: 50px;
+ margin-left: 150px;
+
 }

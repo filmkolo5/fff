@@ -2,13 +2,13 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
-
-
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import DialogActions from '@mui/material/DialogActions';
+
 
 
 export default function SelectLabels() {
-
   const PROJECT = [
     { label: 'โครงการ1'},
     { label: 'โครงการ2'},
@@ -17,10 +17,15 @@ export default function SelectLabels() {
     { label: 'โครงการ5'},
     { label: 'โครงการ6' },
     { label: 'โครงการ7'},
-   
   ];
-  
+  const [open, setOpen] = React.useState(false);
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div>
       <div className='HEAD-POJECT'>
@@ -41,27 +46,62 @@ export default function SelectLabels() {
     </Box>
       </div>
       <div className='POJECT-3' >
-      <h3>วันเริ่มต้น:</h3>
+      <h3>วันเริ่มต้น :</h3>
       <Stack component="form" noValidate spacing={3}>
       <TextField
         id="date"
-        label="Birthday"
+        label="วันเริ่มต้น"
         type="date"
         defaultValue="2017-05-24"
         sx={{ width: 240 }}
         InputLabelProps={{ shrink: true, }}/>
     </Stack>
-    <h3>วันสิ้นสุด:</h3>
+    <h3>วันสิ้นสุด :</h3>
       <Stack component="form" noValidate spacing={3}>
       <TextField
         id="date"
-        label="Birthday"
+        label="วันสิ้นสุด"
         type="date"
         defaultValue="2017-05-24"
         sx={{ width: 240 }}
         InputLabelProps={{ shrink: true, }}/>
     </Stack>
       </div>
+      <div className='POJECT-4' >
+      <h3>รายละเอียด :</h3>
+      <Box component="form"
+      sx={{'& > :not(style)': { width: '75ch' }, height:100}} noValidate autoComplete="off">
+         <TextField
+          id="outlined-multiline-static"
+          label="กรุณากรอกรายละเอียด" multiline rows={4}
+
+        />
+    </Box>
+    </div>
+    {/* <div className='POJECT-5'>
+    <h3>อนุมัติให้จัดโครงการ :</h3>
+      <Box component="form"
+      sx={{'& > :not(style)': { width: '71ch' }, height:100}} noValidate autoComplete="off">
+         <TextField
+          id="outlined-multiline-static"
+          label="กรุณากรอกรายละเอียด" multiline rows={4}
+
+        />
+    </Box>
+    </div> */}
+
+    <div>
+      <div className='POJECT-6'>
+    <DialogActions >
+          <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
+          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#7F669D',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          </DialogActions>
+    </div>  
+        </div>
+
+    <div>
+           
+        </div>
     </div>
     </div>
    
@@ -69,3 +109,4 @@ export default function SelectLabels() {
    
   );
 }
+
