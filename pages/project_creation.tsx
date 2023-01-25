@@ -1,39 +1,37 @@
 import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 
 export default function SelectLabels() {
-  const [namepoject, setNamepoject] = React.useState('');
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setNamepoject(event.target.value);
-  };
-
+  const PROJECT = [
+    { label: 'โครงการ1'},
+    { label: 'โครงการ2'},
+    { label: 'โครงการ3' },
+    { label: 'โครงการ4'},
+    { label: 'โครงการ5'},
+    { label: 'โครงการ6' },
+    { label: 'โครงการ7'},
+   
+  ];
+  
   return (
     <div>
       <div className='HEAD-POJECT'>
         <h3>โครงการ</h3>
         </div>
         <div className='BG-POJECT'>
-          <div className='TEXT'>
-          </div>
-          <div className='POJECT'>
-            <h3>โครงการหลัก : </h3>
-            </div>
-      <FormControl sx={{ m: 1, minWidth:400}}>
-        <Select value={namepoject} onChange={handleChange}
-          displayEmpty inputProps={{ 'aria-label': 'Without label' }}>
-          <MenuItem value=""><a>กรุณาเลือกโครงการ</a> </MenuItem>
-          <MenuItem value={1}>โครงการ 1</MenuItem>
-          <MenuItem value={2}>โครงการ 2</MenuItem>
-          <MenuItem value={3}>โครงการ 3</MenuItem>
-        </Select>
-      </FormControl>
-      </div>
-      </div>
+          <h3>สร้างโครงการ</h3>
+        <div className='POJECT-1' >
     
+        <div className='select-project'>
+        <h3>โครงการหลัก :</h3>
+        <Autocomplete   disablePortal id="combo-box-demo"options={PROJECT}
+      sx={{ width: 600}}renderInput={(params) => <TextField {...params} label="กรุณาเลือกโครงการ" />}/>
+      </div>
+      </div>
+    </div>
+    </div>
+   
   );
 }

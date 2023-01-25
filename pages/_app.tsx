@@ -1,7 +1,4 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import "../styles/index.css";
-import "../styles/data.css";
 import Link from 'next/link';
 import { FiUsers } from "react-icons/fi";
 import { HiOutlineDocumentText } from "react-icons/hi2";
@@ -12,6 +9,12 @@ import { HiChevronDown} from "react-icons/hi";
 import { HiDocumentPlus} from "react-icons/hi2";
 import { TbListDetails} from "react-icons/tb";
 import * as React from 'react';
+
+/* IMPORT CSS FILE */
+import "../styles/index.css";
+import "../styles/data.css";
+import '../styles/globals.css'
+import "../styles/project_creation.css"
 
 
 // Avatar LOGIN 
