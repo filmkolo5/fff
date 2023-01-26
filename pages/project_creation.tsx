@@ -5,7 +5,12 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import DialogActions from '@mui/material/DialogActions';
-
+//npm install @mui/x-date-pickers
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+//npm install dayjs --save
+import dayjs, { Dayjs } from 'dayjs';
 
 
 export default function SelectLabels() {
@@ -26,6 +31,13 @@ export default function SelectLabels() {
   const handleClose = () => {
     setOpen(false);
   };
+    const [value, setValue] = React.useState<Dayjs | null>(
+      dayjs('2023-01-01'),
+    );
+  
+    const handleChange = (newValue: Dayjs | null) => {
+      setValue(newValue);
+    };
   return (
     <div>
       <div className='HEAD-PROJECT'>
@@ -47,25 +59,29 @@ export default function SelectLabels() {
       </div>
       <div className='PROJECT-3' >
       <h3>วันเริ่มต้น :</h3>
-      <Stack component="form" noValidate spacing={3}>
-      <TextField
-        id="date"
-        label="วันเริ่มต้น"
-        type="date"
-        defaultValue="2017-05-24"
-        sx={{ width: 240 }}
-        InputLabelProps={{ shrink: true, }}/>
-    </Stack>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Stack spacing={3}>
+        <DesktopDatePicker
+          label=" วัน / เดือน / ปี"
+          inputFormat="DD/MM/YYYY"
+          value={value}
+          onChange={handleChange}
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </Stack>
+    </LocalizationProvider>
     <h3>วันสิ้นสุด :</h3>
-      <Stack component="form" noValidate spacing={3}>
-      <TextField
-        id="date"
-        label="วันสิ้นสุด"
-        type="date"
-        defaultValue="2017-05-24"
-        sx={{ width: 240 }}
-        InputLabelProps={{ shrink: true, }}/>
-    </Stack>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Stack spacing={3}>
+        <DesktopDatePicker
+          label=" วัน / เดือน / ปี"
+          inputFormat="DD/MM/YYYY"
+          value={value}
+          onChange={handleChange}
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </Stack>
+    </LocalizationProvider>
       </div>
       <div className='PROJECT-4' >
       <h3>รายละเอียด :</h3>
@@ -107,4 +123,3 @@ export default function SelectLabels() {
    
   );
 }
-
