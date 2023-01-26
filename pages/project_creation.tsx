@@ -62,6 +62,7 @@ export default function SelectLabels() {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={3}>
         <DesktopDatePicker
+        className='PROJECT-3.1'
           label=" วัน / เดือน / ปี"
           inputFormat="DD/MM/YYYY"
           value={value}
@@ -74,6 +75,7 @@ export default function SelectLabels() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={3}>
         <DesktopDatePicker
+                className='PROJECT-3.1'
           label=" วัน / เดือน / ปี"
           inputFormat="DD/MM/YYYY"
           value={value}
@@ -96,8 +98,8 @@ export default function SelectLabels() {
           <div className='PROJECT-5'>
           <h3>อนุมัติให้จัดโครงการ :</h3>
           <Box component="span" sx={{ width:600, height: 140,p: 2, border: '1px dashed grey' }}>
-          <Button  variant="contained" component="label">
-          เลือกไฟล์เพื่ออัปโหลด
+          <Button component="label" sx={{ width:565, height: 100,p: 2 ,"&:hover":{backgroundColor:'#ffff'}}} >
+          <h4>เลือกไฟล์เพื่ออัปโหลด</h4>
         <input hidden accept="file" multiple type="file" />
       </Button>
     </Box>
