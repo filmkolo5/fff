@@ -84,16 +84,6 @@ header {
   .dropdown-link:hover a i {
     transform: rotate(-180deg);
   }
-  
-
-
-
-
-
-
-
-
-
 .login-ihub {
     margin-left: 300px;
     font-family: 'Alata', sans-serif;
@@ -242,9 +232,7 @@ h5{
     align-self: stretch;
     flex-grow: 0;
 }
-
 .HEAD_BOX_AFFILIATION {
-  
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -259,9 +247,7 @@ h5{
     align-self: stretch;
     flex-grow: 0;
 }
-
-.HEAD_BOX_IHUB_POSITION {
-    
+.HEAD_BOX_IHUB_POSITION {    
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -276,9 +262,7 @@ h5{
     align-self: stretch;
     flex-grow: 0;
 }
-
-.HEAD_BOX_PERFORMANCE {
-    
+.HEAD_BOX_PERFORMANCE {   
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -292,9 +276,7 @@ h5{
     order: 0;
     flex-grow: 0;
 }
-
-.HEAD_BOX_DELETE_EDIT {
-    
+.HEAD_BOX_DELETE_EDIT {   
     font-style: normal;
     font-size: 15px;
     line-height: 0px;
@@ -309,7 +291,6 @@ h5{
     align-self: stretch;
     flex-grow: 0;
 }
-
 .BOX_NUMBER {
     display: flex;
     align-items: center;
@@ -331,7 +312,6 @@ h5{
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
-
 .BOX_EMPLOYEE_ID {
     align-items: center;
     text-align: center;
@@ -348,9 +328,7 @@ h5{
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
 }
-
-.BOX_FNAME_LNAME {
-    
+.BOX_FNAME_LNAME {   
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -465,10 +443,3 @@ i {
   ::ng-deep .p-autocomplete .p-inputtext {
     padding-left: 28px;
   }
-
-
-
-
-
-
-

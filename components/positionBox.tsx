@@ -10,9 +10,7 @@ export function PositionBox(props : any) {
       id="multiple-limit-tags"
       options={positionihub}
       getOptionLabel={(option) => option.title}
-      renderInput={(params) => (
-        <TextField {...params} className='b-1'label="ตำแหน่ง IHub" />
-      )}
+      renderInput={(params) => (<TextField {...params} className='b-1'label="ตำแหน่ง IHub" />)}
       sx={{ m: 1,width:'400px' }}
     />
     );

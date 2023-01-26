@@ -13,12 +13,10 @@ import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import { Performance } from '../components/performance';
 import { PositionBox } from '../components/positionBox';
-
       /* REACT */
 import { useState } from 'react';
       /* data.tsx */
 import data from './data';
-
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -27,14 +25,11 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(1),
   },
 }));
-
 export interface DialogTitleProps {
   id: string;
   children?: React.ReactNode;
   onClose: () => void;
 }
-
-
 function BootstrapDialogTitle(props: DialogTitleProps) {
   const { children, onClose, ...other } = props;
 
@@ -106,21 +101,21 @@ export default function CustomizedDialogs(props : any) {
         {/* ----------------------------------------------- ชื่อ ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined"type="text" value={ addfristname } onChange={ (e) => setAddfristname(e.target.value) } />
+          <TextField  className='b-0' id="outlined-basic" disabled label=" ชื่อ "variant="filled"/>
         {/* ----------------------------------------------- นามสกุล ----------------------------------------------- */}
-          <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" type="text" value={ addlastname } onChange={ (e) => setAddlastname(e.target.value) }/>
+          <TextField  className='b-0' id="outlined-basic"disabled label=" นามสกุล "variant="filled"/>
           </Box>
           </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" type="text" value={ addposition } onChange={ (e) => setAddposition(e.target.value) } />
+          <TextField  className='b-0' id="outlined-basic"disabled label=" ตำแหน่ง "variant="filled"/>
           </Box>
         </Typography>
         {/* ----------------------------------------------- สังกัด ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" type="text" value={ addaffiliation } onChange={ (e) => setAddaffiliation(e.target.value) } />
+          <TextField  className='b-0' id="outlined-basic"disabled label=" สังกัด "variant="filled"/>
           </Box>
         </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ihub ----------------------------------------------- */}
