@@ -4,7 +4,6 @@ import TextField from '@mui/material/TextField';
 export function Performance() {
     return (
       <Autocomplete
-        disablePortal
         id="performance"
         options={performance}
         sx={{ m: 1,width: 400 }}
