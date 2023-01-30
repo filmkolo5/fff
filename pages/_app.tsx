@@ -15,6 +15,7 @@ import "../styles/index.css";
 import "../styles/data.css";
 import '../styles/globals.css'
 import "../styles/project_creation.css"
+import "../styles/projects.css"
 
 
 // Avatar LOGIN 
@@ -51,13 +52,13 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
            <HiOutlineDatabase/> งบประมาณ
             </Link>
         <div className="dropdown-link">
-        <Link href='/'>
+        <Link href='/projects'>
       <IoIosSchool/> <a>โครงการ</a><HiChevronDown/>
       </Link>
       < div className="dropdown">
       <Link href='/project_creation'>
          <HiDocumentPlus/><a>การสร้างโครงการ </a></Link>
-      <Link href='/'>
+      <Link href='/projects'>
         <TbListDetails/><a>รายละเอียดโครงการ</a></Link>
           </div>
     

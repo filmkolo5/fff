@@ -80,13 +80,7 @@ export default function CustomizedDialogs(props : any) {
           setAddaffiliation , 
           addpositionihub , 
           setAddpositionihub,
-          newuser ,
-          setNewuser,
-          users,
-          setUsers } =  props;
-
-  
-          console.log(newuser);
+          handleAddUser } =  props;
   return (
     <div>
       <Button className="contained" variant="contained"onClick={handleClickOpen} sx={{backgroundColor:'#F7CD8E',"&:hover":{backgroundColor:'#e29521'}}}> <h5>+ เพิ่มข้อมูลพนักงาน</h5></Button>
@@ -125,7 +119,7 @@ export default function CustomizedDialogs(props : any) {
         </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ihub ----------------------------------------------- */}
         <Typography gutterBottom>
-          <PositionBox positionValue = {addpositionihub} setPositionValue = { setAddpositionihub } />
+          <PositionBox addpositionihub = { addpositionihub } setAddpositionihub = { setAddpositionihub } />
         </Typography>
         {/* ----------------------------------------------- การปฏิบัติงาน ----------------------------------------------- */}
         <Typography gutterBottom>
@@ -137,20 +131,28 @@ export default function CustomizedDialogs(props : any) {
           <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
         {/* ----------------------------------------------- ปุ่มบันทึก ----------------------------------------------- */}
           <Button autoFocus 
-          onClick={()=>{setUsers(
-            [
-              ...users,
-              {
-                number:users.length+1,
-                employee_id: addusername,
-                fname_lname: `${addfristname} ${addlastname}`,
-                position: addposition,
-                affiliation: addaffiliation,
-                ihub_position: addpositionihub,
-                performance:"",
-              }
-            ]
-             );handleClose()}} 
+          onClick={()=>{
+            // flow
+            // 1. เอาค่าที่กรอกในหน้าจอ dialog ยิงไป backend เพื่อเพิ่มข้อมูลในฐานข้อมูล
+            // 2. ยิงไป backend เพื่อดึง users ทั้งหมดมาเก็บในตัวแปร users
+            // setUsers(
+            // [
+            //   ...users, // เอาข้อมูลเก่า
+            //   {
+            //     number:users.length+1,
+            //     employee_id: addusername,
+            //     fname_lname: `${addfristname} ${addlastname}`,
+            //     position: addposition,
+            //     affiliation: addaffiliation,
+            //     ihub_position: addpositionihub,
+            //     performance:"",
+            //   }
+            //   // เอาข้อมูลที่มีการกรอกปัจจุบันมาใส่ในตัวแปร users
+            // ]
+            //  );
+             handleAddUser();
+             handleClose();
+            }} 
           className='bt-2' 
           sx={{backgroundColor:'#7F669D',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#b499d3'}}} 
           variant="contained" >
