@@ -79,7 +79,7 @@ export default function CustomizedDialogs(props : any) {
           addaffiliation , 
           setAddaffiliation , 
           addpositionihub , 
-          setAddpositionihub,
+          setAddpositonihub,
           handleAddUser } =  props;
   return (
     <div>
@@ -119,7 +119,7 @@ export default function CustomizedDialogs(props : any) {
         </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ihub ----------------------------------------------- */}
         <Typography gutterBottom>
-          <PositionBox addpositionihub = { addpositionihub } setAddpositionihub = { setAddpositionihub } />
+          <PositionBox addpositionihub = { addpositionihub } setAddpositionihub = { setAddpositonihub } />
         </Typography>
         {/* ----------------------------------------------- การปฏิบัติงาน ----------------------------------------------- */}
         <Typography gutterBottom>
