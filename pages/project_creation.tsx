@@ -33,9 +33,15 @@ export default function SelectLabels() {
     const [value, setValue] = React.useState<Dayjs | null>(
       dayjs('2023-01-01'),
     );
+    const [value2, setValue2] = React.useState<Dayjs | null>(
+      dayjs('2023-02-02'),
+    );
   
     const handleChange = (newValue: Dayjs | null) => {
       setValue(newValue);
+    };
+    const handleChange2 = (newValue: Dayjs | null) => {
+      setValue2(newValue);
     };
     
   return (
@@ -70,16 +76,14 @@ export default function SelectLabels() {
           renderInput={(params) => <TextField {...params} />}
         />
       </Stack>
-    </LocalizationProvider>
     <h3>วันสิ้นสุด :</h3>
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={3}>
         <DesktopDatePicker
                 className='PROJECT-3.1'
           label=" วัน / เดือน / ปี"
           inputFormat="DD/MM/YYYY"
-          value={value}
-          onChange={handleChange}
+          value={value2}
+          onChange={handleChange2}
           renderInput={(params) => <TextField {...params} />}
         />
       </Stack>
