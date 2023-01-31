@@ -1,7 +1,8 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
+import  Box  from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import DialogActions from '@mui/material/DialogActions';
@@ -11,17 +12,15 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 //npm install dayjs --save
 import dayjs, { Dayjs } from 'dayjs';
-
+import Link from 'next/link';
 
 export default function SelectLabels() {
   const PROJECT = [
-    { label: 'โครงการ1'},
-    { label: 'โครงการ2'},
-    { label: 'โครงการ3' },
-    { label: 'โครงการ4'},
-    { label: 'โครงการ5'},
-    { label: 'โครงการ6' },
-    { label: 'โครงการ7'},
+    { label: 'GEMs'},
+    { label: 'AdHoc'},
+    { label: 'DevPool' },
+   
+ 
   ];
   const [open, setOpen] = React.useState(false);
 
@@ -38,6 +37,7 @@ export default function SelectLabels() {
     const handleChange = (newValue: Dayjs | null) => {
       setValue(newValue);
     };
+    
   return (
     <div>
       <div className='HEAD-PROJECT'>
@@ -109,8 +109,10 @@ export default function SelectLabels() {
 
           <div className='PROJECT-6'>
     <DialogActions >
-          <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
-          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#7F669D',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          <Button autoFocus onClick={handleClose} className='bt-1' sx={{m:1,color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
+          <Link href='/project2'>
+          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#3A1062',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          </Link>
           </DialogActions>
     </div>  
         </div>

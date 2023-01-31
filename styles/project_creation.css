@@ -69,25 +69,6 @@
 
 }
 
-/* .PROJECT-5-1 {
-box-sizing: border-box;
-position: absolute;
-width: 600px;
-height: 140px;
-left: 520px;
-top: 680px;
-border: 1px dashed #7B61FF;
-border-radius: 5px;
-}
-.PROJECT-5-1 h3{
-  display: flex;
-  align-items: center;
-  font-family: 'Kanit', sans-serif;
-  font-size: 16px;
-  color: #000;
-
-}
- */
  .PROJECT-5 {
   display: flex;
   justify-content: center;
@@ -117,6 +98,6 @@ border-radius: 5px;
   display: flex;
  justify-content: center;
  margin-top: 50px;
- margin-left: 150px;
+ margin-left: 160px;
 
 }

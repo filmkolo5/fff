@@ -18,7 +18,6 @@ import { useState } from 'react';
       /* data.tsx */
 import data from './data';
 
-import Bt from './Bt';
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -133,7 +132,7 @@ export default function CustomizedDialogs(props : any) {
         <DialogActions>
           <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
         {/* ----------------------------------------------- ปุ่มบันทึก ----------------------------------------------- */}
-          {/* <Button autoFocus 
+          <Button autoFocus 
           onClick={()=>{setUsers(
             [
               ...users,
@@ -152,8 +151,8 @@ export default function CustomizedDialogs(props : any) {
           sx={{backgroundColor:'#7F669D',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#b499d3'}}} 
           variant="contained" >
             <h5>บันทึก</h5>
-          </Button> */}
-          <Bt/>
+          </Button>
+         
         </DialogActions>
       </BootstrapDialog>
     </div>

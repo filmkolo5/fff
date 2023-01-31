@@ -15,7 +15,7 @@ import "../styles/index.css";
 import "../styles/data.css";
 import '../styles/globals.css'
 import "../styles/project_creation.css"
-
+import "../styles/project2.css"
 
 // Avatar LOGIN 
 import Avatar from '@mui/material/Avatar';
