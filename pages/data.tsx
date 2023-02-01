@@ -5,6 +5,9 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
 import Dialog  from './Dialog';
+import { Button } from 'primereact/button';
+
+
 
 /* PRIME REACT */
 import "primereact/resources/themes/lara-light-indigo/theme.css"
@@ -43,8 +46,14 @@ export default function () {
   const [addpositionihub,setAddpositionihub] = useState('');
   const [newuser, setNewuser]= useState('');
 
-
-
+  const action = (rowData:any) => {
+    return (
+        <React.Fragment>
+            <Button icon="pi pi-pencil" className="p-button-rounded p-button-success mr-2"  />
+            <Button icon="pi pi-trash" className="p-button-rounded p-button-warning"  />
+        </React.Fragment>
+    );
+}
 
   return (
     <div>
@@ -81,7 +90,8 @@ export default function () {
 
       <div className='grid'>
         <div className='col'>
-          <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={3}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow '>
+          <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={3}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow ' >
+       
             <Column sortable header='ลำดับ' field='number' className='ui-column-data' />
             <Column sortable header='รหัสพนักงาน' field='employee_id' className='ui-column-data' />
             <Column sortable header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
@@ -89,7 +99,7 @@ export default function () {
             <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
             <Column sortable header='ตำแหน่ง IHub' field='ihub_position' className='ui-column-data' />
             <Column header='การปฏิบัติงาน' field='' className='ui-column-data' />
-            <Column header= 'ICON DELETE/EDIT' className='ui-column-data' />
+            <Column body={action} exportable={false}></Column>
           </DataTable>
         </div>
       </div>
