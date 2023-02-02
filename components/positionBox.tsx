@@ -5,8 +5,7 @@ export function PositionBox(props : any) {
   const {} = props;
     return (
       <Autocomplete
-      multiple
-      limitTags={5}
+      limitTags={1}
       id="multiple-limit-tags"
       options={positionihub}
       getOptionLabel={(option) => option.title}

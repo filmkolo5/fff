@@ -11,6 +11,8 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 import { Performance } from '../components/performance';
 import { PositionBox } from '../components/positionBox';
       /* REACT */
@@ -57,7 +59,6 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 export default function CustomizedDialogs(props : any) {
   const [open, setOpen] = React.useState(false);
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -80,9 +81,6 @@ export default function CustomizedDialogs(props : any) {
           setNewuser,
           users,
           setUsers } =  props;
-
-  
-          console.log(newuser);
   return (
     <div>
       <Button className="contained" variant="contained"onClick={handleClickOpen} sx={{backgroundColor:'#F7CD8E',"&:hover":{backgroundColor:'#e29521'}}}> <h5>+ เพิ่มข้อมูลพนักงาน</h5></Button>
@@ -132,6 +130,7 @@ export default function CustomizedDialogs(props : any) {
         <DialogActions>
           <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
         {/* ----------------------------------------------- ปุ่มบันทึก ----------------------------------------------- */}
+          <div>
           <Button autoFocus 
           onClick={()=>{setUsers(
             [
@@ -146,13 +145,15 @@ export default function CustomizedDialogs(props : any) {
                 performance:"",
               }
             ]
-             );handleClose()}} 
+             );
+             handleClose();
+             }} 
           className='bt-2' 
           sx={{backgroundColor:'#7F669D',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#b499d3'}}} 
           variant="contained" >
             <h5>บันทึก</h5>
           </Button>
-         
+          </div>
         </DialogActions>
       </BootstrapDialog>
     </div>

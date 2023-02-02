@@ -91,14 +91,13 @@ export default function () {
       <div className='grid'>
         <div className='col'>
           <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={3}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow ' >
-       
             <Column sortable header='ลำดับ' field='number' className='ui-column-data' />
             <Column sortable header='รหัสพนักงาน' field='employee_id' className='ui-column-data' />
             <Column sortable header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
             <Column sortable header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
             <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
             <Column sortable header='ตำแหน่ง IHub' field='ihub_position' className='ui-column-data' />
-            <Column header='การปฏิบัติงาน' field='' className='ui-column-data' />
+            <Column header='การปฏิบัติงาน'body={(rowData) =><div className="full-time-body">Full-Time</div>}className='ui-column-data' />
             <Column body={action} exportable={false}></Column>
           </DataTable>
         </div>

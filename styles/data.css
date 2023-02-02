@@ -436,7 +436,16 @@ h5{
     background: #FFFFFF;
 
 }
-
+.full-time-body {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    background-color: #4C3364;
+    border-radius: 24px;
+    padding: 6px;
+    gap: 10px;
+ } 
 i {
     z-index: 1;
   }
