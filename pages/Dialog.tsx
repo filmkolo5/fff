@@ -9,15 +9,9 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import { Performance } from '../components/performance';
 import { PositionBox } from '../components/positionBox';
-
-      /* REACT */
-import { useState } from 'react';
-      /* data.tsx */
-import data from './data';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -27,14 +21,11 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(1),
   },
 }));
-
 export interface DialogTitleProps {
   id: string;
   children?: React.ReactNode;
   onClose: () => void;
 }
-
-
 function BootstrapDialogTitle(props: DialogTitleProps) {
   const { children, onClose, ...other } = props;
 
@@ -61,7 +52,6 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 export default function CustomizedDialogs(props : any) {
   const [open, setOpen] = React.useState(false);
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -81,6 +71,7 @@ export default function CustomizedDialogs(props : any) {
           addpositionihub , 
           setAddpositonihub,
           handleAddUser } =  props;
+
   return (
     <div>
       <Button className="contained" variant="contained"onClick={handleClickOpen} sx={{backgroundColor:'#F7CD8E',"&:hover":{backgroundColor:'#e29521'}}}> <h5>+ เพิ่มข้อมูลพนักงาน</h5></Button>
@@ -100,21 +91,21 @@ export default function CustomizedDialogs(props : any) {
         {/* ----------------------------------------------- ชื่อ ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined"type="text" value={ addfristname } onChange={ (e) => setAddfristname(e.target.value) } />
+          <TextField  className='b-0' id="outlined-basic"  label=" ชื่อ "variant="filled"/>
         {/* ----------------------------------------------- นามสกุล ----------------------------------------------- */}
-          <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" type="text" value={ addlastname } onChange={ (e) => setAddlastname(e.target.value) }/>
+          <TextField  className='b-0' id="outlined-basic" label=" นามสกุล "variant="filled"/>
           </Box>
           </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" type="text" value={ addposition } onChange={ (e) => setAddposition(e.target.value) } />
+          <TextField  className='b-0' id="outlined-basic" label=" ตำแหน่ง "variant="filled"/>
           </Box>
         </Typography>
         {/* ----------------------------------------------- สังกัด ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" type="text" value={ addaffiliation } onChange={ (e) => setAddaffiliation(e.target.value) } />
+          <TextField  className='b-0' id="outlined-basic" label=" สังกัด "variant="filled"/>
           </Box>
         </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ihub ----------------------------------------------- */}
@@ -130,7 +121,9 @@ export default function CustomizedDialogs(props : any) {
         <DialogActions>
           <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
         {/* ----------------------------------------------- ปุ่มบันทึก ----------------------------------------------- */}
+          <div>
           <Button autoFocus 
+
           onClick={()=>{
             // flow
             // 1. เอาค่าที่กรอกในหน้าจอ dialog ยิงไป backend เพื่อเพิ่มข้อมูลในฐานข้อมูล
@@ -153,11 +146,13 @@ export default function CustomizedDialogs(props : any) {
              handleAddUser();
              handleClose();
             }} 
+
           className='bt-2' 
           sx={{backgroundColor:'#7F669D',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#b499d3'}}} 
           variant="contained" >
             <h5>บันทึก</h5>
           </Button>
+          </div>
         </DialogActions>
       </BootstrapDialog>
     </div>

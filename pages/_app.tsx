@@ -16,6 +16,7 @@ import "../styles/data.css";
 import '../styles/globals.css'
 import "../styles/project_creation.css"
 import "../styles/projects.css"
+import "../styles/project2.css"
 
 
 // Avatar LOGIN 

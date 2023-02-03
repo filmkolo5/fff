@@ -26,6 +26,7 @@ export function PositionBox(props : any) {
         )}
 
         sx={{ m: 1, width:'400px' }}
+
     />
     
     );

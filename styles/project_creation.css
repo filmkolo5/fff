@@ -1,109 +1,102 @@
   
   body {
     background: rgb(253, 248, 248);
-}
-  
+} 
   /* หน้าสร้างโครงการ */
-  .HEAD-POJECT{
+  .HEAD-PROJECT{
     font-family: 'Kanit', sans-serif;
     font-size: 25px;
     color: #000000;
   }
   
-  .BG-POJECT{
+  .BG-PROJECT{
     width: 100%;
-    height: 700px;
+    height: 800px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }  
-    .BG-POJECT h3{
+    .BG-PROJECT h3{
       padding: 20px;
     font-family: 'Kanit', sans-serif;
     font-size: 20px;
     color: #000;
   
     }  
-  .POJECT-1{
+  .PROJECT-1{
 
     display: flex;
     justify-content: center;
-
 }
-.POJECT-1 h3{
+
+.PROJECT-1 h3{
   font-family: 'Kanit', sans-serif;
   font-size: 16px;
   color: #000;
 
 }
-.POJECT-2{
+.PROJECT-2{
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-.POJECT-2 h3 {
+.PROJECT-2 h3 {
   font-family: 'Kanit', sans-serif;
   font-size: 16px;
 }
-.POJECT-3 {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-
-}
-.POJECT-3 h3 {
-  font-family: 'Kanit', sans-serif;
-  font-size: 16px;
-  margin-left: 23px;
-  color: #000;
-}
-.POJECT-4 {
+.PROJECT-3 {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 
 }
-.POJECT-4 h3{
+.PROJECT-3 h3 {
   font-family: 'Kanit', sans-serif;
   font-size: 16px;
+  margin-left: 15px;
   color: #000;
-
 }
-
-/* .POJECT-5-1 {
-box-sizing: border-box;
-position: absolute;
-width: 600px;
-height: 140px;
-left: 520px;
-top: 680px;
-border: 1px dashed #7B61FF;
-border-radius: 5px;
-}
-.POJECT-5-1 h3{
+.PROJECT-4 {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+.PROJECT-4 h3{
   font-family: 'Kanit', sans-serif;
   font-size: 16px;
   color: #000;
 
 }
- */
- .POJECT-5 {
+
+ .PROJECT-5 {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 
 }
-.POJECT-5 h3{
+.PROJECT-5 h3{
   font-family: 'Kanit', sans-serif;
   font-size: 16px;
   color: #000;
 
 }
-.POJECT-6{
+
+.PROJECT-5 {
+  display: flex;
+  justify-content: center;
+ margin-right: 50px;
+}
+.PROJECT-5 h4{
+ text-decoration: underline;
+ color: #000000;
+}
+
+
+
+.PROJECT-6{
   display: flex;
  justify-content: center;
  margin-top: 50px;
- margin-left: 150px;
+ margin-left: 160px;
 
 }

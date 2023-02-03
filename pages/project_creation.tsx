@@ -1,22 +1,26 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
+import  Box  from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import DialogActions from '@mui/material/DialogActions';
-
-
+//npm install @mui/x-date-pickers
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+//npm install dayjs --save
+import dayjs, { Dayjs } from 'dayjs';
+import Link from 'next/link';
 
 export default function SelectLabels() {
   const PROJECT = [
-    { label: 'โครงการ1'},
-    { label: 'โครงการ2'},
-    { label: 'โครงการ3' },
-    { label: 'โครงการ4'},
-    { label: 'โครงการ5'},
-    { label: 'โครงการ6' },
-    { label: 'โครงการ7'},
+    { label: 'GEMs'},
+    { label: 'AdHoc'},
+    { label: 'DevPool' },
+   
+ 
   ];
   const [open, setOpen] = React.useState(false);
 
@@ -26,75 +30,93 @@ export default function SelectLabels() {
   const handleClose = () => {
     setOpen(false);
   };
+    const [value, setValue] = React.useState<Dayjs | null>(
+      dayjs('2023-01-01'),
+    );
+    const [value2, setValue2] = React.useState<Dayjs | null>(
+      dayjs('2023-02-02'),
+    );
+  
+    const handleChange = (newValue: Dayjs | null) => {
+      setValue(newValue);
+    };
+    const handleChange2 = (newValue: Dayjs | null) => {
+      setValue2(newValue);
+    };
+    
   return (
     <div>
-      <div className='HEAD-POJECT'>
+      <div className='HEAD-PROJECT'>
         <h3>โครงการ</h3>
         </div>
-        <div className='BG-POJECT'>
+        <div className='BG-PROJECT'>
           <h3>สร้างโครงการ</h3>
-        <div className='POJECT-1' >
+        <div className='PROJECT-1' >
         <h3>โครงการหลัก :</h3>
         <Autocomplete   disablePortal id="combo-box-demo"options={PROJECT}
     sx={{  width: 600}}renderInput={(params) => <TextField {...params} label="กรุณาเลือกโครงการ" />}/>
       </div>
-      <div className='POJECT-2' >
+      <div className='PROJECT-2' >
       <h3>GEN/BATCH :</h3>
       <Box component="form"
       sx={{'& > :not(style)': { width: '75ch' }, }} noValidate autoComplete="off">
       <TextField id="outlined-basic" label="กรุณากรอก Gen/Batch  " variant="outlined" />
     </Box>
       </div>
-      <div className='POJECT-3' >
+      <div className='PROJECT-3' >
       <h3>วันเริ่มต้น :</h3>
-      <Stack component="form" noValidate spacing={3}>
-      <TextField
-        id="date"
-        label="วันเริ่มต้น"
-        type="date"
-        defaultValue="2017-05-24"
-        sx={{ width: 240 }}
-        InputLabelProps={{ shrink: true, }}/>
-    </Stack>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Stack spacing={3}>
+        <DesktopDatePicker
+        className='PROJECT-3.1'
+          label=" วัน / เดือน / ปี"
+          inputFormat="DD/MM/YYYY"
+          value={value}
+          onChange={handleChange}
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </Stack>
     <h3>วันสิ้นสุด :</h3>
-      <Stack component="form" noValidate spacing={3}>
-      <TextField
-        id="date"
-        label="วันสิ้นสุด"
-        type="date"
-        defaultValue="2017-05-24"
-        sx={{ width: 240 }}
-        InputLabelProps={{ shrink: true, }}/>
-    </Stack>
+      <Stack spacing={3}>
+        <DesktopDatePicker
+                className='PROJECT-3.1'
+          label=" วัน / เดือน / ปี"
+          inputFormat="DD/MM/YYYY"
+          value={value2}
+          onChange={handleChange2}
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </Stack>
+    </LocalizationProvider>
       </div>
-      <div className='POJECT-4' >
+      <div className='PROJECT-4' >
       <h3>รายละเอียด :</h3>
       <Box component="form"
       sx={{'& > :not(style)': { width: '75ch' }, height:100}} noValidate autoComplete="off">
          <TextField
           id="outlined-multiline-static"
-          label="กรุณากรอกรายละเอียด" multiline rows={4}
-
-        />
+          label="กรุณากรอกรายละเอียด" multiline rows={4}/>
     </Box>
     </div>
-    {/* <div className='POJECT-5'>
-    <h3>อนุมัติให้จัดโครงการ :</h3>
-      <Box component="form"
-      sx={{'& > :not(style)': { width: '71ch' }, height:100}} noValidate autoComplete="off">
-         <TextField
-          id="outlined-multiline-static"
-          label="กรุณากรอกรายละเอียด" multiline rows={4}
 
-        />
+          <div className='PROJECT-5'>
+          <h3>อนุมัติให้จัดโครงการ :</h3>
+          <Box component="span" sx={{ width:600, height: 140,p: 2, border: '1px dashed grey' }}>
+          <Button component="label" sx={{ width:565, height: 100,p: 2 ,"&:hover":{backgroundColor:'#ffff'}}} >
+          <h4>เลือกไฟล์เพื่ออัปโหลด</h4>
+        <input hidden accept="file" multiple type="file" />
+      </Button>
     </Box>
-    </div> */}
+          </div>
 
-    <div>
-      <div className='POJECT-6'>
+
+
+          <div className='PROJECT-6'>
     <DialogActions >
-          <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
-          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#7F669D',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          <Button autoFocus onClick={handleClose} className='bt-1' sx={{m:1,color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
+          <Link href='/project2'>
+          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#3A1062',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          </Link>
           </DialogActions>
     </div>  
         </div>
@@ -103,10 +125,9 @@ export default function SelectLabels() {
            
         </div>
     </div>
-    </div>
+    
    
    
    
   );
 }
-

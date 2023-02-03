@@ -1,21 +1,19 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import usersJson from "../json/data.json";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
 import Dialog  from './Dialog';
-var axios = require('axios');
-
+import { Button } from 'primereact/button';
 /* PRIME REACT */
 import "primereact/resources/themes/lara-light-indigo/theme.css"
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
-import { Dropdown } from 'primereact/dropdown';
-
 /* Components */
 import { template2 } from '../components/template2';
+/* Axios */
+var axios = require('axios');
 
 interface IUsers {
   "number": number;
@@ -102,6 +100,16 @@ export default function () {
 
   };
 
+  const action = (rowData:any) => {
+    return (
+        <React.Fragment>
+            <Button icon="pi pi-pencil" className="p-button-rounded p-button-success mr-2"  />
+            <Button icon="pi pi-trash" className="p-button-rounded p-button-warning"  />
+        </React.Fragment>
+    );
+}
+
+
   return (
     <div>
       <div className='DATA_TEXT'>
@@ -144,15 +152,18 @@ export default function () {
 
       <div className='grid'>
         <div className='col'>
+
           <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={3}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow'>
+
             <Column sortable header='ลำดับ' field='number' className='ui-column-data' />
             <Column sortable header='รหัสพนักงาน' field='userName' className='ui-column-data' />
             <Column sortable header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
             <Column sortable header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
             <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
-            <Column sortable header='ตำแหน่ง IHub' field='positionIhub' className='ui-column-data' />
-            <Column header='การปฏิบัติงาน' field='' className='ui-column-data' />
-            <Column header= 'ICON DELETE/EDIT' className='ui-column-data' />
+            <Column sortable header='ตำแหน่ง IHub' field='ihub_position' className='ui-column-data' />
+            <Column header='การปฏิบัติงาน'body={(rowData) =><div className="full-time-body">Full-Time</div>}className='ui-column-data' />
+            <Column body={action} exportable={false}></Column>
+
           </DataTable>
         </div>
       </div>
