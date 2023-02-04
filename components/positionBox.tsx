@@ -13,7 +13,7 @@ export function PositionBox(props : any) {
         // limitTags={5}
         id="multiple-limit-tags"
         options={positionihub}
-        getOptionLabel={(option) => option.title}
+        getOptionLabel={(option) => option}
         // ----- เลือก -----
         value={addpositionihub} // title : ''
         onChange={(event, newValue) => {
@@ -33,14 +33,14 @@ export function PositionBox(props : any) {
 }
 
 const positionihub = [
-  { title: 'Subcommittee' },
-  { title: 'PMOs' },
-  { title: 'Mentor' },
-  { title: 'GEMs' },
-  { title: 'Ad Hoc' }
-  // 'Subcommittee',
-  // 'PMOs',
-  // 'Mentor',
-  // 'GEMs',
-  // 'Ad Hoc',
+  // { title: 'Subcommittee' },
+  // { title: 'PMOs' },
+  // { title: 'Mentor' },
+  // { title: 'GEMs' },
+  // { title: 'Ad Hoc' }
+  'Subcommittee',
+  'PMOs',
+  'Mentor',
+  'GEMs',
+  'Ad Hoc',
 ];

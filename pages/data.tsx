@@ -4,6 +4,8 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
 import Dialog  from './Dialog';
+import Edit  from './Edit';
+import Delete  from './Delete';
 import { Button } from 'primereact/button';
 /* PRIME REACT */
 import "primereact/resources/themes/lara-light-indigo/theme.css"
@@ -13,7 +15,7 @@ import "primeflex/primeflex.css"
 /* Components */
 import { template2 } from '../components/template2';
 /* Axios */
-var axios = require('axios');
+var axios = require('axios'); 
 
 interface IUsers {
   "number": number;
@@ -39,7 +41,7 @@ export default function () {
   const [addlastname,setAddlastname] = useState('');
   const [addposition,setAddposition] = useState('');
   const [addaffiliation,setAddaffiliation] = useState('');
-  const [addpositionihub,setAddpositionihub] = useState({ title: '' });
+  const [addpositionihub,setAddpositionihub] = useState('');
   const [newuser, setNewuser]= useState('');
 
   const fetchUsers = () => {
@@ -77,7 +79,7 @@ export default function () {
       "lastName": addlastname,
       "position": addposition,
       "affiliation": addaffiliation,
-      "positionIhub": addpositionihub.title
+      "positionIhub": addpositionihub
     });
 
     var config = {
@@ -103,9 +105,9 @@ export default function () {
   const action = (rowData:any) => {
     return (
         <React.Fragment>
-            <Button icon="pi pi-pencil" className="p-button-rounded p-button-success mr-2"  />
-            <Button icon="pi pi-trash" className="p-button-rounded p-button-warning"  />
-        </React.Fragment>
+            <Edit/> <Delete/>
+      </React.Fragment>
+        
     );
 }
 
@@ -160,9 +162,9 @@ export default function () {
             <Column sortable header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
             <Column sortable header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
             <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
-            <Column sortable header='ตำแหน่ง IHub' field='ihub_position' className='ui-column-data' />
+            <Column sortable header='ตำแหน่ง IHub' field='positionIhub' className='ui-column-data' />
             <Column header='การปฏิบัติงาน'body={(rowData) =><div className="full-time-body">Full-Time</div>}className='ui-column-data' />
-            <Column body={action} exportable={false}></Column>
+            <Column body={action}></Column>
 
           </DataTable>
         </div>
