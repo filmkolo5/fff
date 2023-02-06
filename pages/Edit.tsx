@@ -53,7 +53,9 @@ export default function CustomizedDialogs() {
   };
   return (
     <div>
-      <Button variant="text"onClick={handleClickOpen} > <EditIcon/></Button>
+      <Button variant="text"onClick={handleClickOpen} > 
+      <EditIcon  sx={{ color: '#7F669D' }}   />
+      </Button>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title"open={open}>
         <BootstrapDialogTitle  id="customized-dialog-title " onClose={handleClose} >
           แก้ไขข้อมูลพนักงาน

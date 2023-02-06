@@ -20,8 +20,8 @@ export default function AlertDialog() {
   return (
     <div>
      
-      <Button variant="contained"onClick={handleClickOpen}sx={{  backgroundColor:'#FE9A3D',"&:hover":{backgroundColor:'#FFAE63'}}}>  
-      <DeleteIcon/>
+      <Button variant="text"onClick={handleClickOpen}>  
+      <DeleteIcon sx={{ color: '#7F669D' }} />
       </Button>
       <Dialog
         open={open}
