@@ -54,7 +54,7 @@ export default function CustomizedDialogs() {
   return (
     <div>
       <Button variant="text"onClick={handleClickOpen} > 
-      <EditIcon  sx={{ color: '#7F669D' }}   />
+      <EditIcon  sx={{ color: '#9898CA' }}   />
       </Button>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title"open={open}>
         <BootstrapDialogTitle  id="customized-dialog-title " onClose={handleClose} >
@@ -133,7 +133,7 @@ function Performance() {
       disablePortal
       id="performance"
       options={performance}
-      sx={{ width: 300 }}
+      sx={{ width: 300  }}
       renderInput={(params) => <TextField {...params} label="การปฏิบัติงาน" />}
     />
   );

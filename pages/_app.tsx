@@ -17,7 +17,7 @@ import '../styles/globals.css'
 import "../styles/project_creation.css"
 import "../styles/projects.css"
 import "../styles/project2.css"
-
+import "../styles/ICON-EDIT-DE.css"
 
 // Avatar LOGIN 
 import Avatar from '@mui/material/Avatar';

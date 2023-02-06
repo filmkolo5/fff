@@ -6,6 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(false);
 
@@ -21,7 +22,7 @@ export default function AlertDialog() {
     <div>
      
       <Button variant="text"onClick={handleClickOpen}>  
-      <DeleteIcon sx={{ color: '#7F669D' }} />
+      <DeleteIcon sx={{ color: '#9898CA' }} />
       </Button>
       <Dialog
         open={open}
@@ -30,13 +31,15 @@ export default function AlertDialog() {
         aria-describedby="alert-dialog-description"
       >
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
+        <DeleteOutlineIcon  sx={{ fontSize: 100 , color: '#9898CA',ml:11 }} />
+          <DialogContentText id="alert-dialog-description"sx={{color: '#000' }} >
     คุณแน่ใจหรือไม่ว่าคุณต้องการลบรายชื่อนี้
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>ยกเลิก</Button>
-          <Button onClick={handleClose} autoFocus>
+          <Button  variant="outlined"   sx={{color:'black',m: 1,width:135,borderColor:'black',"&:hover":{borderColor:'black'}}}     onClick={handleClose}>ยกเลิก</Button>
+          <Button  variant="contained"   sx={{backgroundColor:'#4C3364',color:'#FFFFFF',m: 1,width:135,"&:hover":{backgroundColor:'#b499d3'}}} 
+           onClick={handleClose} autoFocus>
             ตกลง
           </Button>
         </DialogActions>

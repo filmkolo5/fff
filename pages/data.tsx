@@ -104,14 +104,12 @@ export default function () {
 
   const action = (rowData:any) => {
     return (
-        <React.Fragment>
-            <Edit/> <Delete/>
-      </React.Fragment>
-        
+            <div className='ED-POPUP'>
+            <Edit/>
+             <Delete/>
+             </div>
     );
 }
-
-
   return (
     <div>
       <div className='DATA_TEXT'>
@@ -155,7 +153,7 @@ export default function () {
       <div className='grid'>
         <div className='col'>
 
-          <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={3}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow'>
+          <DataTable value={[...users]} paginator paginatorTemplate={template2}  first={0} rows={10}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow'>
 
             <Column sortable header='ลำดับ' field='number' className='ui-column-data' />
             <Column sortable header='รหัสพนักงาน' field='userName' className='ui-column-data' />
