@@ -1,6 +1,9 @@
 .ED-POPUP{
     display: flex;
   }
+.Icon-delete{
+  align-items: center;
+}
   /* .ICON-DE{
     display: flex;
     margin-left: 80px;

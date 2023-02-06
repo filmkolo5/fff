@@ -104,6 +104,10 @@ header {
     margin-right: 40px;
     justify-content: right;
 }
+h3{
+    font-size: 24px;
+    font-family: 'Kanit', sans-serif;
+}
 h4{
     font-size: 14px;
     font-family: 'Kanit', sans-serif;
@@ -453,8 +457,3 @@ i {
   ::ng-deep .p-autocomplete .p-inputtext {
     padding-left: 28px;
   }
-
-
-
-
-

@@ -14,6 +14,9 @@ import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import EditIcon from '@mui/icons-material/Edit';
+import { PositionBox } from '../components/positionBox';
+import { Performance } from '../components/performance';
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -58,88 +61,42 @@ export default function CustomizedDialogs() {
       </Button>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title"open={open}>
         <BootstrapDialogTitle  id="customized-dialog-title " onClose={handleClose} >
-          แก้ไขข้อมูลพนักงาน
+          <h4>แก้ไขข้อมูลพนักงาน</h4>
         </BootstrapDialogTitle >
         
         <DialogContent dividers>
-        <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
-      <TextField  id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
-      <Button  variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} >ค้นหา</Button>
+        <Box sx={{'& > :not(style )': {  m: 1, width: '100' },}}>
+      <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
+      <Button  variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} ><h5>ค้นหา</h5></Button>
     </Box>
           <Typography gutterBottom>
           <Box  sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-      <TextField  id="outlined-basic" label="ชื่อ" variant="outlined" />
-      <TextField  id="outlined-basic" label="นามสุกล" variant="outlined" />
+      <TextField className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined" />
+      <TextField className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField  id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
+      <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField  id="outlined-basic" label="สังกัด" variant="outlined" />
+      <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" />
     </Box>
           </Typography>
           <Typography gutterBottom>
-          <Autocomplete
-      disablePortal
-      id="position-ihub"
-      options={positionIHUB}
-      sx={{m:1, width: 400 }}
-      renderInput={(params) => <TextField {...params} label="ตำแหน่ง IHUB" />}
-    />
+          <PositionBox/>
           </Typography>
           <Typography gutterBottom>
-          <Autocomplete
-      disablePortal
-      id="performance"
-      options={performance}
-      sx={{ m:1,width: 400  }}
-      renderInput={(params) => <TextField {...params} label="การปฏิบัติงาน" />}
-    />
+          <Performance/>
           </Typography>
         </DialogContent>
         <DialogActions>
-        <Button autoFocus onClick={handleClose}className='bt-1' sx={{color:'black',width:210,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined">ยกเลิก</Button>
-        <Button autoFocus onClick={handleClose}className='bt-2'  sx={{backgroundColor:'#7F669D',color:'#FFFFFF',width:210,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" >บันทึก</Button>
+        <Button autoFocus onClick={handleClose}className='bt-1' sx={{color:'black',width:210,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
+        <Button autoFocus onClick={handleClose}className='bt-2'  sx={{backgroundColor:'#7F669D',color:'#FFFFFF',width:210,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
         </DialogActions>
       </BootstrapDialog>
     </div>
   );
 }
-function PosisionBox() {
-  return (
-    <Autocomplete
-      disablePortal
-      id="posision-ihub"
-      options={positionIHUB}
-      sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="ตำแหน่ง IHUB" />}
-    />
-  );
-}
-const positionIHUB = [
-  { label: 'Subcommittee' },
-  { label: 'PMOs' },
-  { label: 'Mentor'},
-  { label: 'GEMs' },
-  { label: 'Ad Hoc'},
-];
-function Performance() {
-  return (
-    <Autocomplete
-      disablePortal
-      id="performance"
-      options={performance}
-      sx={{ width: 300  }}
-      renderInput={(params) => <TextField {...params} label="การปฏิบัติงาน" />}
-    />
-  );
-}
-const performance = [
-  { label: 'FULL-TIME' },
-  { label: 'PARTTIME' },
-];
-
