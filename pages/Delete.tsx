@@ -31,13 +31,13 @@ export default function AlertDialog() {
         aria-describedby="alert-dialog-description"
       >
         <DialogContent>
-        <DeleteOutlineIcon  sx={{ fontSize: 100 , color: '#9898CA',ml:18 }} />
-          <DialogContentText id="alert-dialog-description"sx={{color: '#000' }} >
+        <DeleteOutlineIcon  sx={{ fontSize: 100 , color: '#9898CA',ml:15 }} />
+          <DialogContentText className='TEXT-DE' id="alert-dialog-description"sx={{color: '#000' }} >
     <h3>คุณแน่ใจหรือไม่ว่าคุณต้องการลบรายชื่อนี้</h3>
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button  variant="outlined"   sx={{color:'black',m: 1,width:150,ml:18,borderColor:'black',"&:hover":{borderColor:'black'}}}     onClick={handleClose}><h4>ยกเลิก</h4></Button>
+        <DialogActions  >
+          <Button   variant="outlined"   sx={{color:'black',m:1,width:150,mr:5,borderColor:'black',"&:hover":{borderColor:'black'}}}     onClick={handleClose}><h4>ยกเลิก</h4></Button>
           <Button  variant="contained"   sx={{backgroundColor:'#4C3364',color:'#FFFFFF',m: 1,width:150,"&:hover":{backgroundColor:'#b499d3'}}} 
            onClick={handleClose} autoFocus>
             <h5>ตกลง</h5>
