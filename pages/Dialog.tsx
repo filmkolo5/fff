@@ -74,6 +74,8 @@ export default function CustomizedDialogs(props : any) {
           setAddaffiliation , 
           addpositionihub , 
           setAddpositionihub,
+          addperformance,
+          setAddperformance,
           handleAddUser } =  props;
   return (
     <div>
@@ -117,7 +119,7 @@ export default function CustomizedDialogs(props : any) {
         </Typography>
         {/* ----------------------------------------------- การปฏิบัติงาน ----------------------------------------------- */}
         <Typography gutterBottom>
-          <Performance/>
+          <Performance addperformance = { addperformance } setAddperformance = { setAddperformance }/>
         </Typography>
         </DialogContent>
         {/* ----------------------------------------------- ปุ่มยกเลิก ----------------------------------------------- */}

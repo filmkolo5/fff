@@ -14,6 +14,7 @@ import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
 /* Components */
 import { template2 } from '../components/template2';
+import { performance } from 'perf_hooks';
 /* Axios */
 var axios = require('axios'); 
 
@@ -34,6 +35,7 @@ export default function () {
   const [addposition,setAddposition] = useState('');
   const [addaffiliation,setAddaffiliation] = useState('');
   const [addpositionihub,setAddpositionihub] = useState('');
+  const [addperformance,setAddperformance] = useState('');
   const [newuser, setNewuser]= useState('');
 {/* ----------------------------------------------- ยิง API ข้อมูลทั้งหมด ----------------------------------------------- */}
   const fetchUsers = () => {
@@ -71,7 +73,8 @@ export default function () {
       "lastName": addlastname,
       "position": addposition,
       "affiliation": addaffiliation,
-      "positionIhub": addpositionihub
+      "positionIhub": addpositionihub,
+      "performance": addperformance
     });
 
     const config = {
@@ -119,6 +122,7 @@ export default function () {
             position = {rowData.position}
             affiliation = {rowData.affiliation}
             positionIhub = {rowData.positionIhub}
+            performance = {rowData.performance}
             />
              <Delete
               handleDeleteUser = { handleDeleteUser }
@@ -158,6 +162,9 @@ export default function () {
             /* ตำแหน่งใน ihub */
            addpositionihub = { addpositionihub }
            setAddpositionihub = { setAddpositionihub }
+           /* การปฏิบัติงาน */
+           addperformance = { addperformance }
+           setAddperformance = { setAddperformance }
             /* ข้อมูลพนักงาน */
            users = { users }
            setUsers = { setUsers }
@@ -178,7 +185,7 @@ export default function () {
             <Column sortable header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
             <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
             <Column sortable header='ตำแหน่ง IHub' field='positionIhub' className='ui-column-data' />
-            <Column header='การปฏิบัติงาน'body={(rowData) =><div className="full-time-body">Full-Time</div>}className='ui-column-data' />
+            <Column header='การปฏิบัติงาน'field='performance' body={(rowData) =><div className="full-time-body" >{ rowData.performance }</div>}className='ui-column-data' />
             <Column body={action}></Column>
 
           </DataTable>
