@@ -12,6 +12,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import EditIcon from '@mui/icons-material/Edit';
+import { performance } from 'perf_hooks';
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -47,6 +48,7 @@ export default function CustomizedDialogs(props:any) {
           position,
           affiliation,
           positionIhub,
+          performance,
                     } = props;
   const [open, setOpen] = React.useState(false);
 
@@ -68,40 +70,40 @@ export default function CustomizedDialogs(props:any) {
         
         <DialogContent dividers>
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
-      <TextField value = { userName }/>
+      <TextField label="รหัสพนักงาน" defaultValue = { userName }/>
       <Button  variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} >ค้นหา</Button>
     </Box>
           <Typography gutterBottom>
           <Box  sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-      <TextField  value={ firstName }/>
-      <TextField  value={ lastName } />
+      <TextField  label="ชื่อ" defaultValue={ firstName }/>
+      <TextField  label="นามสกุล"  defaultValue={ lastName } />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField  value={ position } />
+      <TextField label="ตำแหน่ง"  defaultValue={ position } />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField  value={ affiliation }/>
+      <TextField label="สังกัด"  defaultValue={ affiliation }/>
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Autocomplete
-      disablePortal
       id="position-ihub"
-      options={positionIHUB}
+      options={ _positionIHUB }
       sx={{m:1, width: 400 }}
+      defaultValue={ positionIhub }
       renderInput={(params) => <TextField {...params} label="ตำแหน่ง IHUB" />}
     />
           </Typography>
           <Typography gutterBottom>
           <Autocomplete
-      disablePortal
       id="performance"
-      options={performance}
+      options={ _performance }
       sx={{ m:1,width: 400  }}
+      defaultValue={ performance }
       renderInput={(params) => <TextField {...params} label="การปฏิบัติงาน" />}
     />
           </Typography>
@@ -114,36 +116,15 @@ export default function CustomizedDialogs(props:any) {
     </div>
   );
 }
-function PosisionBox() {
-  return (
-    <Autocomplete
-      disablePortal
-      id="posision-ihub"
-      options={positionIHUB}
-      sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="ตำแหน่ง IHUB" />}
-    />
-  );
-}
-const positionIHUB = [
+
+const _positionIHUB = [
   { label: 'Subcommittee' },
   { label: 'PMOs' },
   { label: 'Mentor'},
   { label: 'GEMs' },
   { label: 'Ad Hoc'},
 ];
-function Performance() {
-  return (
-    <Autocomplete
-      disablePortal
-      id="performance"
-      options={performance}
-      sx={{ width: 300  }}
-      renderInput={(params) => <TextField {...params} label="การปฏิบัติงาน" />}
-    />
-  );
-}
-const performance = [
+const _performance = [
   { label: 'FULL-TIME' },
   { label: 'PARTTIME' },
 ];

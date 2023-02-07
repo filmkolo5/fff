@@ -128,24 +128,6 @@ export default function CustomizedDialogs(props : any) {
         {/* ----------------------------------------------- ปุ่มบันทึก ----------------------------------------------- */}
           <Button autoFocus 
           onClick={()=>{
-            // flow
-            // 1. เอาค่าที่กรอกในหน้าจอ dialog ยิงไป backend เพื่อเพิ่มข้อมูลในฐานข้อมูล
-            // 2. ยิงไป backend เพื่อดึง users ทั้งหมดมาเก็บในตัวแปร users
-            // setUsers(
-            // [
-            //   ...users, // เอาข้อมูลเก่า
-            //   {
-            //     number:users.length+1,
-            //     employee_id: addusername,
-            //     fname_lname: ${addfristname} ${addlastname},
-            //     position: addposition,
-            //     affiliation: addaffiliation,
-            //     ihub_position: addpositionihub,
-            //     performance:"",
-            //   }
-            //   // เอาข้อมูลที่มีการกรอกปัจจุบันมาใส่ในตัวแปร users
-            // ]
-            //  );
              handleAddUser();
              handleClose();
             }} 

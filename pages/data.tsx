@@ -99,7 +99,7 @@ export default function () {
     console.log('userName',userName);
     const config = {
       method: 'delete',
-      url: `http://localhost:8080/user/${userName}`
+      url: `http://localhost:8080/user/remove/${userName}`
     };
   
     axios(config)
