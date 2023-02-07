@@ -17,17 +17,9 @@ import { template2 } from '../components/template2';
 /* Axios */
 var axios = require('axios'); 
 
-interface IUsers {
-  "number": number;
-  "employee_id": number;
-  "fname_lname": string;
-  "position": string;
-  "affiliation": string;
-  "ihub_position": string;
-  "performance": string;
-}
+
 export default function () {
-  const [users, setUsers] = useState<IUsers[]>([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     // ดึงค่าเริ่มต้นของ user มาแสดงในตาราง
@@ -120,7 +112,14 @@ export default function () {
   const action = (rowData:any) => {
     return (
             <div className='ED-POPUP'>
-            <Edit/>
+            <Edit
+            userName = {rowData.userName}
+            firstName = {rowData.firstName}
+            lastName = {rowData.lastName}
+            position = {rowData.position}
+            affiliation = {rowData.affiliation}
+            positionIhub = {rowData.positionIhub}
+            />
              <Delete
               handleDeleteUser = { handleDeleteUser }
               userName = {rowData.userName}

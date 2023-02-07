@@ -40,7 +40,14 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
   );
 }
 
-export default function CustomizedDialogs() {
+export default function CustomizedDialogs(props:any) {
+  const { userName,
+          firstName,
+          lastName,
+          position,
+          affiliation,
+          positionIhub,
+                    } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -61,23 +68,23 @@ export default function CustomizedDialogs() {
         
         <DialogContent dividers>
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
-      <TextField  id="outlined-basic" label="รหัสพนักงาน" variant="outlined" />
+      <TextField value = { userName }/>
       <Button  variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} >ค้นหา</Button>
     </Box>
           <Typography gutterBottom>
           <Box  sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-      <TextField  id="outlined-basic" label="ชื่อ" variant="outlined" />
-      <TextField  id="outlined-basic" label="นามสุกล" variant="outlined" />
+      <TextField  value={ firstName }/>
+      <TextField  value={ lastName } />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField  id="outlined-basic" label="ตำแหน่ง" variant="outlined" />
+      <TextField  value={ position } />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField  id="outlined-basic" label="สังกัด" variant="outlined" />
+      <TextField  value={ affiliation }/>
     </Box>
           </Typography>
           <Typography gutterBottom>
