@@ -14,8 +14,6 @@ import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import EditIcon from '@mui/icons-material/Edit';
-import { PositionBox } from '../components/positionBox';
-import { Performance } from '../components/performance';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -86,10 +84,10 @@ export default function CustomizedDialogs() {
     </Box>
           </Typography>
           <Typography gutterBottom>
-          <PositionBox/>
+            <PosisionBox/>
           </Typography>
           <Typography gutterBottom>
-          <Performance/>
+            <Performance/>
           </Typography>
         </DialogContent>
         <DialogActions>
@@ -100,3 +98,35 @@ export default function CustomizedDialogs() {
     </div>
   );
 }
+function PosisionBox() {
+  return (
+    <Autocomplete
+      id="posision-ihub"
+      options={positionIHUB}
+       sx={{'& > :not(style)': { m: 1, width: '400px' },}}
+      renderInput={(params) => <TextField {...params} className='b-1' label="ตำแหน่ง IHUB" />}
+      
+    />
+  );
+}
+const positionIHUB = [
+  { label: 'Subcommittee' },
+  { label: 'PMOs' },
+  { label: 'Mentor'},
+  { label: 'GEMs' },
+  { label: 'Ad Hoc'},
+];
+function Performance() {
+  return (
+    <Autocomplete
+      id="performance"
+      options={performance}
+      sx={{ m: 1, width: '400px' }}
+      renderInput={(params) => <TextField {...params} className='b-1' label="การปฏิบัติงาน" />}
+    />
+  );
+}
+const performance = [
+  { label: 'Full-Time' },
+  { label: 'Part-Time' },
+];
