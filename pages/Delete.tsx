@@ -7,7 +7,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-export default function AlertDialog() {
+export default function AlertDialog(props:any) {
+  const { handleDeleteUser, userName } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -20,8 +21,8 @@ export default function AlertDialog() {
 
   return (
     <div>
-     
-      <Button variant="text"onClick={handleClickOpen}>  
+
+      <Button variant="text"onClick={handleClickOpen}>
       <DeleteIcon sx={{ color: '#9898CA' }} />
       </Button>
       <Dialog
@@ -31,24 +32,22 @@ export default function AlertDialog() {
         aria-describedby="alert-dialog-description"
       >
         <DialogContent>
-        <DeleteOutlineIcon  sx={{ fontSize: 100 , color: '#9898CA',ml:15 }} />
-          <DialogContentText className='TEXT-DE' id="alert-dialog-description"sx={{color: '#000' }} >
-    <h3>คุณแน่ใจหรือไม่ว่าคุณต้องการลบรายชื่อนี้</h3>
+        <DeleteOutlineIcon  sx={{ fontSize: 100 , color: '#9898CA',ml:11 }} />
+          <DialogContentText id="alert-dialog-description"sx={{color: '#000' }} >
+    คุณแน่ใจหรือไม่ว่าคุณต้องการลบรายชื่อนี้
           </DialogContentText>
         </DialogContent>
-        <DialogActions  >
-          <Button   variant="outlined"   sx={{color:'black',m:1,width:150,mr:5,borderColor:'black',"&:hover":{borderColor:'black'}}}     onClick={handleClose}><h4>ยกเลิก</h4></Button>
-          <Button  variant="contained"   sx={{backgroundColor:'#4C3364',color:'#FFFFFF',m: 1,width:150,"&:hover":{backgroundColor:'#b499d3'}}} 
-           onClick={handleClose} autoFocus>
-            <h5>ตกลง</h5>
+        <DialogActions>
+          <Button  variant="outlined"   sx={{color:'black',m: 1,width:135,borderColor:'black',"&:hover":{borderColor:'black'}}}     onClick={handleClose}>ยกเลิก</Button>
+          <Button  variant="contained"   sx={{backgroundColor:'#4C3364',color:'#FFFFFF',m: 1,width:135,"&:hover":{backgroundColor:'#b499d3'}}} 
+           onClick={()=>{
+            handleDeleteUser(userName);
+            handleClose();
+           }} >
+            ตกลง
           </Button>
         </DialogActions>
       </Dialog>
     </div>
   );
 }
-
-
-
-
-

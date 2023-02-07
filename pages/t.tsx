@@ -60,7 +60,7 @@ export default function () {
         return ({
           ...user,
           'number': index + 1,
-          'fname_lname': `${user.firstName} ${user.lastName}`
+          'fname_lname': ${user.firstName} ${user.lastName}
         })
       });
 
@@ -104,7 +104,7 @@ export default function () {
     console.log('userName',userName);
     const config = {
       method: 'delete',
-      url: `http://localhost:8080/user/${userName}`
+      url: http://localhost:8080/user/${userName}
     };
   
     axios(config)
@@ -189,3 +189,6 @@ export default function () {
 
   )
 }
+
+
+//data.tsx
