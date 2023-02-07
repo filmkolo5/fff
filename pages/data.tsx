@@ -6,7 +6,6 @@ import { InputText } from 'primereact/inputtext';
 import Dialog  from './Dialog';
 import Edit  from './Edit';
 import Delete  from './Delete';
-import { Button } from 'primereact/button';
 /* PRIME REACT */
 import "primereact/resources/themes/lara-light-indigo/theme.css"
 import "primereact/resources/primereact.min.css"
@@ -14,7 +13,6 @@ import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
 /* Components */
 import { template2 } from '../components/template2';
-import { performance } from 'perf_hooks';
 /* Axios */
 var axios = require('axios'); 
 
@@ -30,13 +28,20 @@ export default function () {
   const [value4, setValue4] = useState('');
 
   const [addusername,setAddusername] = useState('');
-  const [addfristname,setAddfristname] = useState('');
+  const [addfirstname,setAddfirstname] = useState('');
   const [addlastname,setAddlastname] = useState('');
   const [addposition,setAddposition] = useState('');
   const [addaffiliation,setAddaffiliation] = useState('');
   const [addpositionihub,setAddpositionihub] = useState('');
   const [addperformance,setAddperformance] = useState('');
-  const [newuser, setNewuser]= useState('');
+  // const [newuser, setNewuser]= useState('');
+  const [editusername, setEditusername]= useState('');
+  const [editfirstname,setEditfirstname] = useState('');
+  const [editlastname,setEditlastname] = useState('');
+  const [editposition,setEditposition] = useState('');
+  const [editaffiliation,setEditaffiliation] = useState('');
+  const [editpositionihub,setEditpositionihub] = useState('');
+  const [editperformance,setEditperformance] = useState('');
 {/* ----------------------------------------------- ยิง API ข้อมูลทั้งหมด ----------------------------------------------- */}
   const fetchUsers = () => {
     // 1. ยิง api ไป nestjs เพื่อขอข้อมูล user
@@ -67,9 +72,9 @@ export default function () {
 {/* ----------------------------------------------- ยิง API ให้เพิ่มข้อมูล ----------------------------------------------- */}
   // ฟังก์ชั่นในการยิง request ไป nestjs เพื่อเพิ่ม user ในฐานข้อมูล
   const handleAddUser = () => {
-    var data = JSON.stringify({
+    const data = JSON.stringify({
       "userName": addusername,
-      "firstName": addfristname,
+      "firstName": addfirstname,
       "lastName": addlastname,
       "position": addposition,
       "affiliation": addaffiliation,
@@ -95,11 +100,42 @@ export default function () {
     });
   };
   {/* ----------------------------------------------- ยิง API ให้ลบข้อมูล ----------------------------------------------- */}
-  const handleDeleteUser = (userName: string) => {
-    console.log('userName',userName);
+  const handleDeleteUser = (id: string) => {
+    // console.log('id',id);
     const config = {
       method: 'delete',
-      url: `http://localhost:8080/user/remove/${userName}`
+      url: `http://localhost:8080/user/remove/${id}`
+    };
+  
+    axios(config)
+      .then((response:any) => {
+        console.log(JSON.stringify(response.data));
+        fetchUsers();
+      })
+      .catch((error:any) => {
+        console.error(error);
+      });
+  };  
+  {/* ----------------------------------------------- ยิง API ให้ลบข้อมูล ----------------------------------------------- */}
+  const handleEditUser = (id: string) => {
+    // console.log('id',id);
+    // console.log('editusername',editusername);
+    const data = JSON.stringify({
+      "userName": editusername,
+      "firstName": editfirstname,
+      "lastName": editlastname,
+      "position": editposition,
+      "affiliation": editaffiliation,
+      "positionIhub": editpositionihub,
+      "performance": editperformance
+    });
+    const config = {
+      method: 'patch',
+      url: `http://localhost:8080/user/update/${id}`,
+      headers: { 
+        'Content-Type': 'application/json'
+       },
+      data : data
     };
   
     axios(config)
@@ -116,17 +152,26 @@ export default function () {
     return (
             <div className='ED-POPUP'>
             <Edit
+            setEditusername={setEditusername}
             userName = {rowData.userName}
+            setEditfirstname={setEditfirstname}
             firstName = {rowData.firstName}
+            setEditlastname={setEditlastname}
             lastName = {rowData.lastName}
+            setEditposition={setEditposition}
             position = {rowData.position}
+            setEditaffiliation={setEditaffiliation}
             affiliation = {rowData.affiliation}
+            setEditpositionihub={setEditpositionihub}
             positionIhub = {rowData.positionIhub}
+            setEditperformance={setEditperformance}
             performance = {rowData.performance}
+            id = { rowData.id }
+            handleEditUser = {handleEditUser}
             />
              <Delete
               handleDeleteUser = { handleDeleteUser }
-              userName = {rowData.userName}
+              id = {rowData.id}
              />
              </div>
     );
@@ -148,8 +193,8 @@ export default function () {
            addusername = { addusername }
            setAddusername = { setAddusername }
             /* ชื่อ */
-           addfristname = { addfristname }
-           setAddfristname = { setAddfristname }
+           addfirstname = { addfirstname }
+           setAddfirstname = { setAddfirstname }
             /* นามสกุล */
            addlastname = { addlastname }
            setAddlastname = { setAddlastname }

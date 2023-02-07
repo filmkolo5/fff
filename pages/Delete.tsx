@@ -7,7 +7,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 export default function AlertDialog(props:any) {
-  const { handleDeleteUser, userName } = props;
+  const { handleDeleteUser, id } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -40,7 +40,7 @@ export default function AlertDialog(props:any) {
           <Button  variant="outlined"   sx={{color:'black',m: 1,width:135,borderColor:'black',"&:hover":{borderColor:'black'}}}     onClick={handleClose}>ยกเลิก</Button>
           <Button  variant="contained"   sx={{backgroundColor:'#4C3364',color:'#FFFFFF',m: 1,width:135,"&:hover":{backgroundColor:'#b499d3'}}} 
            onClick={()=>{
-            handleDeleteUser(userName);
+            handleDeleteUser(id);
             handleClose();
            }} >
             ตกลง

@@ -17,7 +17,7 @@ export function PositionBox(props : any) {
         // ----- เลือก -----
         value={addpositionihub} // title : ''
         onChange={(event, newValue) => {
-          console.log('onChange', newValue);
+          // console.log('onChange', newValue);
           setAddpositionihub(newValue);
         }}
 

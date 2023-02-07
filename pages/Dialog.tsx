@@ -64,8 +64,8 @@ export default function CustomizedDialogs(props : any) {
   };
   const { addusername ,
           setAddusername , 
-          addfristname , 
-          setAddfristname , 
+          addfirstname , 
+          setAddfirstname , 
           addlastname , 
           setAddlastname , 
           addposition , 
@@ -96,7 +96,7 @@ export default function CustomizedDialogs(props : any) {
         {/* ----------------------------------------------- ชื่อ ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined"type="text" value={ addfristname } onChange={ (e) => setAddfristname(e.target.value) } />
+          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined"type="text" value={ addfirstname } onChange={ (e) => setAddfirstname(e.target.value) } />
         {/* ----------------------------------------------- นามสกุล ----------------------------------------------- */}
           <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" type="text" value={ addlastname } onChange={ (e) => setAddlastname(e.target.value) }/>
           </Box>

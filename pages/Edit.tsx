@@ -12,7 +12,6 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import EditIcon from '@mui/icons-material/Edit';
-import { performance } from 'perf_hooks';
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -42,13 +41,30 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 }
 
 export default function CustomizedDialogs(props:any) {
-  const { userName,
+  const { 
+          /* รหัสพนักงาน */
+          setEditusername,
+          userName,
+          /* ชื่อ */
+          setEditfirstname,
           firstName,
+          /* นามสกุล */
+          setEditlastname,
           lastName,
+          /* ตำแหน่ง */
+          setEditposition,
           position,
+          /* สังกัด */
+          setEditaffiliation,
           affiliation,
+          /* ตำแหน่งihub */
+          setEditpositionihub,
           positionIhub,
+          /* การปฏิบัติงาน */
+          setEditperformance,
           performance,
+          handleEditUser,
+          id
                     } = props;
   const [open, setOpen] = React.useState(false);
 
@@ -70,23 +86,23 @@ export default function CustomizedDialogs(props:any) {
         
         <DialogContent dividers>
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
-      <TextField label="รหัสพนักงาน" defaultValue = { userName }/>
+      <TextField label="รหัสพนักงาน" defaultValue = { userName } onChange={ (e) => setEditusername(e.target.value) } />
       <Button  variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} >ค้นหา</Button>
     </Box>
           <Typography gutterBottom>
           <Box  sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-      <TextField  label="ชื่อ" defaultValue={ firstName }/>
-      <TextField  label="นามสกุล"  defaultValue={ lastName } />
+      <TextField  label="ชื่อ" defaultValue={ firstName } onChange={ (e) => setEditfirstname(e.target.value) } />
+      <TextField  label="นามสกุล"  defaultValue={ lastName } onChange={ (e) => setEditlastname(e.target.value) } />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField label="ตำแหน่ง"  defaultValue={ position } />
+      <TextField label="ตำแหน่ง"  defaultValue={ position } onChange={ (e) => setEditposition(e.target.value) } />
     </Box>
           </Typography>
           <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-      <TextField label="สังกัด"  defaultValue={ affiliation }/>
+      <TextField label="สังกัด"  defaultValue={ affiliation } onChange={ (e) => setEditaffiliation(e.target.value) } />
     </Box>
           </Typography>
           <Typography gutterBottom>
@@ -95,6 +111,10 @@ export default function CustomizedDialogs(props:any) {
       options={ _positionIHUB }
       sx={{m:1, width: 400 }}
       defaultValue={ positionIhub }
+      onChange={(event, newValue) => {
+        // console.log('onChange', newValue);
+        setEditpositionihub(newValue);
+      }}
       renderInput={(params) => <TextField {...params} label="ตำแหน่ง IHUB" />}
     />
           </Typography>
@@ -104,13 +124,20 @@ export default function CustomizedDialogs(props:any) {
       options={ _performance }
       sx={{ m:1,width: 400  }}
       defaultValue={ performance }
+      onChange={(event, newValue) => {
+        // console.log('onChange', newValue);
+        setEditperformance(newValue);
+      }}
       renderInput={(params) => <TextField {...params} label="การปฏิบัติงาน" />}
     />
           </Typography>
         </DialogContent>
         <DialogActions>
         <Button autoFocus onClick={handleClose}className='bt-1' sx={{color:'black',width:210,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined">ยกเลิก</Button>
-        <Button autoFocus onClick={handleClose}className='bt-2'  sx={{backgroundColor:'#7F669D',color:'#FFFFFF',width:210,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" >บันทึก</Button>
+        <Button autoFocus onClick={()=>{
+             handleEditUser(id);
+             handleClose();
+            }} className='bt-2'  sx={{backgroundColor:'#7F669D',color:'#FFFFFF',width:210,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" >บันทึก</Button>
         </DialogActions>
       </BootstrapDialog>
     </div>
@@ -118,13 +145,13 @@ export default function CustomizedDialogs(props:any) {
 }
 
 const _positionIHUB = [
-  { label: 'Subcommittee' },
-  { label: 'PMOs' },
-  { label: 'Mentor'},
-  { label: 'GEMs' },
-  { label: 'Ad Hoc'},
+  'Subcommittee',
+  'PMOs',
+  'Mentor',
+  'GEMs',
+  'Ad Hoc',
 ];
 const _performance = [
-  { label: 'FULL-TIME' },
-  { label: 'PARTTIME' },
+  'Full-Time',
+  'Part-Time',
 ];
