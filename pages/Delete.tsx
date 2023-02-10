@@ -22,7 +22,7 @@ export default function AlertDialog(props:any) {
     <div>
 
       <Button variant="text"onClick={handleClickOpen}>
-      <DeleteIcon sx={{ color: '#F9F9F9', bgcolor: '#FE9A3D',borderRadius: '50%',width:'30px',height:'30px',padding:'5px'}} />
+      <DeleteIcon sx={{ color: '#BDCDD6'}} />
       </Button>
       <Dialog
         open={open}

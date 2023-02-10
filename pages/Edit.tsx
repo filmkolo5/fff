@@ -77,7 +77,7 @@ export default function CustomizedDialogs(props:any) {
   return (
     <div>
       <Button variant="text"onClick={handleClickOpen} > 
-      <EditIcon  sx={{ color: '#F9F9F9', bgcolor: '#19C816',borderRadius: '50%',width:'30px',height:'30px',padding:'5px'}}   />
+      <EditIcon  sx={{ color: '#BDCDD6'}}   />
       </Button>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title"open={open}>
         <BootstrapDialogTitle  id="customized-dialog-title " onClose={handleClose} >
