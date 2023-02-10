@@ -235,10 +235,8 @@ export default function () {
             <Column sortable header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
             <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
             {/* {<Column sortable header='ตำแหน่ง IHub' field='positionIhub' className='ui-column-data' />} */}
-            {/* <Column sortable header='ตำแหน่ง IHub'field='positionIhub'  body={(rowData) =><div className="positionIhub-body" >{ rowData.positionihub } </div>}className='ui-column-data' /> */}
             <Column sortable header='การปฏิบัติงาน'field='performance'  body={(rowData) =><div className="full-time-body" >{ rowData.performance } </div>}className='ui-column-data' />
             <Column body={action}></Column>
-
           </DataTable>
         </div>
       </div>

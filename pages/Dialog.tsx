@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React  from 'react';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
@@ -55,7 +55,6 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 export default function CustomizedDialogs(props : any) {
   const [open, setOpen] = React.useState(false);
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -113,10 +112,10 @@ export default function CustomizedDialogs(props : any) {
             <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" type="text" value={ addaffiliation } onChange={ (e) => setAddaffiliation(e.target.value) } />
           </Box>
         </Typography>
-        {/* ----------------------------------------------- ตำแหน่ง ihub ----------------------------------------------- */}
+        {/* ----------------------------------------------- ตำแหน่ง ihub -----------------------------------------------
         <Typography gutterBottom>
           <PositionBox addpositionihub = { addpositionihub } setAddpositionihub = { setAddpositionihub } />
-        </Typography>
+        </Typography> */}
         {/* ----------------------------------------------- การปฏิบัติงาน ----------------------------------------------- */}
         <Typography gutterBottom>
           <Performance addperformance = { addperformance } setAddperformance = { setAddperformance }/>
@@ -140,4 +139,4 @@ export default function CustomizedDialogs(props : any) {
       </BootstrapDialog>
     </div>
   );
-}
+};

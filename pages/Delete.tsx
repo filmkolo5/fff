@@ -37,8 +37,8 @@ export default function AlertDialog(props:any) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button  variant="outlined"   sx={{color:'black',width:135,ml:10,mb:2,borderColor:'black',"&:hover":{borderColor:'black'}}}     onClick={handleClose}><h4>ยกเลิก</h4></Button>
-          <Button  variant="contained"   sx={{backgroundColor:'#FF0032',color:'#FFFFFF',width:135,mr:10,mb:2,"&:hover":{backgroundColor:'#b499d3'}}} 
+          <Button  variant="outlined"   sx={{color:'black',width:135,ml:10,mb:2,borderColor:'black',"&:hover":{borderColor:'black'}}}onClick={handleClose}><h4>ยกเลิก</h4></Button>
+          <Button  variant="contained"   sx={{backgroundColor:'#FF0032',color:'#FFFFFF',width:135,mr:10,mb:2,"&:hover":{backgroundColor:'#FF0032'}}} 
            onClick={()=>{
             handleDeleteUser(id);
             handleClose();

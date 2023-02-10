@@ -105,7 +105,7 @@ export default function CustomizedDialogs(props:any) {
       <TextField className='b-0' label="สังกัด"  defaultValue={ affiliation } onChange={ (e) => setEditaffiliation(e.target.value) } />
     </Box>
           </Typography>
-          <Typography gutterBottom>
+          {/* <Typography gutterBottom>
           <Autocomplete
       id="position-ihub"
       options={ _positionIHUB }
@@ -117,7 +117,7 @@ export default function CustomizedDialogs(props:any) {
       }}
       renderInput={(params) => <TextField {...params} label="ตำแหน่ง IHUB" />}
     />
-          </Typography>
+          </Typography> */}
           <Typography gutterBottom>
           <Autocomplete
       id="performance"
@@ -128,7 +128,7 @@ export default function CustomizedDialogs(props:any) {
         // console.log('onChange', newValue);
         setEditperformance(newValue);
       }}
-      renderInput={(params) => <TextField {...params} label="การปฏิบัติงาน" />}
+      renderInput={(params) => <TextField {...params} className='b-1' label="การปฏิบัติงาน" />}
     />
           </Typography>
         </DialogContent>
