@@ -12,6 +12,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import EditIcon from '@mui/icons-material/Edit';
+import { useEffect } from 'react';
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -67,6 +68,16 @@ export default function CustomizedDialogs(props:any) {
           id
                     } = props;
   const [open, setOpen] = React.useState(false);
+
+  useEffect(()=>{
+    setEditusername(userName);
+    setEditfirstname(firstName);
+    setEditlastname(lastName);
+    setEditposition(position);
+    setEditaffiliation(affiliation);
+    setEditpositionihub(positionIhub);
+    setEditperformance(performance);
+  }, []);
 
   const handleClickOpen = () => {
     setOpen(true);

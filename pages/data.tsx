@@ -27,21 +27,25 @@ export default function () {
 
   const [value4, setValue4] = useState('');
 
-  const [addusername,setAddusername] = useState('');
-  const [addfirstname,setAddfirstname] = useState('');
-  const [addlastname,setAddlastname] = useState('');
-  const [addposition,setAddposition] = useState('');
-  const [addaffiliation,setAddaffiliation] = useState('');
-  const [addpositionihub,setAddpositionihub] = useState('');
-  const [addperformance,setAddperformance] = useState('');
+  
+  const [addUserInfo, setAddUserInfo] = useState({
+    username: '',
+    firstname: '',
+    lastname: '',
+    position: '',
+    affiliation: '',
+    positionihub: { id:'', positionihub:'' },
+    performance: '',
+  });
   // const [newuser, setNewuser]= useState('');
-  const [editusername, setEditusername]= useState('');
-  const [editfirstname,setEditfirstname] = useState('');
-  const [editlastname,setEditlastname] = useState('');
-  const [editposition,setEditposition] = useState('');
-  const [editaffiliation,setEditaffiliation] = useState('');
-  const [editpositionihub,setEditpositionihub] = useState('');
-  const [editperformance,setEditperformance] = useState('');
+  const [userName, setEditusername]= useState('');
+  const [firstName,setEditfirstname] = useState('');
+  const [lastName,setEditlastname] = useState('');
+  const [position,setEditposition] = useState('');
+  const [affiliation,setEditaffiliation] = useState('');
+  const [positionihub,setEditpositionihub] = useState('');
+  const [performance,setEditperformance] = useState('');
+
 {/* ----------------------------------------------- ยิง API ข้อมูลทั้งหมด ----------------------------------------------- */}
   const fetchUsers = () => {
     // 1. ยิง api ไป nestjs เพื่อขอข้อมูล user
@@ -73,13 +77,13 @@ export default function () {
   // ฟังก์ชั่นในการยิง request ไป nestjs เพื่อเพิ่ม user ในฐานข้อมูล
   const handleAddUser = () => {
     const data = JSON.stringify({
-      "userName": addusername,
-      "firstName": addfirstname,
-      "lastName": addlastname,
-      "position": addposition,
-      "affiliation": addaffiliation,
-      "positionIhub": addpositionihub,
-      "performance": addperformance
+      "userName": addUserInfo.username,
+      "firstName": addUserInfo.firstname,
+      "lastName": addUserInfo.lastname,
+      "position": addUserInfo.position,
+      "affiliation": addUserInfo.affiliation,
+      "positionIhub": addUserInfo.positionihub,
+      "performance":addUserInfo.performance
     });
 
     const config = {
@@ -94,6 +98,8 @@ export default function () {
     .then(function (response:any) {
       console.log(JSON.stringify(response.data));
       fetchUsers();
+      // setAddusername("");
+      // setAddusername("");
     })
     .catch(function (error:any) {
       console.log(error);
@@ -118,16 +124,22 @@ export default function () {
   };  
   {/* ----------------------------------------------- ยิง API ให้ลบข้อมูล ----------------------------------------------- */}
   const handleEditUser = (id: string) => {
-    // console.log('id',id);
-    // console.log('editusername',editusername);
+    console.log('id',id);
+    console.log('userName',userName);
+    console.log('firstName',firstName);
+    console.log('lastName',lastName);
+    console.log('position',position);
+    console.log('affiliation',affiliation);
+    console.log('positionIhub',positionihub);
+    console.log('performance',performance);
     const data = JSON.stringify({
-      "userName": editusername,
-      "firstName": editfirstname,
-      "lastName": editlastname,
-      "position": editposition,
-      "affiliation": editaffiliation,
-      "positionIhub": editpositionihub,
-      "performance": editperformance
+      "userName": userName,
+      "firstName": firstName,
+      "lastName": lastName,
+      "position": position,
+      "affiliation": affiliation,
+      "positionIhub": positionihub,
+      "performance": performance
     });
     const config = {
       method: 'patch',
@@ -189,27 +201,10 @@ export default function () {
         </span>
         <div className='Dialog'>
           <Dialog
-            /* รหัสพนักงาน */
-           addusername = { addusername }
-           setAddusername = { setAddusername }
-            /* ชื่อ */
-           addfirstname = { addfirstname }
-           setAddfirstname = { setAddfirstname }
-            /* นามสกุล */
-           addlastname = { addlastname }
-           setAddlastname = { setAddlastname }
-            /* ตำแหน่งย่อ */
-           addposition = { addposition }
-           setAddposition = { setAddposition }
-            /* สังกัด */
-           addaffiliation = { addaffiliation }
-           setAddaffiliation = { setAddaffiliation }
-            /* ตำแหน่งใน ihub */
-           addpositionihub = { addpositionihub }
-           setAddpositionihub = { setAddpositionihub }
-           /* การปฏิบัติงาน */
-           addperformance = { addperformance }
-           setAddperformance = { setAddperformance }
+            /* เพิ่มพนักงาน */
+            addUserInfo = { addUserInfo }
+            setAddUserInfo = { setAddUserInfo }
+
             /* ข้อมูลพนักงาน */
            users = { users }
            setUsers = { setUsers }

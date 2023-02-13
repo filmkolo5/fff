@@ -62,20 +62,8 @@ export default function CustomizedDialogs(props : any) {
   const handleClose = () => {
     setOpen(false);
   };
-  const { addusername ,
-          setAddusername , 
-          addfirstname , 
-          setAddfirstname , 
-          addlastname , 
-          setAddlastname , 
-          addposition , 
-          setAddposition , 
-          addaffiliation , 
-          setAddaffiliation , 
-          addpositionihub , 
-          setAddpositionihub,
-          addperformance,
-          setAddperformance,
+  const { addUserInfo,
+          setAddUserInfo,
           handleAddUser } =  props;
   return (
     <div>
@@ -90,36 +78,36 @@ export default function CustomizedDialogs(props : any) {
         <DialogContent dividers>
         {/* ----------------------------------------------- รหัสพนักงาน ----------------------------------------------- */}
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
-          <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" type="text" value={ addusername } onChange={ (e) => setAddusername(e.target.value) }/>
+          <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" type="text" value={ addUserInfo.username } onChange={(e) => setAddUserInfo({ ...addUserInfo, username: e.target.value })} />
           <Button   variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} ><h5>ค้นหา</h5></Button>
         </Box>
         {/* ----------------------------------------------- ชื่อ ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined"type="text" value={ addfirstname } onChange={ (e) => setAddfirstname(e.target.value) } />
+          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined"type="text" value={ addUserInfo.firstname } onChange={(e) => setAddUserInfo({ ...addUserInfo, firstname : e.target.value })}  />
         {/* ----------------------------------------------- นามสกุล ----------------------------------------------- */}
-          <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" type="text" value={ addlastname } onChange={ (e) => setAddlastname(e.target.value) }/>
+          <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" type="text" value={ addUserInfo.lastname } onChange={(e) => setAddUserInfo({ ...addUserInfo, lastname: e.target.value })}  />
           </Box>
           </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" type="text" value={ addposition } onChange={ (e) => setAddposition(e.target.value) } />
+            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" type="text" value={ addUserInfo.position } onChange={(e) => setAddUserInfo({ ...addUserInfo, position: e.target.value })}  />
           </Box>
         </Typography>
         {/* ----------------------------------------------- สังกัด ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" type="text" value={ addaffiliation } onChange={ (e) => setAddaffiliation(e.target.value) } />
+            <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" type="text" value={ addUserInfo.affiliation } onChange={(e) => setAddUserInfo({ ...addUserInfo, affiliation: e.target.value })}  />
           </Box>
         </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ihub ----------------------------------------------- */}
         <Typography gutterBottom>
-          <PositionBox addpositionihub = { addpositionihub } setAddpositionihub = { setAddpositionihub } />
+          <PositionBox addUserInfo = { addUserInfo } setAddUserInfo = { setAddUserInfo } />
         </Typography>
         {/* ----------------------------------------------- การปฏิบัติงาน ----------------------------------------------- */}
         <Typography gutterBottom>
-          <Performance addperformance = { addperformance } setAddperformance = { setAddperformance }/>
+          <Performance addUserInfo = { addUserInfo } setAddUserInfo = { setAddUserInfo }/>
         </Typography>
         </DialogContent>
         {/* ----------------------------------------------- ปุ่มยกเลิก ----------------------------------------------- */}
