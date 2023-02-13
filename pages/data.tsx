@@ -237,6 +237,7 @@ export default function () {
             {/* {<Column sortable header='ตำแหน่ง IHub' field='positionIhub' className='ui-column-data' />} */}
             <Column sortable header='การปฏิบัติงาน'field='performance'  body={(rowData) =><div className="full-time-body" >{ rowData.performance } </div>}className='ui-column-data' />
             <Column body={action}></Column>
+            
           </DataTable>
         </div>
       </div>

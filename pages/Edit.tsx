@@ -87,7 +87,7 @@ export default function CustomizedDialogs(props:any) {
         <DialogContent dividers>
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
       <TextField className='b-0' label="รหัสพนักงาน" defaultValue = { userName } onChange={ (e) => setEditusername(e.target.value) } />
-      <Button  variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} >ค้นหา</Button>
+      <Button  variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} ><h5>ค้นหา</h5></Button>
     </Box>
           <Typography gutterBottom>
           <Box  sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
