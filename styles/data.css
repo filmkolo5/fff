@@ -451,6 +451,10 @@ h5{
     padding: 6px;
     gap: 10px;
  } 
+ .positionIhub-body{
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+ }
 i {
     z-index: 1;
   }
