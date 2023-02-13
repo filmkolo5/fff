@@ -66,7 +66,7 @@ export default function CustomizedDialogs(props : any) {
           handleAddUser } =  props;
   return (
     <div>
-      <Button className="contained" variant="contained"onClick={handleClickOpen} sx={{backgroundColor:'#F7CD8E',"&:hover":{backgroundColor:'#e29521'}}}> <h5>+ เพิ่มข้อมูลพนักงาน</h5></Button>
+      <Button className="contained" variant="contained"onClick={handleClickOpen} sx={{backgroundColor:'#4C3364',"&:hover":{backgroundColor:'#4C3364'}}}> <h5>+ เพิ่มข้อมูลพนักงาน</h5></Button>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -78,7 +78,7 @@ export default function CustomizedDialogs(props : any) {
         {/* ----------------------------------------------- รหัสพนักงาน ----------------------------------------------- */}
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
           <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" type="text" value={ addUserInfo.username } onChange={(e) => setAddUserInfo({ ...addUserInfo, username: e.target.value })} />
-          <Button   variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} ><h5>ค้นหา</h5></Button>
+          <Button   variant="contained" color="secondary"   sx={{backgroundColor:'#4C3364',"&:hover":{backgroundColor:'#3F0E74'}}} ><h5>ค้นหา</h5></Button>
         </Box>
         {/* ----------------------------------------------- ชื่อ ----------------------------------------------- */}
         <Typography gutterBottom>
@@ -119,7 +119,7 @@ export default function CustomizedDialogs(props : any) {
              handleClose();
             }} 
           className='bt-2' 
-          sx={{backgroundColor:'#7F669D',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#b499d3'}}} 
+          sx={{backgroundColor:'#4C3364',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#3F0E74'}}} 
           variant="contained" >
             <h5>บันทึก</h5>
           </Button>

@@ -88,7 +88,7 @@ export default function CustomizedDialogs(props:any) {
   return (
     <div>
       <Button variant="text"onClick={handleClickOpen} > 
-      <EditIcon  sx={{ color: '#BDCDD6'}}   />
+      <EditIcon  sx={{ color: '#4C3364'}}   />
       </Button>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title"open={open}>
         <BootstrapDialogTitle  id="customized-dialog-title " onClose={handleClose} >
@@ -98,7 +98,7 @@ export default function CustomizedDialogs(props:any) {
         <DialogContent dividers>
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
       <TextField className='b-0' label="รหัสพนักงาน" defaultValue = { userName } onChange={ (e) => setEditusername(e.target.value) } />
-      <Button  variant="contained" color="secondary"   sx={{backgroundColor:'#7F669D',"&:hover":{backgroundColor:'#b499d3'}}} ><h5>ค้นหา</h5></Button>
+      <Button  variant="contained" color="secondary"   sx={{backgroundColor:'#4C3364',"&:hover":{backgroundColor:'#4C3364'}}} ><h5>ค้นหา</h5></Button>
     </Box>
           <Typography gutterBottom>
           <Box  sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
@@ -148,7 +148,7 @@ export default function CustomizedDialogs(props:any) {
         <Button autoFocus onClick={()=>{
              handleEditUser(id);
              handleClose();
-            }} className='bt-2'  sx={{backgroundColor:'#7F669D',color:'#FFFFFF',width:210,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained"><h5>บันทึก</h5></Button>
+            }} className='bt-2'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:210,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained"><h5>บันทึก</h5></Button>
         </DialogActions>
       </BootstrapDialog>
     </div>

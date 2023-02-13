@@ -6,7 +6,7 @@ const FileUploadButton: React.FC<Props> = () => {
   return (
     <div className="UPLOAD">
       <input type="file"  id="fileInput" onChange={handleFileChange} />
-      <label htmlFor="เลือกไฟล์เพื่ออัปโหลด"  >
+      <label className="UPLOAD1" htmlFor="เลือกไฟล์เพื่ออัปโหลด"  >
       </label>
     </div>
   );

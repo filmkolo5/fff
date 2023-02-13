@@ -39,17 +39,17 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
       <div className='logo_ihub' >
         <div className='left-menu'>
           <div className='start-menu'>
-            <img src="/img/1.png" alt='' height={60} />
+            <img src="/img/logo1.png" alt='' height={70} />
             <a className='logo-header'>PEA  IHub </a>
           </div>
           <div className='menu'>
           <Link href='/data'>
           <FiUsers/> ข้อมูลบุคลากร 
             </Link>
-          <Link href='/'>
+          <Link href=''>
            <HiOutlineDocumentText/> หลักสูตร
             </Link>
-          <Link href='/'>
+          <Link href=''>
            <HiOutlineDatabase/> งบประมาณ
             </Link>
         <div className="dropdown-link">
@@ -71,7 +71,7 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
         <Link href='/login'>
           {/* <CiLogin/>  Login */}
           <Stack direction="row" spacing={2}>
-      <Avatar sx={{ backgroundColor:'#7F669D',width: 25 ,height: 25 ,fontSize:14}}>PH</Avatar>
+      <Avatar sx={{ backgroundColor:'#9898CA',width: 25 ,height: 25 ,fontSize:14}}>PH</Avatar>
     </Stack>
           </Link>
         </div>

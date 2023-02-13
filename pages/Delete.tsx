@@ -22,7 +22,7 @@ export default function AlertDialog(props:any) {
     <div>
 
       <Button variant="text"onClick={handleClickOpen}>
-      <DeleteIcon sx={{ color: '#BDCDD6'}} />
+      <DeleteIcon sx={{ color: '#513252'}} />
       </Button>
       <Dialog
         open={open}
@@ -31,14 +31,14 @@ export default function AlertDialog(props:any) {
         aria-describedby="alert-dialog-description"
       >
         <DialogContent>
-        <DeleteOutlineIcon  sx={{ fontSize: 150 , color: '#FF0032',mx:16 }} />
+        <DeleteOutlineIcon  sx={{ fontSize: 150 , color: '#4C3364',mx:16 }} />
           <DialogContentText id="alert-dialog-description"sx={{color: '#000',ml:10 }} >
     <h4>คุณแน่ใจหรือไม่ว่าคุณต้องการลบรายชื่อนี้?</h4>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button  variant="outlined"   sx={{color:'black',width:135,ml:10,mb:2,borderColor:'black',"&:hover":{borderColor:'black'}}}onClick={handleClose}><h4>ยกเลิก</h4></Button>
-          <Button  variant="contained"   sx={{backgroundColor:'#FF0032',color:'#FFFFFF',width:135,mr:10,mb:2,"&:hover":{backgroundColor:'#FF0032'}}} 
+          <Button  variant="contained"   sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:135,mr:10,mb:2,"&:hover":{backgroundColor:'#6B005B'}}} 
            onClick={()=>{
             handleDeleteUser(id);
             handleClose();

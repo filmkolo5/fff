@@ -132,7 +132,7 @@ export default function SelectLabels() {
     <DialogActions >
           <Button autoFocus onClick={handleClose} className='bt-1' sx={{m:1,color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
           <Link href='/project2'>
-          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#3A1062',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
           </Link>
           </DialogActions>
     </div>  

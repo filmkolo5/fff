@@ -3,9 +3,10 @@ body {
 }
   
   /* หน้าสร้างโครงการ */
-  .HEAD-PROJECT1{
+  .HEAD-PROJECT1 h3{
     font-family: 'Kanit', sans-serif;
     font-size: 25px;
+    margin-bottom: 10px;
     color: #000000;
   }
   

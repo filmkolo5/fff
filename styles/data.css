@@ -12,7 +12,8 @@ header {
     display: flex;
     width: 100vw;
     height: 70px;
-    background: linear-gradient(90.25deg, #7F669D 0%, #BA94D1 30%, #DEBACE 60%, #F7CD8E 90%);
+    /* background: linear-gradient(90.25deg, #7F669D 0%, #BA94D1 30%, #DEBACE 60%, #F7CD8E 90%); */
+    background: #4C3364;;
     padding-left: 96px;
     padding-right: 96px;
 }
@@ -54,7 +55,7 @@ header {
   .dropdown  {
     position: absolute;
     display: block;
-    background-color: #BA94D1 ;
+    background-color: #9898CA; ;
     top: 120%;
     opacity: 0;
     visibility: hidden;
@@ -442,15 +443,27 @@ h5{
 
 }
 .full-time-body {
+   
     text-align: center;
     color: #ffffff;
     font-family: 'Kanit', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     background-color: #4C3364;
     border-radius: 24px;
-    padding: 6px;
-    gap: 10px;
+    width: 90px;
+    
  } 
+
+ .ihubbody body{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 12px;
+    background-color: #4C3364;
+    border-radius:4px;
+    width: 20px;
+ }
+
  .positionIhub-body{
     font-family: 'Kanit', sans-serif;
     font-size: 18px;
@@ -461,3 +474,6 @@ i {
   ::ng-deep .p-autocomplete .p-inputtext {
     padding-left: 28px;
   }
+.UPLOAD1{
+    margin-left: -110px;
+}

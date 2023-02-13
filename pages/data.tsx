@@ -224,13 +224,13 @@ export default function () {
 
           <DataTable value={[...users]} globalFilter={globalFilter} paginator paginatorTemplate={template2}  first={0} rows={10}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow'>
 
-            <Column sortable header='ลำดับ' field='number' className='ui-column-data' />
-            <Column sortable header='รหัสพนักงาน' field='userName' className='ui-column-data' />
-            <Column sortable header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
-            <Column sortable header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
-            <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
-            <Column sortable header='ตำแหน่ง IHub' field='positionIhub' className='ui-column-data' />
-            <Column sortable header='การปฏิบัติงาน'field='performance'  body={(rowData) =><div className="full-time-body" >{ rowData.performance } </div>}className='ui-column-data' />
+            <Column header='ลำดับ' field='number' className='ui-column-data' />
+            <Column header='รหัสพนักงาน' field='userName' className='ui-column-data' />
+            <Column header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
+            <Column header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
+            <Column header='สังกัด' field='affiliation' className='ui-column-data' />
+            <Column header='ตำแหน่ง IHub'  className="ihubbody"    field='positionIhub'  />
+            <Column header='การปฏิบัติงาน'field='performance'  body={(rowData) =><div className="full-time-body" >{ rowData.performance } </div>}className='ui-column-data' />
             <Column body={action}></Column>
             
           </DataTable>
