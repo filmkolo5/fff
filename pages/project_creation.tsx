@@ -13,8 +13,19 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 //npm install dayjs --save
 import dayjs, { Dayjs } from 'dayjs';
 import Link from 'next/link';
+import FileUpload  from './FileUpload';
+
 
 export default function SelectLabels() {
+  const [error, setError] = React.useState(false);
+
+  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.value) {
+      setError(true);
+    } else {
+      setError(false);
+    }
+  };
   const PROJECT = [
     { label: 'GEMs'},
     { label: 'AdHoc'},
@@ -60,7 +71,15 @@ export default function SelectLabels() {
       <h3>GEN/BATCH :</h3>
       <Box component="form"
       sx={{'& > :not(style)': { width: '75ch' }, }} noValidate autoComplete="off">
-      <TextField id="outlined-basic" label="กรุณากรอก Gen/Batch  " variant="outlined" />
+      <TextField
+    id="outlined-basic"
+    label="กรุณากรอก Gen/Batch"
+    variant="outlined"
+    required
+    error={error}
+    helperText={error ? "This field is required." : ""}
+    onChange={handleChange1}
+  />
     </Box>
       </div>
       <div className='PROJECT-3' >
@@ -103,14 +122,12 @@ export default function SelectLabels() {
           <h3>อนุมัติให้จัดโครงการ :</h3>
           <Box component="span" sx={{ width:600, height: 140,p: 2, border: '1px dashed grey' }}>
           <Button component="label" sx={{ width:565, height: 100,p: 2 ,"&:hover":{backgroundColor:'#ffff'}}} >
-          <h4>เลือกไฟล์เพื่ออัปโหลด</h4>
-        <input hidden accept="file" multiple type="file" />
+          {/* <input hidden accept="image/*" multiple type="file" /> */}
+          <FileUpload/>
+          
       </Button>
     </Box>
           </div>
-
-
-
           <div className='PROJECT-6'>
     <DialogActions >
           <Button autoFocus onClick={handleClose} className='bt-1' sx={{m:1,color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
