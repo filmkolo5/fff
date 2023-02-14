@@ -17,6 +17,7 @@ import '../styles/globals.css'
 import "../styles/project_creation.css"
 import "../styles/projects.css"
 import "../styles/project2.css"
+import "../styles/project3.css"
 import "../styles/ICON-EDIT-DE.css"
 
 // Avatar LOGIN 
@@ -59,7 +60,7 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
       < div className="dropdown">
       <Link href='/project_creation'>
          <HiDocumentPlus/>การสร้างโครงการ </Link>
-      <Link href='/projects'>
+      <Link href='/project3'>
         <TbListDetails/>รายละเอียดโครงการ</Link>
           </div>
     

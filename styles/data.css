@@ -55,12 +55,10 @@ header {
   .dropdown  {
     position: absolute;
     display: block;
-    background-color: #9898CA; ;
+    background-color: #7F669D; 
     top: 120%;
     opacity: 0;
     visibility: hidden;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: 0.3s;
     width: 200px;
   }
@@ -72,11 +70,12 @@ header {
     margin-top: 10px;
     margin-bottom: 10px;
    
-    
-  
-  
   }
   
+  .dropdown a:hover {
+    background-color: #BA94D1;
+  }
+
   .dropdown-link:hover .dropdown {
     
     opacity: 1;
@@ -84,6 +83,8 @@ header {
   }
   .dropdown-link:hover a i {
     transform: rotate(-180deg);
+
+    
   }
 .login-ihub {
     margin-left: 300px;
