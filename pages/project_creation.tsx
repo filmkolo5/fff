@@ -25,7 +25,7 @@ export default function SelectLabels() {
   const handleSubmit = (event:any) => {
     event.preventDefault();
     if (!name) {
-      setNameError('Name is required');
+      setNameError('** กรุณาใส่ข้อมูลให้ครบถ้วน');
       return;
     }
     if (nameError) {
@@ -42,7 +42,7 @@ export default function SelectLabels() {
       const value = event.target.value.trim();
       setName(value);
       if (!value) {
-        setNameError('Name is required');
+        setNameError('** กรุณากรอกข้อมูล');
       } else {
         setNameError('');
       }
@@ -71,10 +71,10 @@ export default function SelectLabels() {
     setOpen(false);
   };
     const [value, setValue] = React.useState<Dayjs | null>(
-      dayjs('2023-01-01'),
+      dayjs(''),
     );
     const [value2, setValue2] = React.useState<Dayjs | null>(
-      dayjs('2023-02-02'),
+      dayjs(''),
     );
   
     const handleChange = (newValue: Dayjs | null) => {
@@ -94,7 +94,7 @@ export default function SelectLabels() {
         <div className='PROJECT-1' >
         <h3>โครงการหลัก :</h3>
         <Autocomplete   disablePortal id="combo-box-demo"options={PROJECT}
-    sx={{  width: 600}}renderInput={(params) => <TextField {...params} label="กรุณาเลือกโครงการ" />}/>
+    sx={{  width: 600}}renderInput={(params) => <TextField {...params} label="กรุณาเลือกโครงการ" error={!!nameError} helperText={nameError}/>}/>
       </div>
       <div className='PROJECT-2' >
       <h3>GEN/BATCH :</h3>
@@ -113,7 +113,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={(params) => <TextField {...params} error={!!nameError} helperText={nameError}/>}
         />
       </Stack>
     <h3>วันสิ้นสุด :</h3>
@@ -124,7 +124,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value2}
           onChange={handleChange2}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={(params) => <TextField {...params} error={!!nameError} helperText={nameError}/>}
         />
       </Stack>
     </LocalizationProvider>
@@ -135,7 +135,7 @@ export default function SelectLabels() {
       sx={{'& > :not(style)': { width: '75ch' }, height:100}} noValidate autoComplete="off">
          <TextField
           id="outlined-multiline-static"
-          label="กรุณากรอกรายละเอียด" multiline rows={4}/>
+          label="กรุณากรอกรายละเอียด" multiline rows={4} />
     </Box>
     </div>
 
