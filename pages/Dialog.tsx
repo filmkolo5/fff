@@ -80,6 +80,7 @@ export default function CustomizedDialogs(props : any) {
     const hasEmptyInput = Object.values(addUserInfo).some(val => val === '');
     setIsInputsEmpty(hasEmptyInput);
   }, [addUserInfo]);
+  
 
   return (
     <div>
@@ -94,27 +95,27 @@ export default function CustomizedDialogs(props : any) {
         <DialogContent dividers>
         {/* ----------------------------------------------- รหัสพนักงาน ----------------------------------------------- */}
         <Box sx={{'& > :not(style )': {  m: 1, width: '50' },}}>
-          <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" type="text" value={ addUserInfo.username } onChange={(e) => setAddUserInfo({ ...addUserInfo, username: e.target.value })} />
+          <TextField className='b-0' id="outlined-basic" label="รหัสพนักงาน" variant="outlined" type="text" value={ addUserInfo.username } onChange={(e) => setAddUserInfo({ ...addUserInfo, username: e.target.value })} error={isInputsEmpty && addUserInfo.username === ''}helperText={isInputsEmpty && addUserInfo.username === '' ? 'กรุณากรอกรหัสพนักงาน' : ''}/>
           <Button   variant="contained" color="secondary"   sx={{backgroundColor:'#4C3364',"&:hover":{backgroundColor:'#3F0E74'}}} ><h5>ค้นหา</h5></Button>
         </Box>
         {/* ----------------------------------------------- ชื่อ ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '193px' ,},}}>
-          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined"type="text" value={ addUserInfo.firstname } onChange={(e) => setAddUserInfo({ ...addUserInfo, firstname : e.target.value })}  />
+          <TextField  className='b-0' id="outlined-basic" label="ชื่อ" variant="outlined"type="text" value={ addUserInfo.firstname } onChange={(e) => setAddUserInfo({ ...addUserInfo, firstname : e.target.value })} error={isInputsEmpty && addUserInfo.firstname === ''}helperText={isInputsEmpty && addUserInfo.firstname === '' ? 'กรุณากรอกชื่อ' : ''}  />
         {/* ----------------------------------------------- นามสกุล ----------------------------------------------- */}
-          <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" type="text" value={ addUserInfo.lastname } onChange={(e) => setAddUserInfo({ ...addUserInfo, lastname: e.target.value })}  />
+          <TextField  className='b-0' id="outlined-basic" label="นามสุกล" variant="outlined" type="text" value={ addUserInfo.lastname } onChange={(e) => setAddUserInfo({ ...addUserInfo, lastname: e.target.value })} error={isInputsEmpty && addUserInfo.lastname === ''}helperText={isInputsEmpty && addUserInfo.lastname === '' ? 'กรุณากรอกนามสกุล' : ''} />
           </Box>
           </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" type="text" value={ addUserInfo.position } onChange={(e) => setAddUserInfo({ ...addUserInfo, position: e.target.value })}  />
+            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" type="text" value={ addUserInfo.position } onChange={(e) => setAddUserInfo({ ...addUserInfo, position: e.target.value })}  error={isInputsEmpty && addUserInfo.position === ''}helperText={isInputsEmpty && addUserInfo.position === '' ? 'กรุณากรอกตำแหน่ง' : ''} />
           </Box>
         </Typography>
         {/* ----------------------------------------------- สังกัด ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" type="text" value={ addUserInfo.affiliation } onChange={(e) => setAddUserInfo({ ...addUserInfo, affiliation: e.target.value })}  />
+            <TextField className='b-0' id="outlined-basic" label="สังกัด" variant="outlined" type="text" value={ addUserInfo.affiliation } onChange={(e) => setAddUserInfo({ ...addUserInfo, affiliation: e.target.value })}  error={isInputsEmpty && addUserInfo.affiliation === ''}helperText={isInputsEmpty && addUserInfo.affiliation === '' ? 'กรุณากรอกสังกัด' : ''} />
           </Box>
         </Typography>
         {/* ----------------------------------------------- ตำแหน่ง ihub -----------------------------------------------
