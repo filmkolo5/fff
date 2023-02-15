@@ -53,13 +53,13 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
             </Link>
         <div className="dropdown-link">
         <Link href='/projects'>
-      <IoIosSchool/> โครงการ<HiChevronDown/>
+      <IoIosSchool/>  โครงการ<HiChevronDown/>
       </Link>
       < div className="dropdown">
       <Link href='/project_creation'>
-         <HiDocumentPlus/>การสร้างโครงการ </Link>
+         <HiDocumentPlus/>  การสร้างโครงการ </Link>
       <Link href='/project3'>
-        <TbListDetails/>รายละเอียดโครงการ</Link>
+        <TbListDetails/>  รายละเอียดโครงการ</Link>
           </div>
 </div>
           </div>

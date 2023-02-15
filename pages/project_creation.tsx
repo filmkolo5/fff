@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 // import Box from '@mui/material/Box';
@@ -18,6 +20,33 @@ import FileUpload  from './FileUpload';
 
 export default function SelectLabels() {
   const [error, setError] = React.useState(false);
+  const router = useRouter();
+
+  const handleSubmit = (event:any) => {
+    event.preventDefault();
+    if (!name) {
+      setNameError('Name is required');
+      return;
+    }
+    if (nameError) {
+      return;
+    }
+    console.log('Form submitted with name:', name);
+    router.push('/project2'); // replace with the path to your next page
+  };
+  
+    const [name, setName] = useState('');
+    const [nameError, setNameError] = useState('');
+  
+    const handleNameChange = (event:any) => {
+      const value = event.target.value.trim();
+      setName(value);
+      if (!value) {
+        setNameError('Name is required');
+      } else {
+        setNameError('');
+      }
+    };
 
   const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!event.target.value) {
@@ -69,18 +98,10 @@ export default function SelectLabels() {
       </div>
       <div className='PROJECT-2' >
       <h3>GEN/BATCH :</h3>
-      <Box component="form"
-      sx={{'& > :not(style)': { width: '75ch' }, }} noValidate autoComplete="off">
-      <TextField
-    id="outlined-basic"
-    label="กรุณากรอก Gen/Batch"
-    variant="outlined"
-    required
-    error={error}
-    helperText={error ? "This field is required." : ""}
-    onChange={handleChange1}
-  />
-    </Box>
+      <form onSubmit={handleSubmit} >
+      <TextField  sx={{  width: 600}} label="GEN/BATCH" variant="outlined" 
+        value={name} onChange={handleNameChange}error={!!nameError} helperText={nameError}/>
+        </form>
       </div>
       <div className='PROJECT-3' >
       <h3>วันเริ่มต้น :</h3>
@@ -129,12 +150,9 @@ export default function SelectLabels() {
     </Box>
           </div>
           <div className='PROJECT-6'>
-    <DialogActions >
-          <Button autoFocus onClick={handleClose} className='bt-1' sx={{m:1,color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
-          <Link href='/project2'>
-          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
-          </Link>
-          </DialogActions>
+          <form onSubmit={handleSubmit} >
+          <Button  type="submit" autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
+    </form>
     </div>  
         </div>
 
