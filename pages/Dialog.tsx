@@ -12,6 +12,8 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import { Performance } from '../components/performance';
 import { PositionBox } from '../components/positionBox';
+import { Toast } from 'primereact/toast';
+ 
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -21,14 +23,11 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(1),
   },
 }));
-
 export interface DialogTitleProps {
   id: string;
   children?: React.ReactNode;
   onClose: () => void;
 }
-
-
 function BootstrapDialogTitle(props: DialogTitleProps) {
   const { children, onClose, ...other } = props;
 
@@ -52,18 +51,36 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
     </DialogTitle>
   );
 }
-
 export default function CustomizedDialogs(props : any) {
   const [open, setOpen] = React.useState(false);
+  const [isInputsEmpty, setIsInputsEmpty] = React.useState(true); // State to keep track of empty input fields
+  const toast = React.useRef<Toast>(null); // Define a ref for the Toast component  
   const handleClickOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
-  const { addUserInfo,
-          setAddUserInfo,
-          handleAddUser } =  props;
+  const  ShowToastSuccess= () => {
+    // Show a success toast notification
+    toast.current?.show({
+      severity: 'success',
+      summary: 'บันทึกข้อมูลบุคคลเสร็จสิ้น',
+      life: 3000,
+      style: { 
+        fontFamily: 'Kanit',
+        fontSize: '16px'
+      }
+    });
+    handleClose(); // Close the dialog
+  };
+  const { addUserInfo, setAddUserInfo ,handleAddUser} = props;
+
+  React.useEffect(() => {
+    const hasEmptyInput = Object.values(addUserInfo).some(val => val === '');
+    setIsInputsEmpty(hasEmptyInput);
+  }, [addUserInfo]);
+
   return (
     <div>
       <Button className="contained" variant="contained"onClick={handleClickOpen} sx={{backgroundColor:'#4C3364',"&:hover":{backgroundColor:'#4C3364'}}}> <h5>+ เพิ่มข้อมูลพนักงาน</h5></Button>
@@ -113,18 +130,16 @@ export default function CustomizedDialogs(props : any) {
         <DialogActions>
           <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
         {/* ----------------------------------------------- ปุ่มบันทึก ----------------------------------------------- */}
-          <Button autoFocus 
-          onClick={()=>{
+        <Button autoFocus  onClick={()=>{
              handleAddUser();
              handleClose();
-            }} 
-          className='bt-2' 
-          sx={{backgroundColor:'#4C3364',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#3F0E74'}}} 
-          variant="contained" >
+             ShowToastSuccess();
+            }}  color="success" className='bt-2' sx={{backgroundColor:'#4C3364',color:'#FFFFFF',m: 1,width:200,"&:hover":{backgroundColor:'#3F0E74'}}} variant="contained" >
             <h5>บันทึก</h5>
           </Button>
         </DialogActions>
       </BootstrapDialog>
+      <Toast ref={toast} />
     </div>
   );
 };
