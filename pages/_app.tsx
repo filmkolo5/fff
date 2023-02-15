@@ -24,9 +24,7 @@ import "../styles/ICON-EDIT-DE.css"
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { deepOrange, deepPurple } from '@mui/material/colors';
-
   export default function App({ Component, pageProps }: AppProps) {
-
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -63,9 +61,7 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
       <Link href='/project3'>
         <TbListDetails/>รายละเอียดโครงการ</Link>
           </div>
-    
 </div>
-
           </div>
         </div>
         <div className='login-ihub'>
@@ -82,7 +78,5 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
     <Component {...pageProps} />
     </div>
   </div>
-
   // router.pathname == "/login"
-
 }

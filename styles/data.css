@@ -73,7 +73,13 @@ header {
   }
   
   .dropdown a:hover {
+    height: 50px;
+    width: 200px;
     background-color: #BA94D1;
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
   }
 
   .dropdown-link:hover .dropdown {

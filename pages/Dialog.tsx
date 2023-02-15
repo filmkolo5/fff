@@ -131,7 +131,7 @@ export default function CustomizedDialogs(props : any) {
         <DialogActions>
           <Button autoFocus onClick={handleClose} className='bt-1' sx={{color:'black',m: 1,width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
         {/* ----------------------------------------------- ปุ่มบันทึก ----------------------------------------------- */}
-        <Button autoFocus  onClick={()=>{
+        <Button autoFocus  disabled={isInputsEmpty} onClick={()=>{
              handleAddUser();
              handleClose();
              ShowToastSuccess();
