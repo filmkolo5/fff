@@ -23,29 +23,27 @@ export default function SelectLabels() {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    if (!name1) {
+      setName1Error('** กรุณากรอกข้อมูล');
+    } else {
+      setName1Error('');
+    }
     if (!name) {
-      setNameError('Name is required');
+      setNameError('** กรุณากรอกข้อมูล');
     } else {
       setNameError('');
     }
-    if (!age) {
-      setAgeError('Age is required');
-    } else {
-      setAgeError('');
-    }
-    if (name && age) {
-      console.log('Form submitted with name:', name, 'and age:', age);
-      router.push('/project2'); // replace with the path to your next page
+    if (name1 && name) {
+      console.log('Form submitted with name:', name1, 'and age:', name);
+      router.push('/data');
     }
   };
-
 
   
     const [name, setName] = useState('');
     const [nameError, setNameError] = useState('');
-    const [age, setAge] = useState('');
-    const [ageError, setAgeError] = useState('');
-  
+    const [name1, setName1] = useState('');
+  const [name1Error, setName1Error] = useState('');
 
 
 
@@ -54,22 +52,21 @@ export default function SelectLabels() {
       const value = event.target.value.trim();
       setName(value);
       if (!value) {
-        setNameError('** กรุณากรอกข้อมูล');
+        setNameError('');
       } else {
         setNameError('');
       }
     };
 
-    const handleAgeChange = (event:any) => {
-      const value = event.target.value;
-      setAge(value);
+    const handleName1Change = (event: any, value: string | null) => {
       if (!value) {
-        setAgeError('** กรุณากรอกข้อมูล');
+        setName1Error('');
       } else {
-        setAgeError('');
+        setName1Error('');
       }
+      setName1(value || '');
     };
-
+  
 
 
   const PROJECT = [
@@ -110,21 +107,10 @@ export default function SelectLabels() {
           <h3>สร้างโครงการ</h3>
         <div className='PROJECT-1' >
         <h3>โครงการหลัก :</h3>
-      <Select sx={{  width: 600}}  value={age} onChange={handleAgeChange} error={!!ageError} >
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
-      </Select>
-
-      {/* <Autocomplete disablePortal id="combo-box-demo"
-options={PROJECT}
-  sx={{ width: 300 }}
-  renderInput={(params) => <TextField {...params} label="Movie" value={age} onChange={handleAgeChange} error={!!ageError}     />}
-/>
- */}
+     
+        <Autocomplete sx={{  width: 600}}   id="name" options={['GEMs', 'AdHoc', 'DevPool',]}
+        value={name1} onChange={handleName1Change}renderInput={(params) => (
+          <TextField {...params} label="โครงการหลัก"  variant="outlined" error={!!name1Error} helperText={name1Error}/> )}/>
       </div>
       <div className='PROJECT-2' >
       <h3>GEN/BATCH :</h3>

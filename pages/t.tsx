@@ -1,65 +1,83 @@
-import { useState } from 'react';
-import { TextField, Button, Select, MenuItem, InputLabel } from '@mui/material';
+import { Autocomplete, Button, TextField } from '@mui/material';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 export default function Form() {
   const router = useRouter();
-
-  const [name, setName] = useState('');
-  const [nameError, setNameError] = useState('');
+  const [name1, setName1] = useState('');
+  const [name1Error, setName1Error] = useState('');
   const [age, setAge] = useState('');
   const [ageError, setAgeError] = useState('');
 
-  const handleNameChange = (event:any) => {
-    const value = event.target.value.trim();
-    setName(value);
+  const handleName1Change = (event: any, value: string | null) => {
     if (!value) {
-      setNameError('Name is required');
+      setName1Error('Name is required');
     } else {
-      setNameError('');
+      setName1Error('');
     }
+    setName1(value || '');
   };
 
-  const handleAgeChange = (event:any) => {
-    const value = event.target.value;
-    setAge(value);
+  const handleAgeChange = (event: any, value: string | null) => {
     if (!value) {
       setAgeError('Age is required');
     } else {
       setAgeError('');
     }
+    setAge(value || '');
   };
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    if (!name) {
-      setNameError('Name is required');
+    if (!name1) {
+      setName1Error('Name is required');
     } else {
-      setNameError('');
+      setName1Error('');
     }
     if (!age) {
       setAgeError('Age is required');
     } else {
       setAgeError('');
     }
-    if (name && age) {
-      console.log('Form submitted with name:', name, 'and age:', age);
-      router.push('/data'); // replace with the path to your next page
+    if (name1 && age) {
+      console.log('Form submitted with name:', name1, 'and age:', age);
+      router.push('/data');
     }
   };
+
   return (
     <form onSubmit={handleSubmit}>
-      <TextField label="Name" variant="outlined" value={name} onChange={handleNameChange} error={!!nameError} helperText={nameError} />
-      <InputLabel id="age-label">Age</InputLabel>
-      <Select labelId="age-label" value={age} onChange={handleAgeChange} error={!!ageError} >
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
-      </Select>
-      
+      <Autocomplete
+        id="name"
+        options={['John', 'Jane', 'Doe', 'Joe']}
+        value={name1}
+        onChange={handleName1Change}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Name"
+            variant="outlined"
+            error={!!name1Error}
+            helperText={name1Error}
+          />
+        )}
+      />
+      <Autocomplete
+        id="age"
+        options={['10', '20', '30']}
+        value={age}
+        onChange={handleAgeChange}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Age"
+            variant="outlined"
+            error={!!ageError}
+            helperText={ageError}
+          />
+        )}
+      />
+
       <Button type="submit" variant="contained" color="primary">
         Submit
       </Button>
