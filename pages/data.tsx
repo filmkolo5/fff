@@ -229,7 +229,7 @@ export default function () {
             <Column header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
             <Column header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
             <Column header='สังกัด' field='affiliation' className='ui-column-data' />
-            <Column header='ตำแหน่ง IHub'  className="ihubbody"    field='positionIhub'  />
+            <Column header='ตำแหน่ง IHub'  className='ui-column-data'    field='positionIhub'  />
             <Column header='การปฏิบัติงาน'field='performance'  body={(rowData) =><div className="full-time-body" >{ rowData.performance } </div>}className='ui-column-data' />
             <Column body={action}></Column>
             

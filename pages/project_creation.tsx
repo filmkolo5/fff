@@ -1,10 +1,10 @@
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Autocomplete from '@mui/material/Autocomplete';
 // import Box from '@mui/material/Box';
 import  Box  from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import DialogActions from '@mui/material/DialogActions';
 //npm install @mui/x-date-pickers
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
@@ -14,18 +14,61 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from 'dayjs';
 import Link from 'next/link';
 import FileUpload  from './FileUpload';
-
+import { TextField, Button, Select, MenuItem, InputLabel } from '@mui/material';
 
 export default function SelectLabels() {
   const [error, setError] = React.useState(false);
+  const router = useRouter();
 
-  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (!event.target.value) {
-      setError(true);
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    if (!name1) {
+      setName1Error('** กรุณากรอกข้อมูล');
     } else {
-      setError(false);
+      setName1Error('');
+    }
+    if (!name) {
+      setNameError('** กรุณากรอกข้อมูล');
+    } else {
+      setNameError('');
+    }
+    if (name1 && name) {
+      console.log('Form submitted with name:', name1, 'and age:', name);
+      router.push('/data');
     }
   };
+
+  
+    const [name, setName] = useState('');
+    const [nameError, setNameError] = useState('');
+    const [name1, setName1] = useState('');
+  const [name1Error, setName1Error] = useState('');
+
+
+
+
+    const handleNameChange = (event:any) => {
+      const value = event.target.value.trim();
+      setName(value);
+      if (!value) {
+        setNameError('');
+      } else {
+        setNameError('');
+      }
+    };
+
+    const handleName1Change = (event: any, value: string | null) => {
+      if (!value) {
+        setName1Error('');
+      } else {
+        setName1Error('');
+      }
+      setName1(value || '');
+    };
+  
+
+
   const PROJECT = [
     { label: 'GEMs'},
     { label: 'AdHoc'},
@@ -42,10 +85,10 @@ export default function SelectLabels() {
     setOpen(false);
   };
     const [value, setValue] = React.useState<Dayjs | null>(
-      dayjs('2023-01-01'),
+      dayjs(''),
     );
     const [value2, setValue2] = React.useState<Dayjs | null>(
-      dayjs('2023-02-02'),
+      dayjs(''),
     );
   
     const handleChange = (newValue: Dayjs | null) => {
@@ -64,23 +107,17 @@ export default function SelectLabels() {
           <h3>สร้างโครงการ</h3>
         <div className='PROJECT-1' >
         <h3>โครงการหลัก :</h3>
-        <Autocomplete   disablePortal id="combo-box-demo"options={PROJECT}
-    sx={{  width: 600}}renderInput={(params) => <TextField {...params} label="กรุณาเลือกโครงการ" />}/>
+     
+        <Autocomplete sx={{  width: 600}}   id="name" options={['GEMs', 'AdHoc', 'DevPool',]}
+        value={name1} onChange={handleName1Change}renderInput={(params) => (
+          <TextField {...params} label="โครงการหลัก"  variant="outlined" error={!!name1Error} helperText={name1Error}/> )}/>
       </div>
       <div className='PROJECT-2' >
       <h3>GEN/BATCH :</h3>
-      <Box component="form"
-      sx={{'& > :not(style)': { width: '75ch' }, }} noValidate autoComplete="off">
-      <TextField
-    id="outlined-basic"
-    label="กรุณากรอก Gen/Batch"
-    variant="outlined"
-    required
-    error={error}
-    helperText={error ? "This field is required." : ""}
-    onChange={handleChange1}
-  />
-    </Box>
+      <form onSubmit={handleSubmit} >
+      <TextField  sx={{  width: 600}} label="GEN/BATCH" variant="outlined" 
+        value={name} onChange={handleNameChange}error={!!nameError} helperText={nameError}/>
+        </form>
       </div>
       <div className='PROJECT-3' >
       <h3>วันเริ่มต้น :</h3>
@@ -114,7 +151,7 @@ export default function SelectLabels() {
       sx={{'& > :not(style)': { width: '75ch' }, height:100}} noValidate autoComplete="off">
          <TextField
           id="outlined-multiline-static"
-          label="กรุณากรอกรายละเอียด" multiline rows={4}/>
+          label="กรุณากรอกรายละเอียด" multiline rows={4} />
     </Box>
     </div>
 
@@ -129,12 +166,9 @@ export default function SelectLabels() {
     </Box>
           </div>
           <div className='PROJECT-6'>
-    <DialogActions >
-          <Button autoFocus onClick={handleClose} className='bt-1' sx={{m:1,color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
-          <Link href='/project2'>
-          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
-          </Link>
-          </DialogActions>
+          <form onSubmit={handleSubmit} >
+          <Button  type="submit" autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
+    </form>
     </div>  
         </div>
 
