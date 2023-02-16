@@ -42,9 +42,7 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
             position: 'absolute',
             right: 10,
             top: 10,
-            color: (theme) => theme.palette.grey[500],
-          }}
-        >
+            color: (theme) => theme.palette.grey[500],}}>
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -80,7 +78,6 @@ export default function CustomizedDialogs(props : any) {
     const hasEmptyInput = Object.values(addUserInfo).some(val => val === '');
     setIsInputsEmpty(hasEmptyInput);
   }, [addUserInfo]);
-  
 
   return (
     <div>

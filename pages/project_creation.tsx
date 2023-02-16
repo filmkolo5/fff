@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 // import Box from '@mui/material/Box';
 import  Box  from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import DialogActions from '@mui/material/DialogActions';
 //npm install @mui/x-date-pickers
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
@@ -16,28 +14,42 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from 'dayjs';
 import Link from 'next/link';
 import FileUpload  from './FileUpload';
-
+import { TextField, Button, Select, MenuItem, InputLabel } from '@mui/material';
 
 export default function SelectLabels() {
   const [error, setError] = React.useState(false);
   const router = useRouter();
 
-  const handleSubmit = (event:any) => {
+
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     if (!name) {
-      setNameError('** กรุณาใส่ข้อมูลให้ครบถ้วน');
-      return;
+      setNameError('Name is required');
+    } else {
+      setNameError('');
     }
-    if (nameError) {
-      return;
+    if (!age) {
+      setAgeError('Age is required');
+    } else {
+      setAgeError('');
     }
-    console.log('Form submitted with name:', name);
-    router.push('/project2'); // replace with the path to your next page
+    if (name && age) {
+      console.log('Form submitted with name:', name, 'and age:', age);
+      router.push('/project2'); // replace with the path to your next page
+    }
   };
+
+
   
     const [name, setName] = useState('');
     const [nameError, setNameError] = useState('');
+    const [age, setAge] = useState('');
+    const [ageError, setAgeError] = useState('');
   
+
+
+
+
     const handleNameChange = (event:any) => {
       const value = event.target.value.trim();
       setName(value);
@@ -48,13 +60,18 @@ export default function SelectLabels() {
       }
     };
 
-  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (!event.target.value) {
-      setError(true);
-    } else {
-      setError(false);
-    }
-  };
+    const handleAgeChange = (event:any) => {
+      const value = event.target.value;
+      setAge(value);
+      if (!value) {
+        setAgeError('** กรุณากรอกข้อมูล');
+      } else {
+        setAgeError('');
+      }
+    };
+
+
+
   const PROJECT = [
     { label: 'GEMs'},
     { label: 'AdHoc'},
@@ -93,8 +110,21 @@ export default function SelectLabels() {
           <h3>สร้างโครงการ</h3>
         <div className='PROJECT-1' >
         <h3>โครงการหลัก :</h3>
-        <Autocomplete   disablePortal id="combo-box-demo"options={PROJECT}
-    sx={{  width: 600}}renderInput={(params) => <TextField {...params} label="กรุณาเลือกโครงการ" error={!!nameError} helperText={nameError}/>}/>
+      <Select sx={{  width: 600}}  value={age} onChange={handleAgeChange} error={!!ageError} >
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+
+      {/* <Autocomplete disablePortal id="combo-box-demo"
+options={PROJECT}
+  sx={{ width: 300 }}
+  renderInput={(params) => <TextField {...params} label="Movie" value={age} onChange={handleAgeChange} error={!!ageError}     />}
+/>
+ */}
       </div>
       <div className='PROJECT-2' >
       <h3>GEN/BATCH :</h3>
@@ -113,7 +143,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} error={!!nameError} helperText={nameError}/>}
+          renderInput={(params) => <TextField {...params} />}
         />
       </Stack>
     <h3>วันสิ้นสุด :</h3>
@@ -124,7 +154,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value2}
           onChange={handleChange2}
-          renderInput={(params) => <TextField {...params} error={!!nameError} helperText={nameError}/>}
+          renderInput={(params) => <TextField {...params} />}
         />
       </Stack>
     </LocalizationProvider>

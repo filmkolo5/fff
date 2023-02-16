@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Popup  from './Popup';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import PersonAddIcon from '@mui/icons-material/GroupAdd';
 /* PRIME REACT */
 import "primereact/resources/themes/lara-light-indigo/theme.css"
 import "primereact/resources/primereact.min.css"
@@ -47,12 +48,12 @@ export default function () {
 
           <DataTable   paginator paginatorTemplate={template2}  first={0} rows={10}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow'>
 
-            <Column sortable header='ลำดับ' field='number' className='ui-column-data' />
-            <Column sortable header='รหัสพนักงาน' field='userName' className='ui-column-data' />
-            <Column sortable header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
-            <Column sortable header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
-            <Column sortable header='สังกัด' field='affiliation' className='ui-column-data' />
-            <Column sortable header='ตำแหน่ง IHub' field='positionIhub' className='ui-column-data' />
+            <Column  header='ลำดับ' field='number' className='ui-column-data' />
+            <Column  header='รหัสพนักงาน' field='userName' className='ui-column-data' />
+            <Column  header='ชื่อ - นามสกุล' field='fname_lname' className='ui-column-data' />
+            <Column  header='ตำแหน่งย่อ' field='position' className='ui-column-data' />
+            <Column  header='สังกัด' field='affiliation' className='ui-column-data' />
+            <Column  header='ตำแหน่ง IHub' field='positionIhub' className='ui-column-data' />
             <Column header='Action' field='positionIhub' className='ui-column-data' />
             
           </DataTable>

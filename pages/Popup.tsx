@@ -9,8 +9,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
-
-
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(false);
@@ -26,7 +25,7 @@ export default function AlertDialog() {
   return (
     <div>
       <Button  sx={{ borderColor: '#ffff',"&:hover":{borderColor:'#Ffff',backgroundColor:'#ffff' }}}  variant="outlined" onClick={handleClickOpen}>
-      <GroupAddIcon sx={{ color: '#4C3364',fontSize: 32}}  />
+      <PersonAddAlt1Icon sx={{ color: '#4C3364',fontSize: 32}}  />
       </Button>
       <Dialog open={open} onClose={handleClose}  aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
         <DialogTitle id="alert-dialog-title">
