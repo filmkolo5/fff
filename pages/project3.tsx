@@ -19,6 +19,7 @@ export default function () {
     fetchProjects();
   }, []);
 
+  /*---------------- Fetch ข้อมูล project จาก database------------------*/
   const fetchProjects = async () => {
     const config = {
       method: 'GET',
@@ -40,6 +41,7 @@ export default function () {
       console.log('fetch error : ',error);
     })
   }
+
 
   return (
     <div>

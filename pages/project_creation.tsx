@@ -35,7 +35,7 @@ export default function SelectLabels() {
     }
     if (name1 && name) {
       console.log('Form submitted with name:', name1, 'and age:', name);
-      router.push('/data');
+      router.push('/project2');
     }
   };
 
