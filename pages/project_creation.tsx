@@ -5,21 +5,19 @@ import Autocomplete from '@mui/material/Autocomplete';
 // import Box from '@mui/material/Box';
 import  Box  from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import DialogActions from '@mui/material/DialogActions';
 //npm install @mui/x-date-pickers
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 //npm install dayjs --save
 import dayjs, { Dayjs } from 'dayjs';
-import Link from 'next/link';
 import FileUpload  from './FileUpload';
-import { TextField, Button, Select, MenuItem, InputLabel } from '@mui/material';
+import { TextField, Button } from '@mui/material';
 
 export default function SelectLabels() {
   const [error, setError] = React.useState(false);
+  const [isDateSelected, setIsDateSelected] = React.useState(false);
   const router = useRouter();
-
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -33,22 +31,27 @@ export default function SelectLabels() {
     } else {
       setNameError('');
     }
-    if (name1 && name) {
-      console.log('Form submitted with name:', name1, 'and age:', name);
+    if (!isDateSelected) {
+      setDateError('** กรุณาเลือกวันเริ่มต้น');
+      setDateError1('** กรุณาเลือกวันสิ้นสุด');
+    } else {
+      setDateError('');
+      setDateError1('');
+    }
+    if (name1 && name && isDateSelected ) {
+      console.log('Form submitted with name:', name1, name , isDateSelected );
       router.push('/project2');
     }
   };
-
-  
     const [name, setName] = useState('');
     const [nameError, setNameError] = useState('');
     const [name1, setName1] = useState('');
-  const [name1Error, setName1Error] = useState('');
+    const [name1Error, setName1Error] = useState('');
+    const [dateError, setDateError] = useState('');
+    const [dateError1, setDateError1] = useState('');
 
 
-
-
-    const handleNameChange = (event:any) => {
+      const handleNameChange = (event:any) => {
       const value = event.target.value.trim();
       setName(value);
       if (!value) {
@@ -66,16 +69,6 @@ export default function SelectLabels() {
       }
       setName1(value || '');
     };
-  
-
-
-  const PROJECT = [
-    { label: 'GEMs'},
-    { label: 'AdHoc'},
-    { label: 'DevPool' },
-   
- 
-  ];
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -93,9 +86,21 @@ export default function SelectLabels() {
   
     const handleChange = (newValue: Dayjs | null) => {
       setValue(newValue);
+      if (!newValue) {
+        setDateError('');
+      } else {
+        setDateError('');
+        setIsDateSelected(true);
+      }
     };
-    const handleChange2 = (newValue: Dayjs | null) => {
-      setValue2(newValue);
+    const handleChange2 = (newValue2: Dayjs | null) => {
+      setValue2(newValue2);
+      if (!newValue2) {
+        setDateError1('');
+      } else {
+        setDateError1('');
+        setIsDateSelected(true);
+      }
     };
     
   return (
@@ -107,9 +112,8 @@ export default function SelectLabels() {
           <h3>สร้างโครงการ</h3>
         <div className='PROJECT-1' >
         <h3>โครงการหลัก :</h3>
-     
         <Autocomplete sx={{  width: 600}}   id="name" options={['GEMs', 'AdHoc', 'DevPool',]}
-        value={name1} onChange={handleName1Change}renderInput={(params) => (
+        onChange={handleName1Change}renderInput={(params) => (
           <TextField {...params} label="โครงการหลัก"  variant="outlined" error={!!name1Error} helperText={name1Error}/> )}/>
       </div>
       <div className='PROJECT-2' >
@@ -129,7 +133,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={(params) => <TextField {...params} error={!!dateError} helperText={dateError}/>}
         />
       </Stack>
     <h3>วันสิ้นสุด :</h3>
@@ -140,7 +144,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value2}
           onChange={handleChange2}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={(params) => <TextField {...params} error={!!dateError1} helperText={dateError1}/>}
         />
       </Stack>
     </LocalizationProvider>
@@ -167,13 +171,9 @@ export default function SelectLabels() {
           </div>
           <div className='PROJECT-6'>
           <form onSubmit={handleSubmit} >
-          <Button  type="submit" autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          <Button  type="submit"  className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
     </form>
     </div>  
-        </div>
-
-    <div>
-           
         </div>
     </div>
     
