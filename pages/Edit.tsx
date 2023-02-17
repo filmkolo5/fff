@@ -131,16 +131,11 @@ export default function CustomizedDialogs(props:any) {
           </Typography> */}
           <Typography gutterBottom>
           <Autocomplete
-      id="performance"
-      options={ _performance }
-      sx={{ m:1,width: 400  }}
-      defaultValue={ performance }
-      onChange={(event, newValue) => {
-        // console.log('onChange', newValue);
-        setEditperformance(newValue);
+      id="performance"options={ _performance } sx={{ m:1,width: 400  }}defaultValue={ performance }
+      onChange={(event, newValue) => { // console.log('onChange', newValue);
+setEditperformance(newValue);
       }}
-      renderInput={(params) => <TextField {...params} className='b-1' label="การปฏิบัติงาน" />}
-    />
+      renderInput={(params) => <TextField {...params} className='b-1' label="การปฏิบัติงาน" />}/>
           </Typography>
         </DialogContent>
         <DialogActions>

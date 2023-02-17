@@ -5,16 +5,14 @@ import Autocomplete from '@mui/material/Autocomplete';
 // import Box from '@mui/material/Box';
 import  Box  from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import DialogActions from '@mui/material/DialogActions';
 //npm install @mui/x-date-pickers
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 //npm install dayjs --save
 import dayjs, { Dayjs } from 'dayjs';
-import Link from 'next/link';
 import FileUpload  from './FileUpload';
-import { TextField, Button, Select, MenuItem, InputLabel } from '@mui/material';
+import { TextField, Button } from '@mui/material';
 
 export default function SelectLabels() {
   const [error, setError] = React.useState(false);
@@ -34,21 +32,17 @@ export default function SelectLabels() {
       setNameError('');
     }
     if (name1 && name) {
-      console.log('Form submitted with name:', name1, 'and age:', name);
-      router.push('/data');
+      console.log('Form submitted with name:', name1, 'and name:', name);
+      router.push('/project2');
     }
   };
-
-  
     const [name, setName] = useState('');
     const [nameError, setNameError] = useState('');
     const [name1, setName1] = useState('');
-  const [name1Error, setName1Error] = useState('');
+    const [name1Error, setName1Error] = useState('');
 
 
-
-
-    const handleNameChange = (event:any) => {
+      const handleNameChange = (event:any) => {
       const value = event.target.value.trim();
       setName(value);
       if (!value) {
@@ -107,9 +101,8 @@ export default function SelectLabels() {
           <h3>สร้างโครงการ</h3>
         <div className='PROJECT-1' >
         <h3>โครงการหลัก :</h3>
-     
         <Autocomplete sx={{  width: 600}}   id="name" options={['GEMs', 'AdHoc', 'DevPool',]}
-        value={name1} onChange={handleName1Change}renderInput={(params) => (
+        onChange={handleName1Change}renderInput={(params) => (
           <TextField {...params} label="โครงการหลัก"  variant="outlined" error={!!name1Error} helperText={name1Error}/> )}/>
       </div>
       <div className='PROJECT-2' >
@@ -167,13 +160,9 @@ export default function SelectLabels() {
           </div>
           <div className='PROJECT-6'>
           <form onSubmit={handleSubmit} >
-          <Button  type="submit" autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
+          <Button  type="submit"  className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
     </form>
     </div>  
-        </div>
-
-    <div>
-           
         </div>
     </div>
     

@@ -9,7 +9,8 @@ import "primeflex/primeflex.css"
 /* Components */
 import { template2 } from '../components/template2';
 import axios from 'axios';
-
+import { Button } from 'primereact/button';
+import EditIcon from '@mui/icons-material/Edit';
 
 export default function () {
   const [projects, setProjects] = useState([]);
@@ -41,6 +42,17 @@ export default function () {
     })
   }
 
+
+
+  const action1 = (rowData:any) => {
+    return (
+      <EditIcon  sx={{ color: '#4C3364'}}   />
+     
+    );
+  }
+
+
+
   return (
     <div>
       <div className='HEAD-PROJECT3'>
@@ -62,7 +74,7 @@ export default function () {
             <Column  header='วันสิ้นสุด' field='endProjectAt' className='ui-column-data' />
             <Column  header='จำนวนผู้เข้าร่วมทั้งหมด (คน)' field='totalEmployee' className='ui-column-data' />
             <Column  header='จำนวนผู้เข้าร่วมปัจจุบัน (คน)' field='nowEmployee' className='ui-column-data' />
-            <Column header='Action' field='positionIhub' className='ui-column-data' />
+            <Column  header='Ation' body={action1}   className='ui-column-data' />
           </DataTable>
         </div>
       </div>
