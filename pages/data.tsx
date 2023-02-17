@@ -120,21 +120,21 @@ export default function () {
       })
       .catch((error:any) => {
         console.error(error);
-      });
+      }); 
   };  
   {/* ----------------------------------------------- ยิง API ให้ลบข้อมูล ----------------------------------------------- */}
   const handleEditUser = (id: string) => {
-    console.log('id',id);
-    console.log('userName',userName);
-    console.log('firstName',firstName);
-    console.log('lastName',lastName);
-    console.log('position',position);
-    console.log('affiliation',affiliation);
-    console.log('positionIhub',positionihub);
-    console.log('performance',performance);
+    // console.log('id',id);
+    // console.log('userName',userName);
+    // console.log('firstName',firstName);
+    // console.log('lastName',lastName);
+    // console.log('position',position);
+    // console.log('affiliation',affiliation);
+    // console.log('positionIhub',positionihub);
+    // console.log('performance',performance);
     const data = JSON.stringify({
       "userName": userName,
-      "firstName": firstName,
+      "firstName": firstName, 
       "lastName": lastName,
       "position": position,
       "affiliation": affiliation,

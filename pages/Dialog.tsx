@@ -106,7 +106,10 @@ export default function CustomizedDialogs(props : any) {
         {/* ----------------------------------------------- ตำแหน่ง ----------------------------------------------- */}
         <Typography gutterBottom>
           <Box sx={{'& > :not(style)': { m: 1, width: '400px' },}}>
-            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" type="text" value={ addUserInfo.position } onChange={(e) => setAddUserInfo({ ...addUserInfo, position: e.target.value })}  error={isInputsEmpty && addUserInfo.position === ''}helperText={isInputsEmpty && addUserInfo.position === '' ? 'กรุณากรอกตำแหน่ง' : ''} />
+            <TextField className='b-0' id="outlined-basic" label="ตำแหน่ง" variant="outlined" type="text" value={ addUserInfo.position } 
+            onChange={(e) => setAddUserInfo({ ...addUserInfo, position: e.target.value })}  
+            error={isInputsEmpty && addUserInfo.position === ''}
+            helperText={isInputsEmpty && addUserInfo.position === '' ? 'กรุณากรอกตำแหน่ง' : ''} />
           </Box>
         </Typography>
         {/* ----------------------------------------------- สังกัด ----------------------------------------------- */}

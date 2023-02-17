@@ -32,7 +32,8 @@ export default function SelectLabels() {
       setNameError('');
     }
     if (name1 && name) {
-      console.log('Form submitted with name:', name1, 'and name:', name);
+
+      console.log('Form submitted with name:', name1, 'and age:', name);
       router.push('/project2');
     }
   };
