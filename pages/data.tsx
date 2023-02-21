@@ -190,9 +190,10 @@ export default function () {
   }
 {/* --------------------------------------------SEARCH--------------------------------------------------- */}
     const [globalFilter, setGlobalFilter] = useState("");
-    const onGlobalFilter = (e: any) => {
-    setGlobalFilter(e.target.value);
-};
+    const onGlobalFilter = (e:any) => {
+      const value = e.target.value;
+      setGlobalFilter(value === "" ? "" : value);
+    };
   return (
     <div>
       <div className='DATA_TEXT'>
@@ -222,7 +223,7 @@ export default function () {
       <div className='grid'>
         <div className='col'>
 
-          <DataTable value={[...users]} globalFilter={globalFilter} paginator paginatorTemplate={template2}  first={0} rows={10}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow'>
+          <DataTable value={[...users]} key={globalFilter} globalFilter={globalFilter} paginator paginatorTemplate={template2}  first={0} rows={10}  paginatorClassName="justify-content-end" responsiveLayout="scroll" className='shadow'>
 
             <Column header='ลำดับ' field='number' className='ui-column-data' />
             <Column header='รหัสพนักงาน' field='userName' className='ui-column-data' />
