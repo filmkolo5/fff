@@ -102,3 +102,27 @@
  margin-left: 160px;
 
 }
+.dropzone {
+  justify-content: center;
+  color: #999;
+  border: 1px dashed #999;
+  padding-left: 160px;
+  padding-right: 170px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
+}
+:hover.dropzone{
+  color: red;
+}
+.dropzone.dragover {
+  background-color: #eee;
+}
+
+.dropzone.dragleave {
+  background-color: #fff;
+}
+.container{
+  color: #999;
+  font-family: 'Kanit';
+}

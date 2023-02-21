@@ -1,15 +1,25 @@
-import React, { useState } from 'react';
-interface Props {}
-const FileUploadButton: React.FC<Props> = () => {
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  };
-  return (
-    <div className="UPLOAD">
-      <input type="file"  id="fileInput" onChange={handleFileChange} />
-      <label className="UPLOAD1" htmlFor="เลือกไฟล์เพื่ออัปโหลด"  >
-      </label>
-    </div>
-  );
-};
+import React from 'react';
+import { useDropzone } from 'react-dropzone';
 
-export default FileUploadButton;
+function FileUpload(props: any) {
+  const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
+  
+  const files = acceptedFiles.map(file => (
+    <li key={file.name}>
+      {file.name} - {file.size} bytes
+    </li>
+  ));
+
+  return (
+    <section className="container">
+      <div {...getRootProps({className: 'dropzone'})}>
+        <input {...getInputProps()} />
+        <p>ลากไฟล์มาไว้ที่นี่ หรือ เลือกไฟล์เพื่ออัปโหลด</p>
+      </div>
+      <aside>
+        <ul>{files}</ul>
+      </aside>
+    </section>
+  );
+}
+export default FileUpload;

@@ -118,12 +118,12 @@ export default function SelectLabels() {
         <h3>โครงการหลัก :</h3>
         <Autocomplete sx={{  width: 600}}   id="name" options={['GEMs', 'AdHoc', 'DevPool',]}
         onChange={handleName1Change}renderInput={(params) => (
-          <TextField {...params} label="โครงการหลัก"  variant="outlined" error={!!name1Error} helperText={name1Error}/> )}/>
+          <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}} label="โครงการหลัก"  variant="outlined" error={!!name1Error} helperText={name1Error}/> )}/>
       </div>
       <div className='PROJECT-2' >
       <h3>GEN/BATCH :</h3>
       <form onSubmit={handleSubmit} >
-      <TextField  sx={{  width: 600}} label="GEN/BATCH" variant="outlined" 
+      <TextField  sx={{  width: 600 , '& label': { fontFamily: 'Kanit'}}} label="GEN/BATCH" variant="outlined" 
         value={name} onChange={handleNameChange}error={!!nameError} helperText={nameError}/>
         </form>
       </div>
@@ -137,7 +137,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} error={!!dateError} helperText={dateError}/>}
+          renderInput={(params) => <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}} error={!!dateError} helperText={dateError}/>}
         />
       </Stack>
     <h3>วันสิ้นสุด :</h3>
@@ -148,7 +148,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value2}
           onChange={handleChange2}
-          renderInput={(params) => <TextField {...params} error={!!dateError1} helperText={dateError1}/>}
+          renderInput={(params) => <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}} error={!!dateError1} helperText={dateError1}/>}
         />
       </Stack>
     </LocalizationProvider>
@@ -156,22 +156,17 @@ export default function SelectLabels() {
       <div className='PROJECT-4' >
       <h3>รายละเอียด :</h3>
       <Box component="form"
-      sx={{'& > :not(style)': { width: '75ch' }, height:100}} noValidate autoComplete="off">
+      sx={{'& > :not(style)': { width: '75ch' }, height:100,}} noValidate autoComplete="off">
          <TextField
           id="outlined-multiline-static"
+          sx={{'& label': { fontFamily: 'Kanit'}}}
           label="กรุณากรอกรายละเอียด" multiline rows={4} />
     </Box>
     </div>
 
           <div className='PROJECT-5'>
           <h3>อนุมัติให้จัดโครงการ :</h3>
-          <Box component="span" sx={{ width:600, height: 140,p: 2, border: '1px dashed grey' }}>
-          <Button component="label" sx={{ width:565, height: 100,p: 2 ,"&:hover":{backgroundColor:'#ffff'}}} >
-          {/* <input hidden accept="image/*" multiple type="file" /> */}
           <FileUpload/>
-          
-      </Button>
-    </Box>
           </div>
           <div className='PROJECT-6'>
           <form onSubmit={handleSubmit} >
