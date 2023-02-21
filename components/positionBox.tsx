@@ -1,6 +1,7 @@
+  import { useEffect, useState } from 'react';
+  // Material
   import Autocomplete from '@mui/material/Autocomplete';
   import TextField from '@mui/material/TextField';
-  import { useEffect, useState } from 'react';
   /* Axios */
   var axios = require('axios');
   export function PositionBox(props : any) {

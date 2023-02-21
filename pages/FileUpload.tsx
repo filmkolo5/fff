@@ -1,4 +1,5 @@
 import React from 'react';
+// npm install --save react-dropzone
 import { useDropzone } from 'react-dropzone';
 
 function FileUpload(props: any) {
@@ -11,7 +12,7 @@ function FileUpload(props: any) {
   ));
 
   return (
-    <section className="container">
+    <section className="containeru">
       <div {...getRootProps({className: 'dropzone'})}>
         <input {...getInputProps()} />
         <p>ลากไฟล์มาไว้ที่นี่ หรือ เลือกไฟล์เพื่ออัปโหลด</p>

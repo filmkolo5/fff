@@ -91,9 +91,8 @@
 .PROJECT-5 h4{
  text-decoration: underline;
  color: #000000;
+ 
 }
-
-
 
 .PROJECT-6{
   display: flex;
@@ -125,4 +124,9 @@
 .container{
   color: #999;
   font-family: 'Kanit';
+}
+.containeru p{
+  font-family: 'Kanit';
+  font-size: 15px;
+  text-decoration: underline;
 }

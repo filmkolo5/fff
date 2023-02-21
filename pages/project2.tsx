@@ -1,14 +1,12 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
+import React from 'react'
+// Material
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+// import page Popup
 import Popup  from './Popup';
-import GroupAddIcon from '@mui/icons-material/GroupAdd';
-import PersonAddIcon from '@mui/icons-material/GroupAdd';
 /* PRIME REACT */
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
 import "primereact/resources/themes/lara-light-indigo/theme.css"
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"

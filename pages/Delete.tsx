@@ -1,4 +1,5 @@
 import * as React from 'react';
+// Material
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -6,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+
 export default function AlertDialog(props:any) {
   const { handleDeleteUser, id } = props;
   const [open, setOpen] = React.useState(false);

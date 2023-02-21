@@ -1,4 +1,5 @@
 import * as React  from 'react';
+// Material
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
@@ -10,11 +11,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+// import page Performance
 import { Performance } from '../components/performance';
-import { PositionBox } from '../components/positionBox';
+/* PRIME REACT */
 import { Toast } from 'primereact/toast';
  
-
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),

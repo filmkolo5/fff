@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { InputText } from 'primereact/inputtext';
+// improt page Dialog.tsx Edit.tsx Delete.tsx
 import Dialog  from './Dialog';
 import Edit  from './Edit';
 import Delete  from './Delete';
@@ -11,6 +9,9 @@ import "primereact/resources/themes/lara-light-indigo/theme.css"
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 import "primeflex/primeflex.css"
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { InputText } from 'primereact/inputtext';
 /* Components */
 import { template2 } from '../components/template2';
 /* Axios */
@@ -24,10 +25,6 @@ export default function () {
     // ดึงค่าเริ่มต้นของ user มาแสดงในตาราง
     fetchUsers();
   }, []);
-
-  const [value4, setValue4] = useState('');
-
-  
   const [addUserInfo, setAddUserInfo] = useState({
     username: '',
     firstname: '',
