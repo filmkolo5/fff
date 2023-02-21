@@ -17,29 +17,33 @@ import { TextField, Button } from '@mui/material';
 export default function SelectLabels() {
   const [error, setError] = React.useState(false);
   const [isDateSelected, setIsDateSelected] = React.useState(false);
+  const [isDateSelected1, setIsDateSelected1] = React.useState(false);
   const router = useRouter();
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
     if (!name1) {
-      setName1Error('** กรุณากรอกข้อมูล');
+      setName1Error('** กรุณาเลือกโครงการ');
     } else {
       setName1Error('');
     }
     if (!name) {
-      setNameError('** กรุณากรอกข้อมูล');
+      setNameError('** กรุณากรอก GEN/BATCH');
     } else {
       setNameError('');
     }
     if (!isDateSelected) {
       setDateError('** กรุณาเลือกวันเริ่มต้น');
-      setDateError1('** กรุณาเลือกวันสิ้นสุด');
     } else {
       setDateError('');
+    }
+    if (!isDateSelected1) {
+      setDateError1('** กรุณาเลือกวันสิ้นสุด');
+    } else {
       setDateError1('');
     }
-    if (name1 && name && isDateSelected ) {
-      console.log('Form submitted with name:', name1, name , isDateSelected );
+    if (name1 && name && isDateSelected && isDateSelected1 ) {
+      console.log('Form submitted with name:', name1, name , isDateSelected,isDateSelected1 );
       router.push('/project2');
     }
   };
@@ -99,10 +103,10 @@ export default function SelectLabels() {
         setDateError1('');
       } else {
         setDateError1('');
-        setIsDateSelected(true);
+        setIsDateSelected1(true);
       }
     };
-    
+  
   return (
     <div>
       <div className='HEAD-PROJECT'>
