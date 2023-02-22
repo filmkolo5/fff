@@ -6,11 +6,34 @@ import DialogContentText from '@mui/material/DialogContentText';
 import { Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import axios from 'axios';
+
 
 export function PopupInCreate(props:any) {
   const { handleClose, open } = props;
-
   const [employee, setEmployee] = React.useState('');
+  const employee_clear = employee.split(/,| /)
+  console.log(employee_clear);
+  // const handleAddEmployee = () => {
+  //   const data = JSON.stringify({
+  //     'userName':employee_clear,
+  //   });
+  //   const config = {
+  //     method:'get',
+  //     url: 'https://localhost:8080/user_mock/all',
+  //     headers: { 
+  //       'Content-Type': 'application/json'
+  //     },
+  //     data:data
+  //   };
+  //   axios(config)
+  //   .then(function (response:any) {
+  //     console.log(JSON.stringify(response.data));
+  //   })
+  //   .catch(function (error:any) {
+  //     console.error(error);
+  //   });
+  // };
 
   return (
     <div>
