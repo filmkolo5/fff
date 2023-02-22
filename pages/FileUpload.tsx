@@ -12,7 +12,7 @@ function FileUpload(props: any) {
   ));
 
   return (
-    <section className="containeru">
+    <section className="container">
       <div {...getRootProps({className: 'dropzone'})}>
         <input {...getInputProps()} />
         <p>ลากไฟล์มาไว้ที่นี่ หรือ เลือกไฟล์เพื่ออัปโหลด</p>

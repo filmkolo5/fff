@@ -109,6 +109,7 @@
   padding-right: 170px;
   padding-top: 50px;
   padding-bottom: 50px;
+  text-decoration: underline;
   
 }
 :hover.dropzone{
@@ -124,9 +125,4 @@
 .container{
   color: #999;
   font-family: 'Kanit';
-}
-.containeru p{
-  font-family: 'Kanit';
-  font-size: 15px;
-  text-decoration: underline;
 }
