@@ -91,9 +91,7 @@
 .PROJECT-5 h4{
  text-decoration: underline;
  color: #000000;
- 
 }
-
 .PROJECT-6{
   display: flex;
  justify-content: center;
@@ -110,7 +108,6 @@
   padding-top: 50px;
   padding-bottom: 50px;
   text-decoration: underline;
-  
 }
 :hover.dropzone{
   color: red;
@@ -118,11 +115,13 @@
 .dropzone.dragover {
   background-color: #eee;
 }
-
 .dropzone.dragleave {
   background-color: #fff;
 }
 .container{
   color: #999;
   font-family: 'Kanit';
+}
+.custom-toast .p-toast-summary {
+  font-family: 'Kanit', sans-serif;
 }
