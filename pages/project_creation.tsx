@@ -14,7 +14,6 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from 'dayjs';
 import Link from 'next/link';
 import FileUpload  from './FileUpload';
-import { useState } from 'react';
 
 
 export default function SelectLabels() {
@@ -56,9 +55,7 @@ export default function SelectLabels() {
       setValue2(newValue);
     };
     
-  return
-  const [value1, setValue1] = useState('');
-  (
+  return (
     <div>
       <div className='HEAD-PROJECT'>
         <h3>โครงการ</h3>
