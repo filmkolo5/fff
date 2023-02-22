@@ -107,7 +107,23 @@ export default function SelectLabels() {
       }
     };
   
-  return (
+  return 
+  
+  function MyComponent() {
+    const [value1, setValue1] = useState('initial value');
+  
+    const handleClick = () => {
+      setValue1('new value');
+    };
+  
+    return (
+      <div>
+        <p>Value 1: {value1}</p>
+        <button onClick={handleClick}>Update Value 1</button>
+      </div>
+    );
+  }
+  (
     <div>
       <div className='HEAD-PROJECT'>
         <h3>โครงการ</h3>
