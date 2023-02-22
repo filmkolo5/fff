@@ -1,38 +1,78 @@
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-// import Box from '@mui/material/Box';
-import  Box  from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import DialogActions from '@mui/material/DialogActions';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+// Material
 //npm install @mui/x-date-pickers
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import Autocomplete from '@mui/material/Autocomplete';
+import  Box  from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 //npm install dayjs --save
 import dayjs, { Dayjs } from 'dayjs';
-import Link from 'next/link';
 import FileUpload  from './FileUpload';
-
+import { TextField, Button } from '@mui/material';
 
 export default function SelectLabels() {
   const [error, setError] = React.useState(false);
+  const [isDateSelected, setIsDateSelected] = React.useState(false);
+  const [isDateSelected1, setIsDateSelected1] = React.useState(false);
+  const router = useRouter();
 
-  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (!event.target.value) {
-      setError(true);
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    if (!name1) {
+      setName1Error('** กรุณาเลือกโครงการ');
     } else {
-      setError(false);
+      setName1Error('');
+    }
+    if (!name) {
+      setNameError('** กรุณากรอก GEN/BATCH');
+    } else {
+      setNameError('');
+    }
+    if (!isDateSelected) {
+      setDateError('** กรุณาเลือกวันเริ่มต้น');
+    } else {
+      setDateError('');
+    }
+    if (!isDateSelected1) {
+      setDateError1('** กรุณาเลือกวันสิ้นสุด');
+    } else {
+      setDateError1('');
+    }
+    if (name1 && name && isDateSelected && isDateSelected1 ) {
+      console.log('Form submitted with name:', name1, name , isDateSelected,isDateSelected1 );
+      router.push('/project2');
     }
   };
-  const PROJECT = [
-    { label: 'GEMs'},
-    { label: 'AdHoc'},
-    { label: 'DevPool' },
-   
- 
-  ];
+    const [name, setName] = useState('');
+    const [nameError, setNameError] = useState('');
+    const [name1, setName1] = useState('');
+    const [name1Error, setName1Error] = useState('');
+    const [dateError, setDateError] = useState('');
+    const [dateError1, setDateError1] = useState('');
+
+
+      const handleNameChange = (event:any) => {
+      const value = event.target.value.trim();
+      setName(value);
+      if (!value) {
+        setNameError('');
+      } else {
+        setNameError('');
+      }
+    };
+
+    const handleName1Change = (event: any, value: string | null) => {
+      if (!value) {
+        setName1Error('');
+      } else {
+        setName1Error('');
+      }
+      setName1(value || '');
+    };
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -42,19 +82,31 @@ export default function SelectLabels() {
     setOpen(false);
   };
     const [value, setValue] = React.useState<Dayjs | null>(
-      dayjs('2023-01-01'),
+      dayjs(''),
     );
     const [value2, setValue2] = React.useState<Dayjs | null>(
-      dayjs('2023-02-02'),
+      dayjs(''),
     );
   
     const handleChange = (newValue: Dayjs | null) => {
       setValue(newValue);
+      if (!newValue) {
+        setDateError('');
+      } else {
+        setDateError('');
+        setIsDateSelected(true);
+      }
     };
-    const handleChange2 = (newValue: Dayjs | null) => {
-      setValue2(newValue);
+    const handleChange2 = (newValue2: Dayjs | null) => {
+      setValue2(newValue2);
+      if (!newValue2) {
+        setDateError1('');
+      } else {
+        setDateError1('');
+        setIsDateSelected1(true);
+      }
     };
-    
+  
   return (
     <div>
       <div className='HEAD-PROJECT'>
@@ -64,23 +116,16 @@ export default function SelectLabels() {
           <h3>สร้างโครงการ</h3>
         <div className='PROJECT-1' >
         <h3>โครงการหลัก :</h3>
-        <Autocomplete   disablePortal id="combo-box-demo"options={PROJECT}
-    sx={{  width: 600}}renderInput={(params) => <TextField {...params} label="กรุณาเลือกโครงการ" />}/>
+        <Autocomplete sx={{  width: 600}}   id="name" options={['GEMs', 'AdHoc', 'DevPool',]}
+        onChange={handleName1Change}renderInput={(params) => (
+          <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}} label="โครงการหลัก"  variant="outlined" error={!!name1Error} helperText={name1Error}/> )}/>
       </div>
       <div className='PROJECT-2' >
       <h3>GEN/BATCH :</h3>
-      <Box component="form"
-      sx={{'& > :not(style)': { width: '75ch' }, }} noValidate autoComplete="off">
-      <TextField
-    id="outlined-basic"
-    label="กรุณากรอก Gen/Batch"
-    variant="outlined"
-    required
-    error={error}
-    helperText={error ? "This field is required." : ""}
-    onChange={handleChange1}
-  />
-    </Box>
+      <form onSubmit={handleSubmit} >
+      <TextField  sx={{  width: 600 , '& label': { fontFamily: 'Kanit'}}} label="GEN/BATCH" variant="outlined" 
+        value={name} onChange={handleNameChange}error={!!nameError} helperText={nameError}/>
+        </form>
       </div>
       <div className='PROJECT-3' >
       <h3>วันเริ่มต้น :</h3>
@@ -92,7 +137,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={(params) => <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}} error={!!dateError} helperText={dateError}/>}
         />
       </Stack>
     <h3>วันสิ้นสุด :</h3>
@@ -103,7 +148,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value2}
           onChange={handleChange2}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={(params) => <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}} error={!!dateError1} helperText={dateError1}/>}
         />
       </Stack>
     </LocalizationProvider>
@@ -111,40 +156,23 @@ export default function SelectLabels() {
       <div className='PROJECT-4' >
       <h3>รายละเอียด :</h3>
       <Box component="form"
-      sx={{'& > :not(style)': { width: '75ch' }, height:100}} noValidate autoComplete="off">
+      sx={{'& > :not(style)': { width: '75ch' }, height:100,}} noValidate autoComplete="off">
          <TextField
           id="outlined-multiline-static"
-          label="กรุณากรอกรายละเอียด" multiline rows={4}/>
+          sx={{'& label': { fontFamily: 'Kanit'}}}
+          label="กรุณากรอกรายละเอียด" multiline rows={4} />
     </Box>
     </div>
-
           <div className='PROJECT-5'>
           <h3>อนุมัติให้จัดโครงการ :</h3>
-          <Box component="span" sx={{ width:600, height: 140,p: 2, border: '1px dashed grey' }}>
-          <Button component="label" sx={{ width:565, height: 100,p: 2 ,"&:hover":{backgroundColor:'#ffff'}}} >
-          {/* <input hidden accept="image/*" multiple type="file" /> */}
           <FileUpload/>
-          
-      </Button>
-    </Box>
           </div>
           <div className='PROJECT-6'>
-    <DialogActions >
-          <Button autoFocus onClick={handleClose} className='bt-1' sx={{m:1,color:'black',width:200,borderColor:'black',"&:hover":{borderColor:'black'}}}  variant="outlined"><h4>ยกเลิก</h4></Button>
-          <Link href='/project2'>
-          <Button autoFocus onClick={handleClose} className='bt-1'  sx={{backgroundColor:'#3A1062',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#b499d3'}}} variant="contained" ><h5>บันทึก</h5></Button>
-          </Link>
-          </DialogActions>
+          <form onSubmit={handleSubmit} >
+          <Button  type="submit"  className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
+    </form>
     </div>  
         </div>
-
-    <div>
-           
-        </div>
     </div>
-    
-   
-   
-   
   );
 }
