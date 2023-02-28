@@ -14,14 +14,17 @@ import dayjs, { Dayjs } from 'dayjs';
 import FileUpload  from './FileUpload';
 import { TextField, Button } from '@mui/material';
 
-export default function SelectLabels() {
+export default function SelectLabels(props : any) {
   const [error, setError] = React.useState(false);
   const [isDateSelected, setIsDateSelected] = React.useState(false);
   const [isDateSelected1, setIsDateSelected1] = React.useState(false);
   const router = useRouter();
+  const [users, setUsers] = useState([]);
 
   const handleSubmit = (event: any) => {
+    
     event.preventDefault();
+   
     if (!name1) {
       setName1Error('** กรุณาเลือกโครงการ');
     } else {
@@ -53,10 +56,12 @@ export default function SelectLabels() {
     const [name1Error, setName1Error] = useState('');
     const [dateError, setDateError] = useState('');
     const [dateError1, setDateError1] = useState('');
+    const [inputValue, setInputValue] = useState('');
 
 
       const handleNameChange = (event:any) => {
       const value = event.target.value.trim();
+      
       setName(value);
       if (!value) {
         setNameError('');
@@ -64,7 +69,7 @@ export default function SelectLabels() {
         setNameError('');
       }
     };
-
+    
     const handleName1Change = (event: any, value: string | null) => {
       if (!value) {
         setName1Error('');
@@ -118,7 +123,8 @@ export default function SelectLabels() {
         <h3>โครงการหลัก :</h3>
         <Autocomplete sx={{  width: 600}}   id="name" options={['GEMs', 'AdHoc', 'DevPool',]}
         onChange={handleName1Change}renderInput={(params) => (
-          <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}} label="โครงการหลัก"  variant="outlined" error={!!name1Error} helperText={name1Error}/> )}/>
+          <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}} label="โครงการหลัก"  variant="outlined" error={!!name1Error} helperText={name1Error}
+          /> )}/>
       </div>
       <div className='PROJECT-2' >
       <h3>GEN/BATCH :</h3>
@@ -148,7 +154,7 @@ export default function SelectLabels() {
           inputFormat="DD/MM/YYYY"
           value={value2}
           onChange={handleChange2}
-          renderInput={(params) => <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}} error={!!dateError1} helperText={dateError1}/>}
+          renderInput={(params) => <TextField {...params} sx={{'& label': { fontFamily: 'Kanit'}}}error={!!dateError1} helperText={dateError1}/>}
         />
       </Stack>
     </LocalizationProvider>
@@ -170,7 +176,7 @@ export default function SelectLabels() {
           <div className='PROJECT-6'>
           <form onSubmit={handleSubmit} >
           <Button  type="submit"  className='bt-1'  sx={{backgroundColor:'#4C3364',color:'#FFFFFF',width:200,"&:hover":{backgroundColor:'#4C3364'}}} variant="contained" ><h5>บันทึก</h5></Button>
-    </form>
+  </form>
     </div>  
         </div>
     </div>
